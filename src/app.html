@@ -1,10 +1,18 @@
 <template>
-  <require from="nav-bar.html"></require>
-  <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="semantic-ui/semantic.css"></require>
 
-  <nav-bar router.bind="router"></nav-bar>
+  <h2 class="ui top attached blue header" style = "background-color: lightcyan">
+    Kupalinka Adult Daycare
+  </h2>
 
-  <div class="page-host">
+  <div class = "ui secondary pointing menu">
+    <a href = ${row.href} class = "${row.isActive ? 'active orange item' : 'item'}" repeat.for = "row of router.navigation">
+      ${row.title}
+    </a>
+  </div>
+
+  <div class ="page-host">
     <router-view></router-view>
   </div>
+
 </template>

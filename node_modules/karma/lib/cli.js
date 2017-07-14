@@ -41,20 +41,6 @@ var processArgs = function (argv, options, fs, path) {
     options.failOnEmptyTestSuite = options.failOnEmptyTestSuite === 'true'
   }
 
-  if (helper.isString(options.formatError)) {
-    try {
-      var required = require(options.formatError)
-    } catch (err) {
-      console.error('Could not require formatError: ' + options.formatError, err)
-    }
-    // support exports.formatError and module.exports = function
-    options.formatError = required.formatError || required
-    if (!helper.isFunction(options.formatError)) {
-      console.error('Format error must be a function, got: ' + typeof options.formatError)
-      process.exit(1)
-    }
-  }
-
   if (helper.isString(options.logLevel)) {
     var logConstant = constant['LOG_' + options.logLevel.toUpperCase()]
     if (helper.isDefined(logConstant)) {
@@ -108,14 +94,10 @@ var processArgs = function (argv, options, fs, path) {
       configFile = './karma.conf.js'
     } else if (fs.existsSync('./karma.conf.coffee')) {
       configFile = './karma.conf.coffee'
-    } else if (fs.existsSync('./karma.conf.ts')) {
-      configFile = './karma.conf.ts'
     } else if (fs.existsSync('./.config/karma.conf.js')) {
       configFile = './.config/karma.conf.js'
     } else if (fs.existsSync('./.config/karma.conf.coffee')) {
       configFile = './.config/karma.conf.coffee'
-    } else if (fs.existsSync('./.config/karma.conf.ts')) {
-      configFile = './.config/karma.conf.ts'
     }
   }
 
@@ -177,7 +159,6 @@ var describeStart = function () {
       '  $0 start [<configFile>] [<options>]')
     .describe('port', '<integer> Port where the server is running.')
     .describe('auto-watch', 'Auto watch source files and run on change.')
-    .describe('detached', 'Detach the server.')
     .describe('no-auto-watch', 'Do not watch source files.')
     .describe('log-level', '<disable | error | warn | info | debug> Level of logging.')
     .describe('colors', 'Use colors when reporting and printing logs.')
@@ -204,20 +185,6 @@ var describeRun = function () {
     .describe('fail-on-empty-test-suite', 'Fail on empty test suite.')
     .describe('no-fail-on-empty-test-suite', 'Do not fail on empty test suite.')
     .describe('help', 'Print usage.')
-    .describe('log-level', '<disable | error | warn | info | debug> Level of logging.')
-    .describe('colors', 'Use colors when reporting and printing logs.')
-    .describe('no-colors', 'Do not use colors when reporting or printing logs.')
-}
-
-var describeStop = function () {
-  optimist
-    .usage('Karma - Spectacular Test Runner for JavaScript.\n\n' +
-      'STOP - Stop the server (requires running server).\n\n' +
-      'Usage:\n' +
-      '  $0 run [<configFile>] [<options>]')
-    .describe('port', '<integer> Port where the server is listening.')
-    .describe('log-level', '<disable | error | warn | info | debug> Level of logging.')
-    .describe('help', 'Print usage.')
 }
 
 var describeCompletion = function () {
@@ -243,10 +210,6 @@ exports.process = function () {
     case 'run':
       describeRun()
       options.clientArgs = parseClientArgs(process.argv)
-      break
-
-    case 'stop':
-      describeStop()
       break
 
     case 'init':
@@ -281,9 +244,6 @@ exports.run = function () {
       break
     case 'run':
       require('./runner').run(config)
-      break
-    case 'stop':
-      require('./stopper').stop(config)
       break
     case 'init':
       require('./init').init(config)

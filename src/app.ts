@@ -1,16 +1,24 @@
-import {Router, RouterConfiguration} from 'aurelia-router';
+import RouteModel from "./resources/model/route-model";
+import {bindable} from "aurelia-templating";
 
 export class App {
-  public router: Router;
 
-  public configureRouter(config: RouterConfiguration, router: Router) {
-    config.title = 'Aurelia';
-    config.map([
-      { route: ['', 'welcome'], name: 'welcome',      moduleId: 'welcome',      nav: true, title: 'Welcome' },
-      { route: 'users',         name: 'users',        moduleId: 'users',        nav: true, title: 'Github Users' },
-      { route: 'child-router',  name: 'child-router', moduleId: 'child-router', nav: true, title: 'Child Router' }
-    ]);
+  @bindable router;
+
+  configureRouter(config, router) {
+    config.title = "Kupalinka";
+
+    let routes: RouteModel[] = [];
+    routes.push(new RouteModel(["", "home"], "home", "home/home", "Home"));
+    routes.push(new RouteModel(["services"], "services", "services/services", "Services"));
+    routes.push(new RouteModel(["additional"], "additional", "services/additional", "Additional"));
+    routes.push(new RouteModel(["staff"], "staff", "staff/staff", "Staff"));
+    routes.push(new RouteModel(["gallery"], "gallery", "gallery/gallery", "Photo Gallery"));
+    routes.push(new RouteModel(["contact"], "contact", "contact/contact", "Contact Us"));
+
+    config.map(routes);
 
     this.router = router;
   }
+
 }

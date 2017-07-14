@@ -2,7 +2,6 @@ var fs = require('graceful-fs')
 var crypto = require('crypto')
 var mm = require('minimatch')
 var isBinaryFile = require('isbinaryfile')
-var combineLists = require('combine-lists')
 
 var log = require('./logger').create('preprocess')
 
@@ -38,14 +37,12 @@ var createNextProcessor = function (preprocessors, file, done) {
 }
 
 var createPreprocessor = function (config, basePath, injector) {
-  var alreadyDisplayedErrors = {}
+  var alreadyDisplayedWarnings = {}
   var instances = {}
   var patterns = Object.keys(config)
 
-  var emitter = injector.get('emitter')
-
   var instantiatePreprocessor = function (name) {
-    if (alreadyDisplayedErrors[name]) {
+    if (alreadyDisplayedWarnings[name]) {
       return
     }
 
@@ -55,23 +52,21 @@ var createPreprocessor = function (config, basePath, injector) {
       p = injector.get('preprocessor:' + name)
     } catch (e) {
       if (e.message.indexOf('No provider for "preprocessor:' + name + '"') !== -1) {
-        log.error('Can not load "%s", it is not registered!\n  ' +
-          'Perhaps you are missing some plugin?', name)
+        log.warn('Can not load "%s", it is not registered!\n  ' +
+                 'Perhaps you are missing some plugin?', name)
       } else {
-        log.error('Can not load "%s"!\n  ' + e.stack, name)
+        log.warn('Can not load "%s"!\n  ' + e.stack, name)
       }
-      alreadyDisplayedErrors[name] = true
-      emitter.emit('load_error', 'preprocessor', name)
+
+      alreadyDisplayedWarnings[name] = true
     }
 
     return p
   }
 
-  var allPreprocessors = []
   patterns.forEach(function (pattern) {
-    allPreprocessors = combineLists(allPreprocessors, config[pattern])
+    config[pattern].forEach(instantiatePreprocessor)
   })
-  allPreprocessors.forEach(instantiatePreprocessor)
 
   return function preprocess (file, done) {
     patterns = Object.keys(config)
@@ -86,38 +81,35 @@ var createPreprocessor = function (config, basePath, injector) {
           throw err
         }
 
-        var preprocessorNames = []
+        var preprocessors = []
+        var nextPreprocessor = createNextProcessor(preprocessors, file, done)
+
         for (var i = 0; i < patterns.length; i++) {
           if (mm(file.originalPath, patterns[i], {dot: true})) {
             if (thisFileIsBinary) {
               log.warn('Ignoring preprocessing (%s) %s because it is a binary file.',
                 config[patterns[i]].join(', '), file.originalPath)
             } else {
-              preprocessorNames = combineLists(preprocessorNames, config[patterns[i]])
+              config[patterns[i]].forEach(function (name) {
+                var p = instances[name]
+                if (p == null) {
+                  p = instantiatePreprocessor(name)
+                }
+
+                if (p == null) {
+                  if (!alreadyDisplayedWarnings[name]) {
+                    alreadyDisplayedWarnings[name] = true
+                    log.warn('Failed to instantiate preprocessor %s', name)
+                  }
+                  return
+                }
+
+                instances[name] = p
+                preprocessors.push(p)
+              })
             }
           }
         }
-
-        var preprocessors = []
-        var nextPreprocessor = createNextProcessor(preprocessors, file, done)
-        preprocessorNames.forEach(function (name) {
-          var p = instances[name]
-          if (p == null) {
-            p = instantiatePreprocessor(name)
-          }
-
-          if (p == null) {
-            if (!alreadyDisplayedErrors[name]) {
-              alreadyDisplayedErrors[name] = true
-              log.error('Failed to instantiate preprocessor %s', name)
-              emitter.emit('load_error', 'preprocessor', name)
-            }
-            return
-          }
-
-          instances[name] = p
-          preprocessors.push(p)
-        })
 
         nextPreprocessor(null, thisFileIsBinary ? buffer : buffer.toString())
       })

@@ -1,16 +1,13 @@
 var fs = require('graceful-fs')
 var util = require('util')
-var path = require('path')
 
-var JS_TEMPLATE_PATH = path.join(__dirname, '/../../config.tpl.js')
-var COFFEE_TEMPLATE_PATH = path.join(__dirname, '/../../config.tpl.coffee')
-var JS_REQUIREJS_TEMPLATE_PATH = path.join(__dirname, '/../../requirejs.config.tpl.js')
-var COFFEE_REQUIREJS_TEMPLATE_PATH = path.join(__dirname, '/../../requirejs.config.tpl.coffee')
+var JS_TEMPLATE_PATH = __dirname + '/../../config.tpl.js'
+var COFFEE_TEMPLATE_PATH = __dirname + '/../../config.tpl.coffee'
+var JS_REQUIREJS_TEMPLATE_PATH = __dirname + '/../../requirejs.config.tpl.js'
+var COFFEE_REQUIREJS_TEMPLATE_PATH = __dirname + '/../../requirejs.config.tpl.coffee'
 var COFFEE_REGEXP = /\.coffee$/
-var LIVE_TEMPLATE_PATH = path.join(__dirname, '/../../config.tpl.ls')
+var LIVE_TEMPLATE_PATH = __dirname + '/../../config.tpl.ls'
 var LIVE_REGEXP = /\.ls$/
-var TYPE_TEMPLATE_PATH = path.join(__dirname, '/../../config.tpl.ts')
-var TYPE_REGEXP = /\.ts$/
 
 var isCoffeeFile = function (filename) {
   return COFFEE_REGEXP.test(filename)
@@ -18,10 +15,6 @@ var isCoffeeFile = function (filename) {
 
 var isLiveFile = function (filename) {
   return LIVE_REGEXP.test(filename)
-}
-
-var isTypeFile = function (filename) {
-  return TYPE_REGEXP.test(filename)
 }
 
 var JavaScriptFormatter = function () {
@@ -120,16 +113,9 @@ var LiveFormatter = function () {
   this.TEMPLATE_FILE_PATH = LIVE_TEMPLATE_PATH
 }
 
-var TypeFormatter = function () {
-  JavaScriptFormatter.call(this)
-
-  this.TEMPLATE_FILE_PATH = TYPE_TEMPLATE_PATH
-}
-
 exports.JavaScript = JavaScriptFormatter
 exports.Coffee = CoffeeFormatter
 exports.Live = LiveFormatter
-exports.Type = TypeFormatter
 
 exports.createForPath = function (path) {
   if (isCoffeeFile(path)) {
@@ -138,10 +124,6 @@ exports.createForPath = function (path) {
 
   if (isLiveFile(path)) {
     return new LiveFormatter()
-  }
-
-  if (isTypeFile(path)) {
-    return new TypeFormatter()
   }
 
   return new JavaScriptFormatter()

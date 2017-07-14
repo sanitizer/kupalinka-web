@@ -2,10 +2,7 @@ var SocketIO = require('socket.io')
 var di = require('di')
 var util = require('util')
 var Promise = require('bluebird')
-var spawn = require('child_process').spawn
-var tmp = require('tmp')
-var fs = require('fs')
-var path = require('path')
+
 var root = global || window || this
 
 var cfg = require('./config')
@@ -43,15 +40,19 @@ function createSocketIoServer (webServer, executor, config) {
   return server
 }
 
+function setupLogger (level, colors) {
+  var logLevel = logLevel || constant.LOG_INFO
+  var logColors = helper.isDefined(colors) ? colors : true
+  logger.setup(logLevel, logColors, [constant.CONSOLE_APPENDER])
+}
+
 // Constructor
 var Server = function (cliOptions, done) {
   EventEmitter.call(this)
 
-  logger.setupFromConfig(cliOptions)
+  setupLogger(cliOptions.logLevel, cliOptions.colors)
 
   this.log = logger.create()
-
-  this.loadErrors = []
 
   var config = cfg.parseConfig(cliOptions.configFile, cliOptions)
 
@@ -60,7 +61,6 @@ var Server = function (cliOptions, done) {
     logger: ['value', logger],
     done: ['value', done || process.exit],
     emitter: ['value', this],
-    server: ['value', this],
     launcher: ['type', Launcher],
     config: ['value', config],
     preprocess: ['factory', preprocessor.createPreprocessor],
@@ -85,9 +85,8 @@ var Server = function (cliOptions, done) {
     }]
   }]
 
-  this._setUpLoadErrorListener()
   // Load the plugins
-  modules = modules.concat(plugin.resolve(config.plugins, this))
+  modules = modules.concat(plugin.resolve(config.plugins))
 
   this._injector = new di.Injector(modules)
 }
@@ -129,22 +128,15 @@ Server.prototype.refreshFiles = function () {
 // Private Methods
 // ---------------
 
-Server.prototype._start = function (config, launcher, preprocess, fileList,
-                                    capturedBrowsers, executor, done) {
+Server.prototype._start = function (config, launcher, preprocess, fileList, webServer,
+                                    capturedBrowsers, socketServer, executor, done) {
   var self = this
-  if (config.detached) {
-    this._detach(config, done)
-    return
-  }
 
   self._fileList = fileList
 
   config.frameworks.forEach(function (framework) {
     self._injector.get('framework:' + framework)
   })
-
-  var webServer = self._injector.get('webServer')
-  var socketServer = self._injector.get('socketServer')
 
   // A map of launched browsers.
   var singleRunDoneBrowsers = Object.create(null)
@@ -160,7 +152,7 @@ Server.prototype._start = function (config, launcher, preprocess, fileList,
     if (e.code === 'EADDRINUSE') {
       self.log.warn('Port %d in use', config.port)
       config.port++
-      webServer.listen(config.port, config.listenAddress)
+      webServer.listen(config.port)
     } else {
       throw e
     }
@@ -171,21 +163,14 @@ Server.prototype._start = function (config, launcher, preprocess, fileList,
       self._injector.invoke(watcher.watch)
     }
 
-    webServer.listen(config.port, config.listenAddress, function () {
+    webServer.listen(config.port, function () {
       self.log.info('Karma v%s server started at %s//%s:%s%s', constant.VERSION,
-        config.protocol, config.listenAddress, config.port, config.urlRoot)
+        config.protocol, config.hostname, config.port, config.urlRoot)
 
-      self.emit('listening', config.port)
       if (config.browsers && config.browsers.length) {
         self._injector.invoke(launcher.launch, launcher).forEach(function (browserLauncher) {
           singleRunDoneBrowsers[browserLauncher.id] = false
         })
-      }
-      var noLoadErrors = self.loadErrors.length
-      if (noLoadErrors > 0) {
-        self.log.error('Found %d load error%s', noLoadErrors, noLoadErrors === 1 ? '' : 's')
-        process.exitCode = 1
-        process.kill(process.pid, 'SIGINT')
       }
     })
   }
@@ -210,27 +195,6 @@ Server.prototype._start = function (config, launcher, preprocess, fileList,
       }
     }
   })
-
-  if (config.browserConsoleLogOptions && config.browserConsoleLogOptions.path) {
-    var configLevel = config.browserConsoleLogOptions.level || 'debug'
-    var configFormat = config.browserConsoleLogOptions.format || '%b %T: %m'
-    var configPath = config.browserConsoleLogOptions.path
-    self.log.info('Writing browser console to file: %s', configPath)
-    var browserLogFile = fs.openSync(configPath, 'w+')
-    var levels = ['log', 'error', 'warn', 'info', 'debug']
-    self.on('browser_log', function (browser, message, level) {
-      if (levels.indexOf(level.toLowerCase()) > levels.indexOf(configLevel)) return
-      if (!helper.isString(message)) {
-        message = util.inspect(message, {showHidden: false, colors: false})
-      }
-      var logMap = {'%m': message, '%t': level.toLowerCase(), '%T': level.toUpperCase(), '%b': browser}
-      var logString = configFormat.replace(/%[mtTb]/g, function (m) {
-        return logMap[m]
-      })
-      self.log.debug('Writing browser console line: %s', logString)
-      fs.write(browserLogFile, logString + '\n')
-    })
-  }
 
   var EVENTS_TO_REPLY = ['start', 'info', 'karma_error', 'result', 'complete']
   socketServer.sockets.on('connection', function (socket) {
@@ -296,34 +260,26 @@ Server.prototype._start = function (config, launcher, preprocess, fileList,
     }
   }
 
-  self.on('browser_complete', function (completedBrowser) {
-    if (completedBrowser.lastResult.disconnected &&
-      completedBrowser.disconnectsCount <= config.browserDisconnectTolerance) {
-      self.log.info('Restarting %s (%d of %d attempts)', completedBrowser.name,
-        completedBrowser.disconnectsCount, config.browserDisconnectTolerance)
-
-      if (!launcher.restart(completedBrowser.id)) {
-        self.emit('browser_restart_failure', completedBrowser)
-      }
-    } else {
-      self.emit('browser_complete_with_no_more_retries', completedBrowser)
-    }
-  })
-
   if (config.singleRun) {
-    self.on('browser_restart_failure', function (completedBrowser) {
-      singleRunDoneBrowsers[completedBrowser.id] = true
-      emitRunCompleteIfAllBrowsersDone()
-    })
-    self.on('browser_complete_with_no_more_retries', function (completedBrowser) {
-      singleRunDoneBrowsers[completedBrowser.id] = true
+    self.on('browser_complete', function (completedBrowser) {
+      if (completedBrowser.lastResult.disconnected &&
+        completedBrowser.disconnectsCount <= config.browserDisconnectTolerance) {
+        self.log.info('Restarting %s (%d of %d attempts)', completedBrowser.name,
+          completedBrowser.disconnectsCount, config.browserDisconnectTolerance)
+        if (!launcher.restart(completedBrowser.id)) {
+          singleRunDoneBrowsers[completedBrowser.id] = true
+          emitRunCompleteIfAllBrowsersDone()
+        }
+      } else {
+        singleRunDoneBrowsers[completedBrowser.id] = true
 
-      if (launcher.kill(completedBrowser.id)) {
-        // workaround to supress "disconnect" warning
-        completedBrowser.state = Browser.STATE_DISCONNECTED
+        if (launcher.kill(completedBrowser.id)) {
+          // workaround to supress "disconnect" warning
+          completedBrowser.state = Browser.STATE_DISCONNECTED
+        }
+
+        emitRunCompleteIfAllBrowsersDone()
       }
-
-      emitRunCompleteIfAllBrowsersDone()
     })
 
     self.on('browser_process_failure', function (browserLauncher) {
@@ -393,9 +349,7 @@ Server.prototype._start = function (config, launcher, preprocess, fileList,
     })
   }
 
-  processWrapper.on('SIGINT', function () {
-    disconnectBrowsers(process.exitCode)
-  })
+  processWrapper.on('SIGINT', disconnectBrowsers)
   processWrapper.on('SIGTERM', disconnectBrowsers)
 
   // Handle all unhandled exceptions, so we don't just exit but
@@ -404,35 +358,6 @@ Server.prototype._start = function (config, launcher, preprocess, fileList,
     self.log.error(error)
     disconnectBrowsers(1)
   })
-}
-
-Server.prototype._setUpLoadErrorListener = function () {
-  var self = this
-  self.on('load_error', function (type, name) {
-    self.log.debug('Registered a load error of type %s with name %s', type, name)
-    self.loadErrors.push([type, name])
-  })
-}
-
-Server.prototype._detach = function (config, done) {
-  var log = this.log
-  var tmpFile = tmp.fileSync({keep: true})
-  log.info('Starting karma detached')
-  log.info('Run "karma stop" to stop the server.')
-  log.debug('Writing config to tmp-file %s', tmpFile.name)
-  config.detached = false
-  try {
-    fs.writeFileSync(tmpFile.name, JSON.stringify(config), 'utf8')
-  } catch (e) {
-    log.error("Couldn't write temporary configuration file")
-    done(1)
-    return
-  }
-  var child = spawn(process.argv[0], [path.resolve(__dirname, '../lib/detached.js'), tmpFile.name], {
-    detached: true,
-    stdio: 'ignore'
-  })
-  child.unref()
 }
 
 // Export

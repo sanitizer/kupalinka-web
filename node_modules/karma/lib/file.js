@@ -6,7 +6,7 @@
 // Dependencies
 // ------------
 
-var _ = require('lodash')
+var _ = require('./helper')._
 
 // Constructor
 var File = function (path, mtime, doNotCache) {

@@ -14,13 +14,12 @@ var mm = require('minimatch')
 var Glob = require('glob').Glob
 var fs = Promise.promisifyAll(require('graceful-fs'))
 var pathLib = require('path')
-var _ = require('lodash')
 
 var File = require('./file')
 var Url = require('./url')
 var helper = require('./helper')
+var _ = helper._
 var log = require('./logger').create('watcher')
-var createPatternObject = require('./config').createPatternObject
 
 // Constants
 // ---------
@@ -150,9 +149,8 @@ List.prototype._isRefreshing = function () {
 List.prototype._refresh = function () {
   var self = this
   var buckets = this.buckets
-  var matchedFiles = new Set()
 
-  var promise = Promise.map(this._patterns, function (patternObject) {
+  return Promise.all(this._patterns.map(function (patternObject) {
     var pattern = patternObject.pattern
 
     if (helper.isUrlAbsolute(pattern)) {
@@ -169,17 +167,11 @@ List.prototype._refresh = function () {
       return
     }
 
-    return Promise.map(files, function (path) {
+    return Promise.all(files.map(function (path) {
       if (self._isExcluded(path)) {
         log.debug('Excluded file "%s"', path)
         return Promise.resolve()
       }
-
-      if (matchedFiles.has(path)) {
-        return Promise.resolve()
-      }
-
-      matchedFiles.add(path)
 
       var mtime = mg.statCache[path].mtime
       var doNotCache = patternObject.nocache
@@ -193,27 +185,27 @@ List.prototype._refresh = function () {
       return self._preprocess(file).then(function () {
         return file
       })
-    })
+    }))
     .then(function (files) {
       files = _.compact(files)
 
       if (_.isEmpty(files)) {
-        log.warn('All files matched by "%s" were excluded or matched by prior matchers.', pattern)
+        log.warn('All files matched by "%s" were excluded.', pattern)
       } else {
         buckets.set(pattern, new Set(files))
       }
     })
-  })
+  }))
+  .cancellable()
   .then(function () {
-    if (self._refreshing !== promise) {
-      return self._refreshing
-    }
     self.buckets = buckets
     self._emitModified(true)
     return self.files
   })
-
-  return promise
+  .catch(Promise.CancellationError, function () {
+    // We were canceled so return the resolution of the new run
+    return self._refreshing
+  })
 }
 
 // Public Interface
@@ -222,45 +214,28 @@ List.prototype._refresh = function () {
 Object.defineProperty(List.prototype, 'files', {
   get: function () {
     var self = this
-    var uniqueFlat = function (list) {
-      return _.uniq(_.flatten(list), 'path')
-    }
-
-    var expandPattern = function (p) {
-      return from(self.buckets.get(p.pattern) || []).sort(byPath)
-    }
 
     var served = this._patterns.filter(function (pattern) {
       return pattern.served
     })
-    .map(expandPattern)
-
-    var lookup = {}
-    var included = {}
-    this._patterns.forEach(function (p) {
-      // This needs to be here sadly, as plugins are modifiying
-      // the _patterns directly resulting in elements not being
-      // instantiated properly
-      if (p.constructor.name !== 'Pattern') {
-        p = createPatternObject(p)
-      }
-
-      var bucket = expandPattern(p)
-      bucket.forEach(function (file) {
-        var other = lookup[file.path]
-        if (other && other.compare(p) < 0) return
-        lookup[file.path] = p
-        if (p.included) {
-          included[file.path] = file
-        } else {
-          delete included[file.path]
-        }
-      })
+    .map(function (p) {
+      return from(self.buckets.get(p.pattern) || []).sort(byPath)
     })
 
+    var included = this._patterns.filter(function (pattern) {
+      return pattern.included
+    })
+    .map(function (p) {
+      return from(self.buckets.get(p.pattern) || []).sort(byPath)
+    })
+
+    var uniqFlat = function (list) {
+      return _.uniq(_.flatten(list), 'path')
+    }
+
     return {
-      served: uniqueFlat(served),
-      included: _.values(included)
+      served: uniqFlat(served),
+      included: uniqFlat(included)
     }
   }
 })
@@ -270,6 +245,10 @@ Object.defineProperty(List.prototype, 'files', {
 // Returns a promise that is resolved when the refresh
 // is completed.
 List.prototype.refresh = function () {
+  if (this._isRefreshing()) {
+    this._refreshing.cancel()
+  }
+
   this._refreshing = this._refresh()
   return this._refreshing
 }

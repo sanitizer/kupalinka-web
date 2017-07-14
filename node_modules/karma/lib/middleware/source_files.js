@@ -1,8 +1,7 @@
 var from = require('core-js/library/fn/array/from')
 var querystring = require('querystring')
-var _ = require('lodash')
-
 var common = require('./common')
+var _ = require('../helper')._
 var logger = require('../logger')
 var log = logger.create('middleware:source-files')
 
@@ -13,20 +12,14 @@ var findByPath = function (files, path) {
   })
 }
 
-var composeUrl = function (url, basePath, urlRoot, mustEscape) {
-  return (mustEscape ? querystring.unescape(url) : url)
-            .replace(urlRoot, '/')
-            .replace(/\?.*$/, '')
-            .replace(/^\/absolute/, '')
-            .replace(/^\/base/, basePath)
-}
-
 // Source Files middleware is responsible for serving all the source files under the test.
 var createSourceFilesMiddleware = function (filesPromise, serveFile, basePath, urlRoot) {
   return function (request, response, next) {
-    var requestedFilePath = composeUrl(request.url, basePath, urlRoot, true)
-    // When a path contains HTML-encoded characters (e.g %2F used by Jenkins for branches with /)
-    var requestedFilePathUnescaped = composeUrl(request.url, basePath, urlRoot, false)
+    var requestedFilePath = querystring.unescape(request.url)
+      .replace(urlRoot, '/')
+      .replace(/\?.*$/, '')
+      .replace(/^\/absolute/, '')
+      .replace(/^\/base/, basePath)
 
     request.pause()
 
@@ -35,12 +28,10 @@ var createSourceFilesMiddleware = function (filesPromise, serveFile, basePath, u
 
     return filesPromise.then(function (files) {
       // TODO(vojta): change served to be a map rather then an array
-      var file = findByPath(files.served, requestedFilePath) ||
-                 findByPath(files.served, requestedFilePathUnescaped)
-      var rangeHeader = request.headers['range']
+      var file = findByPath(files.served, requestedFilePath)
 
       if (file) {
-        serveFile(file.contentPath || file.path, rangeHeader, response, function () {
+        serveFile(file.contentPath || file.path, response, function () {
           if (/\?\w+/.test(request.url)) {
             // files with timestamps - cache one year, rely on timestamps
             common.setHeavyCacheHeaders(response)

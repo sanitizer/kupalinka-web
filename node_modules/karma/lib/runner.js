@@ -31,10 +31,6 @@ var parseExitCode = function (buffer, defaultCode, failOnEmptyTestSuite) {
 
 // TODO(vojta): read config file (port, host, urlRoot)
 exports.run = function (config, done) {
-  config = config || {}
-
-  logger.setupFromConfig(config)
-
   done = helper.isFunction(done) ? done : process.exit
   config = cfg.parseConfig(config.configFile, config)
 
@@ -75,7 +71,6 @@ exports.run = function (config, done) {
     removedFiles: config.removedFiles,
     changedFiles: config.changedFiles,
     addedFiles: config.addedFiles,
-    refresh: config.refresh,
-    colors: config.colors
+    refresh: config.refresh
   }))
 }

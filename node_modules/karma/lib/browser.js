@@ -37,7 +37,6 @@ var Browser = function (id, fullName, /* capturedBrowsers */ collection, emitter
     self.state = DISCONNECTED
     self.disconnectsCount++
     log.warn('Disconnected (%d times)' + (reason || ''), self.disconnectsCount)
-    emitter.emit('browser_error', self, 'Disconnected' + reason)
     collection.remove(self)
   }
 
@@ -110,13 +109,6 @@ var Browser = function (id, fullName, /* capturedBrowsers */ collection, emitter
 
     if (helper.isDefined(info.log)) {
       emitter.emit('browser_log', this, info.log, info.type)
-    }
-
-    if (
-      !helper.isDefined(info.log) &&
-      !helper.isDefined(info.dump)
-    ) {
-      emitter.emit('browser_info', this, info)
     }
 
     refreshNoActivityTimeout()

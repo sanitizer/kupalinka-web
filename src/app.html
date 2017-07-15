@@ -1,14 +1,17 @@
 <template>
-  <require from="semantic-ui/semantic.css"></require>
+  <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="resources/css/styles.css"></require>
 
   <h2 class="ui top attached blue header" style = "background-color: lightcyan">
-    Kupalinka Adult Daycare
+    Kupalinka <small>Adult Daycare</small>
   </h2>
 
-  <div class = "ui secondary pointing menu">
-    <a href = ${row.href} class = "${row.isActive ? 'active orange item' : 'item'}" repeat.for = "row of router.navigation">
-      ${row.title}
-    </a>
+  <div class="default-margin-around">
+    <div class = "ui fluid six item menu">
+      <a href = ${row.href} class = "${row.isActive ? 'item blue active' : 'item'}" repeat.for = "row of router.navigation">
+        ${row.title}
+      </a>
+    </div>
   </div>
 
   <div class ="page-host">

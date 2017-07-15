@@ -117,12 +117,24 @@ define('components/services/additional',["require", "exports"], function (requir
     exports.Additional = Additional;
 });
 
-define('components/services/services',["require", "exports"], function (require, exports) {
+define('components/services/services',["require", "exports", "./customers/art_classes", "./customers/bioceramics", "./customers/computer_class", "./customers/drama_club", "./customers/esl_class", "./customers/extended_working_hours", "./customers/field_trips", "./customers/haircuts", "./customers/karaoke", "./customers/massage_therapist", "./customers/skin_care_classes", "./customers/social_dances", "./customers/wellness_classes"], function (require, exports, art_classes_1, bioceramics_1, computer_class_1, drama_club_1, esl_class_1, extended_working_hours_1, field_trips_1, haircuts_1, karaoke_1, massage_therapist_1, skin_care_classes_1, social_dances_1, wellness_classes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Services = (function () {
         function Services() {
-            this.data = "hello this is services";
+            this.services = [new art_classes_1.ArtClasses(),
+                new bioceramics_1.Bioceramics(),
+                new computer_class_1.ComputerClass(),
+                new drama_club_1.DramaClub(),
+                new esl_class_1.EslClass(),
+                new extended_working_hours_1.ExtendedWorkingHours(),
+                new field_trips_1.FieldTrips(),
+                new haircuts_1.Haircuts(),
+                new karaoke_1.Karaoke(),
+                new massage_therapist_1.MassageTherapist(),
+                new skin_care_classes_1.SkinCareClass(),
+                new social_dances_1.SocialDances(),
+                new wellness_classes_1.WellnessClasses()];
         }
         return Services;
     }());
@@ -140,6 +152,10 @@ define('components/staff/staff',["require", "exports"], function (require, expor
     }());
     exports.Staff = Staff;
 });
+
+
+
+define("resources/model/picture", [],function(){});
 
 define('resources/model/route-model',["require", "exports"], function (require, exports) {
     "use strict";
@@ -159,12 +175,224 @@ define('resources/model/route-model',["require", "exports"], function (require, 
     exports.default = RouteModel;
 });
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"semantic-ui/semantic.css\"></require><h2 class=\"ui top attached blue header\" style=\"background-color:#e0ffff\">Kupalinka Adult Daycare</h2><div class=\"ui secondary pointing menu\"><a href=\"${row.href}\" class=\"${row.isActive ? 'active orange item' : 'item'}\" repeat.for=\"row of router.navigation\">${row.title}</a></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
-define('text!resources/styles/styles.css', ['module'], function(module) { module.exports = "Skip to content\nThis repository\nSearch\nPull requests\nIssues\nGist\n@sanitizer\nSign out\nWatch 2\nStar 1\nFork 2 Vheissu/tweeter\nCode  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs\nBranch: master Find file Copy pathtweeter/src/styles.css\n3dc3d5c  on Aug 26, 2016\n@Vheissu Vheissu feat(app): compose tweet functionality, remove router\n1 contributor\nRawBlameHistory\n98 lines (82 sloc)  1.22 KB\n* {\n  box-sizing: border-box;\n  position: relative;\n}\n\nbody {\n  background-color: #F5F8FA;\n  font-family: Arial, Helvetica, sans-serif;\n  margin: 0;\n  padding: 0;\n}\n\nimg {\n  height: auto;\n  max-width: 100%;\n}\n\ntextarea {\n  border: none;\n  display: inline-block;\n  height: 70px;\n  padding: 12px;\n  resize: none;\n  width: 340px;\n}\n\nbutton {\n  background: #DDD;\n  border: none;\n  color: #000;\n  cursor: pointer;\n  display: inline-block;\n  height: 70px;\n  margin-left: 8px;\n  vertical-align: top;\n  width: 120px;\n}\n\nbutton:disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n}\n\n.compose-container {\n  margin-bottom: 20px;\n}\n\n.container {\n  margin: 0 auto;\n  max-width: 620px;\n  width: 100%;\n}\n\ntweet-feed {\n  background: #FFF;\n  border: 1px solid #e1e8ed;\n  display: block;\n}\n\ntweet {\n  border-bottom: 1px solid #e1e8ed;\n  display: flex;\n  flex-direction: row;\n  padding: 20px 10px;\n}\ntweet:last-child {\n  border-bottom: none;\n}\n\n.tweet-avatar {\n  flex-basis: 48px;\n  height: 48px;\n  margin-right: 10px;\n}\n\n.tweet-avatar img {\n  border-radius: 5px;\n  display: block;\n}\n\n.tweet-body {\n  flex: 1;\n}\n\n.tweet-meta {\n  color: #DDD;\n  margin-bottom: 5px;\n}\n\n.tweet-meta strong {\n  color: #111;\n}\n\n.tweet-text {\n  font-size: 14px;\n  line-height: 18px;\n}\n"; });
+
+
+define("resources/model/service", [],function(){});
+
+define('components/services/customers/art_classes',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var ArtClasses = (function () {
+        function ArtClasses() {
+            this.name = "Art Classes";
+            this.description = this.getDescription();
+        }
+        ArtClasses.prototype.getDescription = function () {
+            return "We do art. Impressed?";
+        };
+        return ArtClasses;
+    }());
+    exports.ArtClasses = ArtClasses;
+});
+
+define('components/services/customers/bioceramics',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Bioceramics = (function () {
+        function Bioceramics() {
+            this.name = "Bioceramics";
+            this.description = this.getDescription();
+        }
+        Bioceramics.prototype.getDescription = function () {
+            return "We do whatever bioceramics is. Cool isnt it?";
+        };
+        return Bioceramics;
+    }());
+    exports.Bioceramics = Bioceramics;
+});
+
+define('components/services/customers/computer_class',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var ComputerClass = (function () {
+        function ComputerClass() {
+            this.name = "Computer Class";
+            this.description = this.getDescription();
+        }
+        ComputerClass.prototype.getDescription = function () {
+            return "This is the computer class. We study computers.";
+        };
+        return ComputerClass;
+    }());
+    exports.ComputerClass = ComputerClass;
+});
+
+define('components/services/customers/drama_club',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var DramaClub = (function () {
+        function DramaClub() {
+            this.name = "Drama Club";
+            this.description = this.getDescription();
+        }
+        DramaClub.prototype.getDescription = function () {
+            return "Oh yes!!! We have a lot of drama here.";
+        };
+        return DramaClub;
+    }());
+    exports.DramaClub = DramaClub;
+});
+
+define('components/services/customers/esl_class',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var EslClass = (function () {
+        function EslClass() {
+            this.name = "ESL Class";
+            this.description = this.getDescription();
+        }
+        EslClass.prototype.getDescription = function () {
+            return "This is the ESL class. We study English as a second language.";
+        };
+        return EslClass;
+    }());
+    exports.EslClass = EslClass;
+});
+
+define('components/services/customers/extended_working_hours',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var ExtendedWorkingHours = (function () {
+        function ExtendedWorkingHours() {
+            this.name = "Extended Working Hours";
+            this.description = this.getDescription();
+        }
+        ExtendedWorkingHours.prototype.getDescription = function () {
+            return "We work long and hard for you.";
+        };
+        return ExtendedWorkingHours;
+    }());
+    exports.ExtendedWorkingHours = ExtendedWorkingHours;
+});
+
+define('components/services/customers/field_trips',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var FieldTrips = (function () {
+        function FieldTrips() {
+            this.name = "Field Trips";
+            this.description = this.getDescription();
+        }
+        FieldTrips.prototype.getDescription = function () {
+            return "We go to museums, concerts, movies.";
+        };
+        return FieldTrips;
+    }());
+    exports.FieldTrips = FieldTrips;
+});
+
+define('components/services/customers/haircuts',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Haircuts = (function () {
+        function Haircuts() {
+            this.name = "Haircuts";
+            this.description = this.getDescription();
+        }
+        Haircuts.prototype.getDescription = function () {
+            return "We do cut your hair from time to time.";
+        };
+        return Haircuts;
+    }());
+    exports.Haircuts = Haircuts;
+});
+
+define('components/services/customers/karaoke',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Karaoke = (function () {
+        function Karaoke() {
+            this.name = "Karaoke";
+            this.description = this.getDescription();
+        }
+        Karaoke.prototype.getDescription = function () {
+            return "We also sing. Like proooooossss!!!";
+        };
+        return Karaoke;
+    }());
+    exports.Karaoke = Karaoke;
+});
+
+define('components/services/customers/massage_therapist',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var MassageTherapist = (function () {
+        function MassageTherapist() {
+            this.name = "Massage Therapist";
+            this.description = this.getDescription();
+        }
+        MassageTherapist.prototype.getDescription = function () {
+            return "We have a massage therapist stopping by from time to time.";
+        };
+        return MassageTherapist;
+    }());
+    exports.MassageTherapist = MassageTherapist;
+});
+
+define('components/services/customers/skin_care_classes',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var SkinCareClass = (function () {
+        function SkinCareClass() {
+            this.name = "Skin Care Class";
+            this.description = this.getDescription();
+        }
+        SkinCareClass.prototype.getDescription = function () {
+            return "We teach you how to care of your skin.";
+        };
+        return SkinCareClass;
+    }());
+    exports.SkinCareClass = SkinCareClass;
+});
+
+define('components/services/customers/social_dances',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var SocialDances = (function () {
+        function SocialDances() {
+            this.name = "Social Dances";
+            this.description = this.getDescription();
+        }
+        SocialDances.prototype.getDescription = function () {
+            return "We dance socially.";
+        };
+        return SocialDances;
+    }());
+    exports.SocialDances = SocialDances;
+});
+
+define('components/services/customers/wellness_classes',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var WellnessClasses = (function () {
+        function WellnessClasses() {
+            this.name = "Wellness Classes";
+            this.description = this.getDescription();
+        }
+        WellnessClasses.prototype.getDescription = function () {
+            return "we do that kind of wellness and this kind of wellness. Ex: swimming pool, excercises, good nutrition, vitamins";
+        };
+        return WellnessClasses;
+    }());
+    exports.WellnessClasses = WellnessClasses;
+});
+
+define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><h2 class=\"ui top attached blue header\" style=\"background-color:#e0ffff\">Kupalinka <small>Adult Daycare</small></h2><div class=\"default-margin-around\"><div class=\"ui fluid six item menu\"><a href=\"${row.href}\" class=\"${row.isActive ? 'item blue active' : 'item'}\" repeat.for=\"row of router.navigation\">${row.title}</a></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
+define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".default-margin {\n    margin-left: 20px;\n    margin-right: 20px;\n}\n\n.default-margin-around {\n    margin: 20px;\n}"; });
 define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
 define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
 define('text!components/services/additional.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
-define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
+define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"default-margin\"><div class=\"ui five centered cards\"><div class=\"card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"../../pics/pic.jpg\"></div><div class=\"content\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div></div></div></div></template>"; });
 define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
 //# sourceMappingURL=app-bundle.js.map

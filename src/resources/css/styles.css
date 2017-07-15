@@ -1,0 +1,8 @@
+.default-margin {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.default-margin-around {
+    margin: 20px;
+}

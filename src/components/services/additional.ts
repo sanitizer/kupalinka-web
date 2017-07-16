@@ -2,12 +2,15 @@
  * Created by sanitizer on 7/14/17.
  */
 
+import {ArtClasses} from "./customers/art_classes";
+import {Service} from "../../resources/model/service";
+
 export class Additional {
 
-    data: string;
+    services: Array<Service>;
 
     constructor() {
-        this.data = "hello this is additional services";
+        this.services = [new ArtClasses()];
     }
 
 }

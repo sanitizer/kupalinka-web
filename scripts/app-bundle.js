@@ -105,12 +105,12 @@ define('components/home/home',["require", "exports"], function (require, exports
     exports.Home = Home;
 });
 
-define('components/services/additional',["require", "exports"], function (require, exports) {
+define('components/services/additional',["require", "exports", "./customers/art_classes"], function (require, exports, art_classes_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Additional = (function () {
         function Additional() {
-            this.data = "hello this is additional services";
+            this.services = [new art_classes_1.ArtClasses()];
         }
         return Additional;
     }());
@@ -153,9 +153,19 @@ define('components/staff/staff',["require", "exports"], function (require, expor
     exports.Staff = Staff;
 });
 
-
-
-define("resources/model/picture", [],function(){});
+define('resources/model/picture',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Picture = (function () {
+        function Picture(path, description) {
+            if (description === void 0) { description = ""; }
+            this.path = path;
+            this.description = description;
+        }
+        return Picture;
+    }());
+    exports.Picture = Picture;
+});
 
 define('resources/model/route-model',["require", "exports"], function (require, exports) {
     "use strict";
@@ -175,17 +185,19 @@ define('resources/model/route-model',["require", "exports"], function (require, 
     exports.default = RouteModel;
 });
 
+define('resources/model/service',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
 
-
-define("resources/model/service", [],function(){});
-
-define('components/services/customers/art_classes',["require", "exports"], function (require, exports) {
+define('components/services/customers/art_classes',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var ArtClasses = (function () {
         function ArtClasses() {
             this.name = "Art Classes";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         ArtClasses.prototype.getDescription = function () {
             return "We do art. Impressed?";
@@ -195,13 +207,14 @@ define('components/services/customers/art_classes',["require", "exports"], funct
     exports.ArtClasses = ArtClasses;
 });
 
-define('components/services/customers/bioceramics',["require", "exports"], function (require, exports) {
+define('components/services/customers/bioceramics',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Bioceramics = (function () {
         function Bioceramics() {
             this.name = "Bioceramics";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         Bioceramics.prototype.getDescription = function () {
             return "We do whatever bioceramics is. Cool isnt it?";
@@ -211,13 +224,14 @@ define('components/services/customers/bioceramics',["require", "exports"], funct
     exports.Bioceramics = Bioceramics;
 });
 
-define('components/services/customers/computer_class',["require", "exports"], function (require, exports) {
+define('components/services/customers/computer_class',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var ComputerClass = (function () {
         function ComputerClass() {
             this.name = "Computer Class";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         ComputerClass.prototype.getDescription = function () {
             return "This is the computer class. We study computers.";
@@ -227,13 +241,14 @@ define('components/services/customers/computer_class',["require", "exports"], fu
     exports.ComputerClass = ComputerClass;
 });
 
-define('components/services/customers/drama_club',["require", "exports"], function (require, exports) {
+define('components/services/customers/drama_club',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var DramaClub = (function () {
         function DramaClub() {
             this.name = "Drama Club";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         DramaClub.prototype.getDescription = function () {
             return "Oh yes!!! We have a lot of drama here.";
@@ -243,13 +258,14 @@ define('components/services/customers/drama_club',["require", "exports"], functi
     exports.DramaClub = DramaClub;
 });
 
-define('components/services/customers/esl_class',["require", "exports"], function (require, exports) {
+define('components/services/customers/esl_class',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var EslClass = (function () {
         function EslClass() {
             this.name = "ESL Class";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         EslClass.prototype.getDescription = function () {
             return "This is the ESL class. We study English as a second language.";
@@ -259,13 +275,14 @@ define('components/services/customers/esl_class',["require", "exports"], functio
     exports.EslClass = EslClass;
 });
 
-define('components/services/customers/extended_working_hours',["require", "exports"], function (require, exports) {
+define('components/services/customers/extended_working_hours',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var ExtendedWorkingHours = (function () {
         function ExtendedWorkingHours() {
             this.name = "Extended Working Hours";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         ExtendedWorkingHours.prototype.getDescription = function () {
             return "We work long and hard for you.";
@@ -275,13 +292,14 @@ define('components/services/customers/extended_working_hours',["require", "expor
     exports.ExtendedWorkingHours = ExtendedWorkingHours;
 });
 
-define('components/services/customers/field_trips',["require", "exports"], function (require, exports) {
+define('components/services/customers/field_trips',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var FieldTrips = (function () {
         function FieldTrips() {
             this.name = "Field Trips";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         FieldTrips.prototype.getDescription = function () {
             return "We go to museums, concerts, movies.";
@@ -291,13 +309,14 @@ define('components/services/customers/field_trips',["require", "exports"], funct
     exports.FieldTrips = FieldTrips;
 });
 
-define('components/services/customers/haircuts',["require", "exports"], function (require, exports) {
+define('components/services/customers/haircuts',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Haircuts = (function () {
         function Haircuts() {
             this.name = "Haircuts";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         Haircuts.prototype.getDescription = function () {
             return "We do cut your hair from time to time.";
@@ -307,13 +326,14 @@ define('components/services/customers/haircuts',["require", "exports"], function
     exports.Haircuts = Haircuts;
 });
 
-define('components/services/customers/karaoke',["require", "exports"], function (require, exports) {
+define('components/services/customers/karaoke',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Karaoke = (function () {
         function Karaoke() {
             this.name = "Karaoke";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         Karaoke.prototype.getDescription = function () {
             return "We also sing. Like proooooossss!!!";
@@ -323,13 +343,14 @@ define('components/services/customers/karaoke',["require", "exports"], function 
     exports.Karaoke = Karaoke;
 });
 
-define('components/services/customers/massage_therapist',["require", "exports"], function (require, exports) {
+define('components/services/customers/massage_therapist',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var MassageTherapist = (function () {
         function MassageTherapist() {
             this.name = "Massage Therapist";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         MassageTherapist.prototype.getDescription = function () {
             return "We have a massage therapist stopping by from time to time.";
@@ -339,13 +360,14 @@ define('components/services/customers/massage_therapist',["require", "exports"],
     exports.MassageTherapist = MassageTherapist;
 });
 
-define('components/services/customers/skin_care_classes',["require", "exports"], function (require, exports) {
+define('components/services/customers/skin_care_classes',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var SkinCareClass = (function () {
         function SkinCareClass() {
             this.name = "Skin Care Class";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         SkinCareClass.prototype.getDescription = function () {
             return "We teach you how to care of your skin.";
@@ -355,13 +377,14 @@ define('components/services/customers/skin_care_classes',["require", "exports"],
     exports.SkinCareClass = SkinCareClass;
 });
 
-define('components/services/customers/social_dances',["require", "exports"], function (require, exports) {
+define('components/services/customers/social_dances',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var SocialDances = (function () {
         function SocialDances() {
             this.name = "Social Dances";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         SocialDances.prototype.getDescription = function () {
             return "We dance socially.";
@@ -371,13 +394,14 @@ define('components/services/customers/social_dances',["require", "exports"], fun
     exports.SocialDances = SocialDances;
 });
 
-define('components/services/customers/wellness_classes',["require", "exports"], function (require, exports) {
+define('components/services/customers/wellness_classes',["require", "exports", "../../../resources/model/picture"], function (require, exports, picture_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var WellnessClasses = (function () {
         function WellnessClasses() {
             this.name = "Wellness Classes";
             this.description = this.getDescription();
+            this.pic = new picture_1.Picture("pics/pic.jpg");
         }
         WellnessClasses.prototype.getDescription = function () {
             return "we do that kind of wellness and this kind of wellness. Ex: swimming pool, excercises, good nutrition, vitamins";
@@ -392,7 +416,7 @@ define('text!resources/css/styles.css', ['module'], function(module) { module.ex
 define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
 define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
-define('text!components/services/additional.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
-define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"default-margin\"><div class=\"ui five centered cards\"><div class=\"card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"../../pics/pic.jpg\"></div><div class=\"content\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div></div></div></div></template>"; });
+define('text!components/services/additional.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"default-margin\"><div class=\"ui five centered cards\"><div class=\"card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div></div></div></div></template>"; });
+define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"default-margin\"><div class=\"ui five centered cards\"><div class=\"card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div></div></div></div></template>"; });
 define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
 //# sourceMappingURL=app-bundle.js.map

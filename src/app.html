@@ -1,14 +1,16 @@
 <template>
   <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="semantic-ui/semantic.css"></require>
   <require from="resources/css/styles.css"></require>
 
-  <h2 class="ui top attached blue header" style = "background-color: lightcyan">
-    Kupalinka <small>Adult Daycare</small>
-  </h2>
-
-  <div class="default-margin-around">
-    <div class = "ui fluid six item menu">
-      <a href = ${row.href} class = "${row.isActive ? 'item blue active' : 'item'}" repeat.for = "row of router.navigation">
+  <div class="ui inverted segment">
+    <div class="ui secondary pointing inverted menu">
+      <h2 class="ui top attached blue header common-font item">
+        <img class="ui image" src="/pics/sign.jpg">
+        &ensp;Kupalinka&ensp;
+        <small>Adult Daycare</small>
+      </h2>
+      <a href = ${row.href} class = "${row.isActive ? 'item active' : 'item'}" repeat.for = "row of router.navigation">
         ${row.title}
       </a>
     </div>

@@ -1,3 +1,18 @@
 <template>
-    <h2>${data}</h2>
+    <require from="bootstrap/css/bootstrap.css"></require>
+    <require from="resources/css/styles.css"></require>
+    <require from="semantic-ui/semantic.css"></require>
+
+    <div class="lr50">
+        <div class="ui one column grid">
+            <div class="row" repeat.for="employee of employees">
+                <div class="column ui segment">
+                    <h2 class="ui header">${employee.name}</h2>
+                    <img class="ui medium left floated image" src="${employee.pic.path}">
+                    <span class="common-font">&emsp;${employee.description}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </template>

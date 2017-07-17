@@ -1,11 +1,20 @@
 import RouteModel from "./resources/model/route-model";
 import {bindable} from "aurelia-templating";
+import {Picture} from "./resources/model/picture";
+import {BASE_MISC_DIR} from "./constants";
 
 export class App {
 
   @bindable router;
+  header: string;
+  subHeader: string;
+  headerPic: Picture;
 
   configureRouter(config, router) {
+    this.header = "Kupalinka";
+    this.subHeader = "Adult Daycare";
+    this.headerPic = new Picture(BASE_MISC_DIR + "sign.jpg");
+
     config.title = "Kupalinka";
 
     let routes: RouteModel[] = [];

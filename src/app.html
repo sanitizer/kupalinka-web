@@ -6,9 +6,9 @@
   <div class="ui inverted segment">
     <div class="ui secondary pointing inverted menu">
       <h2 class="ui top attached blue header common-font item">
-        <img class="ui image" src="/pics/sign.jpg">
-        &ensp;Kupalinka&ensp;
-        <small>Adult Daycare</small>
+        <img class="ui image" src="${headerPic.path}">
+        &ensp;${header}
+        <small>&ensp;${subHeader}</small>
       </h2>
       <a href = ${row.href} class = "${row.isActive ? 'item active' : 'item'}" repeat.for = "row of router.navigation">
         ${row.title}

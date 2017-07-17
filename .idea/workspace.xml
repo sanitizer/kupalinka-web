@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77facbeb-ec27-48fe-a230-5c37ba1b01a5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/model/address.ts" />
+    <list default="true" id="1f4f4625-ca25-49ee-87eb-3774d6c4d2a9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/employees/employee1.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/model/employee.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pics/pic.jpg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pics/sign.jpg" afterPath="$PROJECT_DIR$/pics/misc/sign.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app-bundle.js" afterPath="$PROJECT_DIR$/scripts/app-bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app-bundle.js.map" afterPath="$PROJECT_DIR$/scripts/app-bundle.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/vendor-bundle.js" afterPath="$PROJECT_DIR$/scripts/vendor-bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.html" afterPath="$PROJECT_DIR$/src/app.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.ts" afterPath="$PROJECT_DIR$/src/app.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/contact/contact.html" afterPath="$PROJECT_DIR$/src/components/contact/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/contact/contact.ts" afterPath="$PROJECT_DIR$/src/components/contact/contact.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/additional.html" afterPath="$PROJECT_DIR$/src/components/services/additional.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/art_classes.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/art_classes.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/bioceramics.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/bioceramics.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/computer_class.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/computer_class.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/drama_club.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/drama_club.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/esl_class.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/esl_class.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/extended_working_hours.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/extended_working_hours.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/field_trips.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/field_trips.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/haircuts.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/haircuts.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/karaoke.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/karaoke.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/massage_therapist.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/massage_therapist.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/skin_care_classes.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/skin_care_classes.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/social_dances.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/social_dances.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/customers/wellness_classes.ts" afterPath="$PROJECT_DIR$/src/components/services/customers/wellness_classes.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/services.html" afterPath="$PROJECT_DIR$/src/components/services/services.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/staff.html" afterPath="$PROJECT_DIR$/src/components/staff/staff.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/staff.ts" afterPath="$PROJECT_DIR$/src/components/staff/staff.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/css/styles.css" afterPath="$PROJECT_DIR$/src/resources/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/model/service.ts" afterPath="$PROJECT_DIR$/src/resources/model/service.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,22 +46,33 @@
       <file leaf-file-name="app.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="160">
+              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
               <folding>
-                <element signature="e#391#397#0" expanded="true" />
-                <element signature="e#406#412#0" expanded="true" />
+                <element signature="e#0#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/contact/contact.ts">
+      <file leaf-file-name="staff.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/staff/staff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="176">
+              <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="52" />
+              <folding>
+                <element signature="e#560#566#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,31 +80,8 @@
       <file leaf-file-name="contact.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/contact/contact.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="additional.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/services/additional.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#45#96#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="336">
+              <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -84,18 +90,8 @@
       <file leaf-file-name="services.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/services/services.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="additional.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/services/additional.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="55" />
+            <state relative-caret-position="80">
+              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -110,14 +106,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>default</find>
-      <find>de</find>
-      <find>defaul</find>
-      <find>u</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -129,30 +117,34 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/resources/model/picture.ts" />
+        <option value="$PROJECT_DIR$/src/resources/model/data_format.ts" />
+        <option value="$PROJECT_DIR$/src/resources/model/employee.ts" />
         <option value="$PROJECT_DIR$/src/resources/model/service.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/services.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/additional.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/wellness_classes.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/social_dances.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/skin_care_classes.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/massage_therapist.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/karaoke.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/haircuts.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/field_trips.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/extended_working_hours.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/esl_class.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/art_classes.ts" />
         <option value="$PROJECT_DIR$/src/components/services/customers/drama_club.ts" />
         <option value="$PROJECT_DIR$/src/components/services/customers/computer_class.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/esl_class.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/extended_working_hours.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/field_trips.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/haircuts.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/karaoke.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/massage_therapist.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/skin_care_classes.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/social_dances.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/wellness_classes.ts" />
         <option value="$PROJECT_DIR$/src/components/services/customers/bioceramics.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/customers/art_classes.ts" />
-        <option value="$PROJECT_DIR$/src/components/services/additional.html" />
+        <option value="$PROJECT_DIR$/src/components/staff/employees/constants.ts" />
+        <option value="$PROJECT_DIR$/src/components/staff/employees/employee2.ts" />
+        <option value="$PROJECT_DIR$/src/components/staff/employees/employee1.ts" />
+        <option value="$PROJECT_DIR$/src/components/staff/staff.ts" />
+        <option value="$PROJECT_DIR$/src/components/staff/staff.html" />
         <option value="$PROJECT_DIR$/src/resources/css/styles.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/components/services/services.html" />
+        <option value="$PROJECT_DIR$/src/constants.ts" />
+        <option value="$PROJECT_DIR$/src/app.ts" />
         <option value="$PROJECT_DIR$/src/app.html" />
-        <option value="$PROJECT_DIR$/src/resources/model/address.ts" />
-        <option value="$PROJECT_DIR$/src/components/contact/contact.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/customers/constants.ts" />
+        <option value="$PROJECT_DIR$/src/components/services/non_customers/constants.ts" />
         <option value="$PROJECT_DIR$/src/components/contact/contact.html" />
       </list>
     </option>
@@ -190,8 +182,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -320,7 +310,85 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="staff" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="employees" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kupalinka-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kupalinka-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kupalinka-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kupalinka-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="non_customers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kupalinka-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kupalinka-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="customers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -380,16 +448,24 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+    <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/pics/misc" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pics/services" />
+      <recent name="$PROJECT_DIR$/pics/employees" />
+      <recent name="$PROJECT_DIR$/pics/additional_services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -838,17 +914,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="77facbeb-ec27-48fe-a230-5c37ba1b01a5" name="Default" comment="" />
-      <created>1500167794367</created>
+      <changelist id="1f4f4625-ca25-49ee-87eb-3774d6c4d2a9" name="Default" comment="" />
+      <created>1500303431709</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1500167794367</updated>
-      <workItem from="1500167796123" duration="8594000" />
+      <updated>1500303431709</updated>
+      <workItem from="1500303433805" duration="5687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8594000" />
+    <option name="totallyTimeSpent" value="5687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="951" extended-state="6" />
@@ -873,7 +949,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -901,97 +977,71 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/model/picture.ts">
+    <entry file="file://$PROJECT_DIR$/src/resources/model/data_format.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="64">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc;n#DataFormat#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/model/employee.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc;n#Employee#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/gallery/gallery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/model/service.ts">
+    <entry file="file://$PROJECT_DIR$/src/components/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/wellness_classes.ts">
+    <entry file="file://$PROJECT_DIR$/src/components/services/additional.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="44" />
+        <state relative-caret-position="96">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/computer_class.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding>
             <element signature="e#0#57#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/social_dances.ts">
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/drama_club.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/skin_care_classes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/massage_therapist.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/karaoke.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/haircuts.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/field_trips.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/extended_working_hours.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="240">
+          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding>
             <element signature="e#0#57#0" expanded="false" />
           </folding>
@@ -1000,8 +1050,127 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/services/customers/esl_class.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="240">
+          <caret line="15" column="51" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/extended_working_hours.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/field_trips.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/haircuts.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/karaoke.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="51" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/massage_therapist.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/skin_care_classes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="51" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/social_dances.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="51" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/wellness_classes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/model/service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/employees/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="4" column="61" lean-forward="false" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/employees/employee2.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+            <element signature="n#!!doc;n#IrinaLastName#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/art_classes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="57" />
           <folding>
             <element signature="e#0#57#0" expanded="false" />
           </folding>
@@ -1010,129 +1179,113 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/services/customers/bioceramics.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+        <state relative-caret-position="368">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#45#102#0" expanded="false" />
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/art_classes.ts">
+    <entry file="file://$PROJECT_DIR$/src/components/staff/employees/employee1.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/services.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#0#51#0" expanded="false" />
+            <element signature="e#0#57#0" expanded="true" />
+            <element signature="n#!!doc;n#AlenaVolchak#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/computer_class.ts">
+    <entry file="file://$PROJECT_DIR$/src/components/staff/staff.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="256">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
-            <element signature="e#0#57#0" expanded="false" />
+            <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/customers/drama_club.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="320">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/services/services.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="80">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/staff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="52" />
+          <folding>
+            <element signature="e#560#566#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/customers/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="4" column="59" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/services/non_customers/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="4" column="81" lean-forward="false" selection-start-line="4" selection-start-column="81" selection-end-line="4" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="e#391#397#0" expanded="true" />
-            <element signature="e#406#412#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/model/address.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc;n#Address#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/additional.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#45#96#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/services/additional.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/contact/contact.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="160">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/contact/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        <state relative-caret-position="336">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding />
         </state>
       </provider>

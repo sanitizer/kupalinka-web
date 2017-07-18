@@ -5,14 +5,18 @@
 
     <div class="lr50">
         <h1 class="ui header">
-            ${mainHeader}
+            <span class="common-font">
+                ${mainHeader}
+            </span>
             <div class="sub header margin10">
-                ${text}
+                <span class="common-font">
+                    ${text}
+                </span>
             </div>
         </h1>
 
         <div class="ui list">
-            <div class="item" repeat.for="addr of addresses">
+            <div class="item common-font" repeat.for="addr of addresses">
                 <div class="header">
                     <bold>${addr.name}</bold>
                 </div>

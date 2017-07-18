@@ -185,6 +185,21 @@ define('components/services/services',["require", "exports", "./customers/art_cl
     exports.Services = Services;
 });
 
+define('components/staff/employee',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Employee = (function () {
+        function Employee() {
+            this.description = this.getDescription();
+        }
+        Employee.prototype.getDescription = function () {
+            return "";
+        };
+        return Employee;
+    }());
+    exports.Employee = Employee;
+});
+
 define('components/staff/staff',["require", "exports", "./employees/employee1", "./employees/employee2"], function (require, exports, employee1_1, employee2_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -215,11 +230,6 @@ define('resources/model/address',["require", "exports"], function (require, expo
 });
 
 define('resources/model/data_format',["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-});
-
-define('resources/model/employee',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
@@ -651,52 +661,114 @@ define('components/staff/employees/constants',["require", "exports"], function (
     exports.BASE_EMPLOYEES_DIR = "/pics/employees/";
 });
 
-define('components/staff/employees/employee1',["require", "exports", "../../../resources/model/picture", "./constants"], function (require, exports, picture_1, constants_1) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/staff/employees/employee1',["require", "exports", "../../../resources/model/picture", "../employee", "./constants"], function (require, exports, picture_1, employee_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var AlenaVolchak = (function () {
+    var AlenaVolchak = (function (_super) {
+        __extends(AlenaVolchak, _super);
         function AlenaVolchak() {
-            this.name = "Alena Volchak";
-            this.description = this.getDescription();
-            this.pic = new picture_1.Picture(constants_1.BASE_EMPLOYEES_DIR + "pic.jpg");
+            var _this = _super.call(this) || this;
+            _this.name = "Alena Volchak";
+            _this.position = "Entertainment Director";
+            _this.pic = new picture_1.Picture(constants_1.BASE_EMPLOYEES_DIR + "pic.jpg");
+            return _this;
         }
         AlenaVolchak.prototype.getDescription = function () {
             return "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
                 "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
                 "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
                 "i work here. yes i work here. ";
         };
         return AlenaVolchak;
-    }());
+    }(employee_1.Employee));
     exports.AlenaVolchak = AlenaVolchak;
 });
 
-define('components/staff/employees/employee2',["require", "exports", "../../../resources/model/picture", "./constants"], function (require, exports, picture_1, constants_1) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/staff/employees/employee2',["require", "exports", "../employee", "../../../resources/model/picture", "./constants"], function (require, exports, employee_1, picture_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var IrinaLastName = (function () {
+    var IrinaLastName = (function (_super) {
+        __extends(IrinaLastName, _super);
         function IrinaLastName() {
-            this.name = "Irina LastName";
-            this.description = this.getDescription();
-            this.pic = new picture_1.Picture(constants_1.BASE_EMPLOYEES_DIR + "pic.jpg");
+            var _this = _super.call(this) || this;
+            _this.name = "Irina LastName";
+            _this.position = "Assistant to regional manager";
+            _this.pic = new picture_1.Picture(constants_1.BASE_EMPLOYEES_DIR + "pic.jpg");
+            return _this;
         }
         IrinaLastName.prototype.getDescription = function () {
             return "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
                 "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
                 "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. es i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. es i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
+                "i work here. yes i work here. es i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
+                "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
+                "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
                 "i work here. yes i work here. ";
         };
         return IrinaLastName;
-    }());
+    }(employee_1.Employee));
     exports.IrinaLastName = IrinaLastName;
 });
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing inverted menu\"><h2 class=\"ui top attached blue header common-font item\"><img class=\"ui image\" src=\"${headerPic.path}\"> &ensp;${header} <small>&ensp;${subHeader}</small></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active' : 'item'}\" repeat.for=\"row of router.navigation\">${row.title}</a></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing inverted menu\"><h2 class=\"ui top attached blue header item\"><img class=\"ui image\" src=\"${headerPic.path}\"> &ensp;<span class=\"common-font\"> ${header} <small>&ensp;${subHeader}</small></span></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
 define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".lr20 {\n    margin-left: 20px;\n    margin-right: 20px;\n}\n\n.lr30 {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: \"SansSerif\";\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}"; });
-define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><h1 class=\"ui header\">${mainHeader}<div class=\"sub header margin10\">${text}</div></h1><div class=\"ui list\"><div class=\"item\" repeat.for=\"addr of addresses\"><div class=\"header\"><bold>${addr.name}</bold></div>${addr.street}<br>Office Hours: ${addr.officeHours}<br>Phone: ${addr.phoneNum}<br>Email: ${addr.email}<br></div></div></div></template>"; });
-define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
+define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><h1 class=\"ui header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub header margin10\"><span class=\"common-font\">${text}</span></div></h1><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"header\"><bold>${addr.name}</bold></div>${addr.street}<br>Office Hours: ${addr.officeHours}<br>Phone: ${addr.phoneNum}<br>Email: ${addr.email}<br></div></div></div></template>"; });
+define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"ui segment\"><img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted small image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted small image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted small image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted small image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted small image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted small image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted small image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted tiny image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted tiny image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted tiny image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted medium image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"> <img class=\"ui segment grey inverted large image\" src=\"/pics/services/pic.jpg\"></div></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
-define('text!components/services/additional.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr20 common-font\"><div class=\"ui five centered cards\"><div class=\"card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div></div></div></div></template>"; });
-define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50 common-font\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div><div class=\"extra content\"><button class=\"${service.showFullDescr() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });
-define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><div class=\"ui one column grid\"><div class=\"row\" repeat.for=\"employee of employees\"><div class=\"column ui segment\"><h2 class=\"ui header\">${employee.name}</h2><img class=\"ui medium left floated image\" src=\"${employee.pic.path}\"> <span class=\"common-font\">&emsp;${employee.description}</span></div></div></div></div></template>"; });
+define('text!components/services/additional.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50 common-font\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div><div class=\"extra content\"><button class=\"${service.showFullDescr() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });
+define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50 common-font\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div><div class=\"extra content common-font\"><button class=\"${service.showFullDescr() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });
+define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"ui divided items\"><div class=\"item\" repeat.for=\"employee of employees\"><div class=\"ui medium image\"><img src=\"${employee.pic.path}\"></div><div class=\"content common-font\"><div class=\"header\">${employee.name}</div><div class=\"meta\"><span>${employee.position}</span></div><div class=\"description\"><p>${employee.description}</p></div></div></div></div></template>"; });
 //# sourceMappingURL=app-bundle.js.map

@@ -5,12 +5,14 @@
 
   <div class="ui inverted segment">
     <div class="ui secondary pointing inverted menu">
-      <h2 class="ui top attached blue header common-font item">
+      <h2 class="ui top attached blue header item">
         <img class="ui image" src="${headerPic.path}">
-        &ensp;${header}
-        <small>&ensp;${subHeader}</small>
+        &ensp;<span class="common-font">
+          ${header}
+          <small>&ensp;${subHeader}</small>
+        </span>
       </h2>
-      <a href = ${row.href} class = "${row.isActive ? 'item active' : 'item'}" repeat.for = "row of router.navigation">
+      <a href = ${row.href} class = "${row.isActive ? 'item active common-font' : 'item common-font'}" repeat.for = "row of router.navigation">
         ${row.title}
       </a>
     </div>

@@ -3,9 +3,9 @@
     <require from="resources/css/styles.css"></require>
     <require from="semantic-ui/semantic.css"></require>
 
-    <div class="lr20 common-font">
+    <div class="lr50 common-font">
         <div class = "ui five centered cards">
-            <div class="card" repeat.for="service of services">
+            <div class="ui grey raised link card" repeat.for="service of services">
                 <div class="image">
                     <img src="${service.pic.path}">
                 </div>
@@ -16,6 +16,9 @@
                     <div class="description">
                         ${service.description}
                     </div>
+                </div>
+                <div class="extra content">
+                    <button class="${service.showFullDescr() ? 'ui hidden button' : 'ui blue right floated basic button'}" click.delegate="service.onClick()">Read More</button>
                 </div>
             </div>
         </div>

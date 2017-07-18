@@ -1,4 +1,4 @@
-import {Employee} from "../../resources/model/employee";
+import {Employee} from "./employee";
 import {AlenaVolchak} from "./employees/employee1";
 import {IrinaLastName} from "./employees/employee2";
 /**

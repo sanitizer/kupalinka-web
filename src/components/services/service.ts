@@ -20,7 +20,7 @@ export class Service implements DataFormat {
     }
 
     getMaxDescrSize(): number {
-        return 120;
+        return 100;
     }
 
     showFullDescr(): boolean {

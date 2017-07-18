@@ -47,7 +47,7 @@ export class Services {
     }
 
     getDividerText(): string {
-        return "Services for customers";
+        return "List Of Services";
     }
 
     getMainText(): string {

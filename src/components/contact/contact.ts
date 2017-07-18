@@ -12,7 +12,12 @@ export class Contact {
     constructor() {
         this.mainHeader = this.getMainHeader();
         this.text = this.getText();
-        this.addresses = [new Address("Main Office", "Mississippi st.", "9am-3pm Monday-Friday", "xxx-xxx-xxxx", "kupalinka@mail.com")];
+        this.addresses = [new Address("Main Office",
+                                      "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012",
+                                      "9 am - 5 pm, Monday-Friday",
+                                      "303-386-4508",
+                                      "xxx-xxx-xxxx",
+                                      "kupalinkaadc@gmail.com")];
     }
 
     private getMainHeader(): string {

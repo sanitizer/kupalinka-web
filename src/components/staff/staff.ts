@@ -1,6 +1,6 @@
 import {Employee} from "./employee";
 import {AlenaVolchak} from "./employees/employee1";
-import {IrinaLastName} from "./employees/employee2";
+import {IrinaMonosova} from "./employees/employee2";
 /**
  * Created by sanitizer on 7/14/17.
  */
@@ -11,7 +11,7 @@ export class Staff {
 
     constructor() {
         this.employees = [new AlenaVolchak(),
-                          new IrinaLastName()];
+                          new IrinaMonosova()];
     }
 
 }

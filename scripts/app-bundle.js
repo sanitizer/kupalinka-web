@@ -21,7 +21,6 @@ define('app',["require", "exports", "./resources/model/route-model", "aurelia-te
             var routes = [];
             routes.push(new route_model_1.default(["", "home"], "home", "home/home", "Home"));
             routes.push(new route_model_1.default(["services"], "services", "services/services", "Services"));
-            routes.push(new route_model_1.default(["additional"], "additional", "services/additional", "Additional"));
             routes.push(new route_model_1.default(["staff"], "staff", "staff/staff", "Staff"));
             routes.push(new route_model_1.default(["gallery"], "gallery", "gallery/gallery", "Photo Gallery"));
             routes.push(new route_model_1.default(["contact"], "contact", "contact/contact", "Contact Us"));
@@ -85,7 +84,7 @@ define('components/contact/contact',["require", "exports", "../../resources/mode
         function Contact() {
             this.mainHeader = this.getMainHeader();
             this.text = this.getText();
-            this.addresses = [new address_1.Address("Main Office", "Mississippi st.", "9am-3pm Monday-Friday", "xxx-xxx-xxxx", "kupalinka@mail.com")];
+            this.addresses = [new address_1.Address("Main Office", "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012", "9 am - 5 pm, Monday-Friday", "303-386-4508", "xxx-xxx-xxxx", "kupalinkaadc@gmail.com")];
         }
         Contact.prototype.getMainHeader = function () {
             return "We are here to help - Contact us";
@@ -137,74 +136,41 @@ define('components/home/home',["require", "exports"], function (require, exports
     exports.Home = Home;
 });
 
-define('components/services/additional',["require", "exports", "./customers/art_classes"], function (require, exports, art_classes_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Additional = (function () {
-        function Additional() {
-            this.mainHeader = this.getMainHeader();
-            this.mainText = this.getMainText();
-            this.dividerText = this.getDividerText();
-            this.services = [new art_classes_1.ArtClasses()];
-        }
-        Additional.prototype.getMainHeader = function () {
-            return "We provide services even though your are not our customer";
-        };
-        Additional.prototype.getDividerText = function () {
-            return "Services for non customers";
-        };
-        Additional.prototype.getMainText = function () {
-            return "Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
-                "                d fk vdsnalkfhndsalkjfhn vsdkljafh nvsdkfhn vlksjdfhn vdslkfm njklh lkdjsafh nlkdshfn vsnldkjfh\n" +
-                "                sdf nksdhflk vjhsdfl vlkjsd dhflksdjdhf kldsjdhf nvksdjdfhn kldsjdhn flkjsdh fnlkdsjhf nvsd\n" +
-                "                dfdslkfh sldnkjhf lskdjhf nldjkshf lkjsddhf lkjds nf lkjsflkjsdhfn vkljsdhf vklsdj fvs'd\n" +
-                "                ds f sdl;kf nfndsl;kfh vnsldkjhf lsdkjfhdsakjghl ahdsjhljv mcnv,mzriutyewpiytdo[ifygaspd;j hv198367tyewdsofh nsd\n" +
-                "                 lhds fhp283ty09du fhni2 ht9hdfnil hn289 fhsd9uvn 8o7h2 9fnwdasp9h v8yw er.\n" +
-                "                Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
-                "                d fk vdsnalkfhndsalkjfhn vsdkljafh nvsdkfhn vlksjdfhn vdslkfm njklh lkdjsafh nlkdshfn vsnldkjfh\n" +
-                "                sdf nksdhflk vjhsdfl vlkjsd dhflksdjdhf kldsjdhf nvksdjdfhn kldsjdhn flkjsdh fnlkdsjhf nvsd\n" +
-                "                dfdslkfh sldnkjhf lskdjhf nldjkshf lkjsddhf lkjds nf lkjsflkjsdhfn vkljsdhf vklsdj fvs'd\n" +
-                "                ds f sdl;kf nfndsl;kfh vnsldkjhf lsdkjfhdsakjghl ahdsjhljv mcnv,mzriutyewpiytdo[ifygaspd;j hv198367tyewdsofh nsd\n" +
-                "                 lhds fhp283ty09du fhni2 ht9hdfnil hn289 fhsd9uvn 8o7h2 9fnwdasp9h v8yw er.\n" +
-                "                Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
-                "                d fk vdsnalkfhndsalkjfhn vsdkljafh nvsdkfhn vlksjdfhn vdslkfm njklh lkdjsafh nlkdshfn vsnldkjfh\n" +
-                "                sdf nksdhflk vjhsdfl vlkjsd dhflksdjdhf kldsjdhf nvksdjdfhn kldsjdhn flkjsdh fnlkdsjhf nvsd\n" +
-                "                dfdslkfh sldnkjhf lskdjhf nldjkshf lkjsddhf lkjds nf lkjsflkjsdhfn vkljsdhf vklsdj fvs'd\n" +
-                "                ds f sdl;kf nfndsl;kfh vnsldkjhf lsdkjfhdsakjghl ahdsjhljv mcnv,mzriutyewpiytdo[ifygaspd;j hv198367tyewdsofh nsd\n" +
-                "                 lhds fhp283ty09du fhni2 ht9hdfnil hn289 fhsd9uvn 8o7h2 9fnwdasp9h v8yw er.\n" +
-                "                Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
-                "                d fk vdsnalkfhndsalkjfhn vsdkljafh nvsdkfhn vlksjdfhn vdslkfm njklh lkdjsafh nlkdshfn vsnldkjfh\n" +
-                "                sdf nksdhflk vjhsdfl vlkjsd dhflksdjdhf kldsjdhf nvksdjdfhn kldsjdhn flkjsdh fnlkdsjhf nvsd\n" +
-                "                dfdslkfh sldnkjhf lskdjhf nldjkshf lkjsddhf lkjds nf lkjsflkjsdhfn vkljsdhf vklsdj fvs'd\n" +
-                "                ds f sdl;kf nfndsl;kfh vnsldkjhf lsdkjfhdsakjghl ahdsjhljv mcnv,mzriutyewpiytdo[ifygaspd;j hv198367tyewdsofh nsd\n" +
-                "                 lhds fhp283ty09du fhni2 ht9hdfnil hn289 fhsd9uvn 8o7h2 9fnwdasp9h v8yw er.";
-        };
-        return Additional;
-    }());
-    exports.Additional = Additional;
-});
-
-define('components/services/service',["require", "exports"], function (require, exports) {
+define('components/services/service',["require", "exports", "../../resources/utils/common"], function (require, exports, common_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Service = (function () {
         function Service() {
-            this.description = this.getPartOfDescription();
+            this.mainHeader = this.getMainHeader();
+            this.mainText = this.getMainText();
+            this.dividerText = this.getDividerText();
+            this.data = common_1.loadDataFromFile(this.getDataPath());
+            this.partialData = this.getPartOfData();
         }
-        Service.prototype.getPartOfDescription = function () {
-            return this.showFullDescr() ? this.getDescription() : this.getDescription().substring(0, this.getMaxDescrSize() / 2) + "...";
+        Service.prototype.getPartOfData = function () {
+            return this.showFullData() ? this.getData() : this.getData().substring(0, this.getMaxDescrSize() / 2) + "...";
         };
-        Service.prototype.getDescription = function () {
-            return "";
+        Service.prototype.getData = function () {
+            return this.data;
         };
         Service.prototype.getMaxDescrSize = function () {
             return 100;
         };
-        Service.prototype.showFullDescr = function () {
-            return this.getDescription().length <= this.getMaxDescrSize();
+        Service.prototype.showFullData = function () {
+            return this.getData().length <= this.getMaxDescrSize();
+        };
+        Service.prototype.getMainHeader = function () {
+            return "";
+        };
+        Service.prototype.getDividerText = function () {
+            return "";
+        };
+        Service.prototype.getMainText = function () { return ""; };
+        Service.prototype.getDataPath = function () {
+            return "";
         };
         Service.prototype.onClick = function () {
-            alert(this.getDescription());
+            alert(this.getData());
         };
         return Service;
     }());
@@ -237,7 +203,7 @@ define('components/services/services',["require", "exports", "./customers/art_cl
             return "We are here to make your stay pleasant and fun";
         };
         Services.prototype.getDividerText = function () {
-            return "Services for customers";
+            return "List Of Services";
         };
         Services.prototype.getMainText = function () {
             return "Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
@@ -275,7 +241,7 @@ define('components/staff/employee',["require", "exports"], function (require, ex
     Object.defineProperty(exports, "__esModule", { value: true });
     var Employee = (function () {
         function Employee() {
-            this.description = this.getDescription();
+            this.data = this.getDescription();
         }
         Employee.prototype.getDescription = function () {
             return "";
@@ -291,7 +257,7 @@ define('components/staff/staff',["require", "exports", "./employees/employee1", 
     var Staff = (function () {
         function Staff() {
             this.employees = [new employee1_1.AlenaVolchak(),
-                new employee2_1.IrinaLastName()];
+                new employee2_1.IrinaMonosova()];
         }
         return Staff;
     }());
@@ -302,11 +268,12 @@ define('resources/model/address',["require", "exports"], function (require, expo
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Address = (function () {
-        function Address(name, street, officeHours, phoneNum, email) {
+        function Address(name, street, officeHours, phoneNum, fax, email) {
             this.name = name;
             this.street = street;
             this.officeHours = officeHours;
             this.phoneNum = phoneNum;
+            this.fax = fax;
             this.email = email;
         }
         return Address;
@@ -372,8 +339,8 @@ define('components/services/customers/art_classes',["require", "exports", "../..
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        ArtClasses.prototype.getDescription = function () {
-            return "dghgfdl; hgd ;hg sdl;ahg ;sldhglsdhgl;sdhgsd hld fshf dsjkjsdhgs hgsdklgh ssldkghhsd kgjh dslkghd lkjh kjn ngjkndkgjndkjgh gdh dng d nd nd dn ndknsk gj dkdghgfdl; hgd ;hg sdl;ahg ;sldhglsdhgl;sdhgsd hld fshf dsjkjsdhgs hgsdklgh ssldkghhsd kgjh dslkghd lkjh kjn ngjkndkgjndkjgh gdh dng d nd nd dn ndknsk gj dkdghgfdl; hgd ;hg sdl;ahg ;sldhglsdhgl;sdhgsd hld fshf dsjkjsdhgs hgsdklgh ssldkghhsd kgjh dslkghd lkjh kjn ngjkndkgjndkjgh gdh dng d nd nd dn ndknsk gj dk";
+        ArtClasses.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "art_classes.txt";
         };
         return ArtClasses;
     }(service_1.Service));
@@ -401,8 +368,8 @@ define('components/services/customers/bioceramics',["require", "exports", "../..
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        Bioceramics.prototype.getDescription = function () {
-            return "We do whatever bioceramics is. Cool isnt it?";
+        Bioceramics.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "bioceramics.txt";
         };
         return Bioceramics;
     }(service_1.Service));
@@ -430,8 +397,8 @@ define('components/services/customers/computer_class',["require", "exports", "..
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        ComputerClass.prototype.getDescription = function () {
-            return "This is the computer class. We study computers.";
+        ComputerClass.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "computer_class.txt";
         };
         return ComputerClass;
     }(service_1.Service));
@@ -442,6 +409,7 @@ define('components/services/customers/constants',["require", "exports"], functio
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BASE_SERVICES_DIR = "/pics/services/";
+    exports.BASE_DATA_DIR = "/data/services/";
 });
 
 var __extends = (this && this.__extends) || (function () {
@@ -465,8 +433,8 @@ define('components/services/customers/drama_club',["require", "exports", "../../
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        DramaClub.prototype.getDescription = function () {
-            return "Oh yes!!! We have a lot of drama here.";
+        DramaClub.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "drama_club.txt";
         };
         return DramaClub;
     }(service_1.Service));
@@ -494,8 +462,8 @@ define('components/services/customers/esl_class',["require", "exports", "../../.
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        EslClass.prototype.getDescription = function () {
-            return "This is the ESL class. We study English as a second language.";
+        EslClass.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "esl_class.txt";
         };
         return EslClass;
     }(service_1.Service));
@@ -523,8 +491,8 @@ define('components/services/customers/extended_working_hours',["require", "expor
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        ExtendedWorkingHours.prototype.getDescription = function () {
-            return "We work long and hard for you.";
+        ExtendedWorkingHours.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "extended_working_hours.txt";
         };
         return ExtendedWorkingHours;
     }(service_1.Service));
@@ -552,8 +520,8 @@ define('components/services/customers/field_trips',["require", "exports", "../..
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        FieldTrips.prototype.getDescription = function () {
-            return "We go to museums, concerts, movies.";
+        FieldTrips.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "field_trips.txt";
         };
         return FieldTrips;
     }(service_1.Service));
@@ -581,8 +549,8 @@ define('components/services/customers/haircuts',["require", "exports", "../../..
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        Haircuts.prototype.getDescription = function () {
-            return "We do cut your hair from time to time.";
+        Haircuts.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "haircuts.txt";
         };
         return Haircuts;
     }(service_1.Service));
@@ -610,8 +578,8 @@ define('components/services/customers/karaoke',["require", "exports", "../../../
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        Karaoke.prototype.getDescription = function () {
-            return "We also sing. Like proooooossss!!!";
+        Karaoke.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "karaoke.txt";
         };
         return Karaoke;
     }(service_1.Service));
@@ -639,8 +607,8 @@ define('components/services/customers/massage_therapist',["require", "exports", 
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        MassageTherapist.prototype.getDescription = function () {
-            return "We have a massage therapist stopping by from time to time.";
+        MassageTherapist.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "massage_therapist.txt";
         };
         return MassageTherapist;
     }(service_1.Service));
@@ -668,8 +636,8 @@ define('components/services/customers/skin_care_classes',["require", "exports", 
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        SkinCareClass.prototype.getDescription = function () {
-            return "We teach you how to care of your skin.";
+        SkinCareClass.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "skin_care_classes.txt";
         };
         return SkinCareClass;
     }(service_1.Service));
@@ -697,8 +665,8 @@ define('components/services/customers/social_dances',["require", "exports", "../
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        SocialDances.prototype.getDescription = function () {
-            return "We dance socially.";
+        SocialDances.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "social_dances.txt";
         };
         return SocialDances;
     }(service_1.Service));
@@ -726,18 +694,12 @@ define('components/services/customers/wellness_classes',["require", "exports", "
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
-        WellnessClasses.prototype.getDescription = function () {
-            return "we do that kind of wellness and this kind of wellness. Ex: swimming pool, excercises, good nutrition, vitamins";
+        WellnessClasses.prototype.getDataPath = function () {
+            return constants_1.BASE_DATA_DIR + "wellness_classes.txt";
         };
         return WellnessClasses;
     }(service_1.Service));
     exports.WellnessClasses = WellnessClasses;
-});
-
-define('components/services/non_customers/constants',["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.BASE_ADDITIONAL_SERVICES_DIR = "/pics/additional_services/";
 });
 
 define('components/staff/employees/constants',["require", "exports"], function (require, exports) {
@@ -819,16 +781,16 @@ var __extends = (this && this.__extends) || (function () {
 define('components/staff/employees/employee2',["require", "exports", "../employee", "../../../resources/model/picture", "./constants"], function (require, exports, employee_1, picture_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var IrinaLastName = (function (_super) {
-        __extends(IrinaLastName, _super);
-        function IrinaLastName() {
+    var IrinaMonosova = (function (_super) {
+        __extends(IrinaMonosova, _super);
+        function IrinaMonosova() {
             var _this = _super.call(this) || this;
-            _this.name = "Irina LastName";
+            _this.name = "Irina Monosova";
             _this.position = "Assistant to regional manager";
             _this.pic = new picture_1.Picture(constants_1.BASE_EMPLOYEES_DIR + "pic.jpg");
             return _this;
         }
-        IrinaLastName.prototype.getDescription = function () {
+        IrinaMonosova.prototype.getDescription = function () {
             return "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
                 "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
                 "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
@@ -843,17 +805,28 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
                 "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
                 "i work here. yes i work here. ";
         };
-        return IrinaLastName;
+        return IrinaMonosova;
     }(employee_1.Employee));
-    exports.IrinaLastName = IrinaLastName;
+    exports.IrinaMonosova = IrinaMonosova;
+});
+
+define('resources/utils/common',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    function loadDataFromFile(filePath) {
+        var reader = new XMLHttpRequest();
+        reader.open("GET", filePath, false);
+        reader.send(false);
+        return reader.responseText;
+    }
+    exports.loadDataFromFile = loadDataFromFile;
 });
 
 define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing inverted menu\"><h2 class=\"ui top attached blue header item\"><img class=\"ui image\" src=\"${headerPic.path}\"> &ensp;<span class=\"common-font\"> ${header} <small>&ensp;${subHeader}</small></span></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
 define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".lr20 {\n    margin-left: 20px;\n    margin-right: 20px;\n}\n\n.lr30 {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: \"SansSerif\";\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}"; });
-define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><h1 class=\"ui header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub header margin10\"><span class=\"common-font\">${text}</span></div></h1><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"header\"><bold>${addr.name}</bold></div>${addr.street}<br>Office Hours: ${addr.officeHours}<br>Phone: ${addr.phoneNum}<br>Email: ${addr.email}<br></div></div></div></template>"; });
+define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><h1 class=\"ui header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub header margin10\"><span class=\"common-font\">${text}</span></div></h1><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"header\"><bold>${addr.name}</bold></div><div class=\"ui divider\"></div>${addr.street}<br>Office Hours: ${addr.officeHours}<br>Phone: ${addr.phoneNum}<br>Fax: ${addr.fax}<br>Email: ${addr.email}<br></div></div></div></template>"; });
 define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><div class=\"ui four column centered equal width grid\"><div class=\"left floated column\" repeat.for=\"pic of pics\"><div class=\"ui basic segment common-font\"><a class=\"medium image\" href=\"${pic.path}\" target=\"_blank\"><img class=\"ui bordered rounded medium image\" src=\"${pic.path}\"></a><div class=\"content\">${pic.description}</div></div></div></div></div></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><h2>${data}</h2></template>"; });
-define('text!components/services/additional.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"ui three column equal wide grid\"><div class=\"column\"></div><div class=\"six wide column\"><div class=\"ui basic segment common-font\"><div class=\"ui centered header\">${mainHeader}</div><span>${mainText}</span></div></div><div class=\"column\"></div></div><div class=\"ui horizontal divider common-font\">${dividerText}</div><div class=\"ui basic segment\"></div><div class=\"lr100\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div><div class=\"extra content common-font\"><button class=\"${service.showFullDescr() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });
-define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"ui three column equal wide grid\"><div class=\"column\"></div><div class=\"six wide column\"><div class=\"ui basic segment common-font\"><div class=\"ui centered header\">${mainHeader}</div><span>${mainText}</span></div></div><div class=\"column\"></div></div><div class=\"ui horizontal divider common-font\">${dividerText}</div><div class=\"ui basic segment\"></div><div class=\"lr100\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.description}</div></div><div class=\"extra content common-font\"><button class=\"${service.showFullDescr() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });
-define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"ui divided items\"><div class=\"item\" repeat.for=\"employee of employees\"><div class=\"ui medium image\"><img src=\"${employee.pic.path}\"></div><div class=\"content common-font\"><div class=\"header\">${employee.name}</div><div class=\"meta\"><span>${employee.position}</span></div><div class=\"description\"><p>${employee.description}</p></div></div></div></div></template>"; });
+define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"ui three column equal wide grid\"><div class=\"column\"></div><div class=\"six wide column\"><div class=\"ui basic segment common-font\"><div class=\"ui centered header\">${mainHeader}</div><span>${mainText}</span></div></div><div class=\"column\"></div></div><div class=\"ui horizontal divider common-font\">${dividerText}</div><div class=\"ui basic segment\"></div><div class=\"lr100\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.partialData}</div></div><div class=\"extra content common-font\"><button class=\"${service.showFullData() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });
+define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"ui divided items\"><div class=\"item\" repeat.for=\"employee of employees\"><div class=\"ui medium image\"><img src=\"${employee.pic.path}\"></div><div class=\"content common-font\"><div class=\"header\">${employee.name}</div><div class=\"meta\"><span>${employee.position}</span></div><div class=\"description\"><p>${employee.data}</p></div></div></div></div></template>"; });
 //# sourceMappingURL=app-bundle.js.map

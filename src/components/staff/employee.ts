@@ -5,11 +5,11 @@ import {DataFormat} from "../../resources/model/data_format";
 
 export class Employee implements DataFormat {
     name: string;
-    description: string;
+    data: string;
     position: string;
 
     constructor() {
-        this.description = this.getDescription();
+        this.data = this.getDescription();
     }
 
     getDescription(): string {

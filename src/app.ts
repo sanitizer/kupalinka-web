@@ -20,7 +20,6 @@ export class App {
     let routes: RouteModel[] = [];
     routes.push(new RouteModel(["", "home"], "home", "home/home", "Home"));
     routes.push(new RouteModel(["services"], "services", "services/services", "Services"));
-    routes.push(new RouteModel(["additional"], "additional", "services/additional", "Additional"));
     routes.push(new RouteModel(["staff"], "staff", "staff/staff", "Staff"));
     routes.push(new RouteModel(["gallery"], "gallery", "gallery/gallery", "Photo Gallery"));
     routes.push(new RouteModel(["contact"], "contact", "contact/contact", "Contact Us"));

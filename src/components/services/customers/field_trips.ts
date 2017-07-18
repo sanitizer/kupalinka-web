@@ -1,6 +1,6 @@
 import {Picture} from "../../../resources/model/picture";
 import {Service} from "../service";
-import {BASE_SERVICES_DIR} from "./constants";
+import {BASE_DATA_DIR, BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
@@ -14,8 +14,8 @@ export class FieldTrips extends Service {
         this.pic = new Picture(BASE_SERVICES_DIR + "pic.jpg");
     }
 
-    getDescription() {
-        return "We go to museums, concerts, movies.";
+    getDataPath(): string {
+        return BASE_DATA_DIR + "field_trips.txt";
     }
 
 }

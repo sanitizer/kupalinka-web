@@ -1,6 +1,6 @@
 import {Picture} from "../../../resources/model/picture";
 import {Service} from "../service";
-import {BASE_SERVICES_DIR} from "./constants";
+import {BASE_DATA_DIR, BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
@@ -14,8 +14,8 @@ export class EslClass extends Service {
         this.pic = new Picture(BASE_SERVICES_DIR + "pic.jpg");
     }
 
-    getDescription() {
-        return "This is the ESL class. We study English as a second language.";
+    getDataPath(): string {
+        return BASE_DATA_DIR + "esl_class.txt";
     }
 
 }

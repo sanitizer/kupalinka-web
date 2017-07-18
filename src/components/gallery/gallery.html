@@ -3,43 +3,19 @@
     <require from="resources/css/styles.css"></require>
     <require from="semantic-ui/semantic.css"></require>
 
-    <div class="ui segment">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted small image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted small image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted small image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted small image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted small image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted small image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted small image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted tiny image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted tiny image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted tiny image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted medium image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
-        <img class="ui segment grey inverted large image" src="/pics/services/pic.jpg">
+    <div class="lr50">
+        <div class="ui four column centered equal width grid">
+            <div class="left floated column"  repeat.for="pic of pics">
+                <div class="ui basic segment common-font">
+                    <a class="medium image" href="${pic.path}" target="_blank">
+                        <img class="ui bordered rounded medium image" src="${pic.path}">
+                    </a>
+                    <div class="content">
+                        ${pic.description}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </template>

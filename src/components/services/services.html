@@ -17,6 +17,9 @@
                         ${service.description}
                     </div>
                 </div>
+                <div class="extra content">
+                    <button class="${service.showFullDescr() ? 'ui hidden button' : 'ui blue right floated basic button'}" click.delegate="service.onClick()">Read More</button>
+                </div>
             </div>
         </div>
     </div>

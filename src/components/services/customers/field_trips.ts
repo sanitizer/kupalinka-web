@@ -1,22 +1,20 @@
 import {Picture} from "../../../resources/model/picture";
-import {Service} from "../../../resources/model/service";
+import {Service} from "../service";
 import {BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
 
-export class FieldTrips implements Service {
-    name: string;
-    description: string;
+export class FieldTrips extends Service {
     pic: Picture;
 
     constructor() {
+        super();
         this.name = "Field Trips";
-        this.description = this.getDescription();
         this.pic = new Picture(BASE_SERVICES_DIR + "pic.jpg");
     }
 
-    private getDescription() {
+    getDescription() {
         return "We go to museums, concerts, movies.";
     }
 

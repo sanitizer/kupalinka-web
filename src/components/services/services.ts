@@ -11,7 +11,7 @@ import {MassageTherapist} from "./customers/massage_therapist";
 import {SkinCareClass} from "./customers/skin_care_classes";
 import {SocialDances} from "./customers/social_dances";
 import {WellnessClasses} from "./customers/wellness_classes";
-import {Service} from "../../resources/model/service";
+import {Service} from "./service";
 /**
  * Created by sanitizer on 7/14/17.
  */

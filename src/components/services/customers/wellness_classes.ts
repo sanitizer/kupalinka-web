@@ -1,22 +1,20 @@
 import {Picture} from "../../../resources/model/picture";
-import {Service} from "../../../resources/model/service";
+import {Service} from "../service";
 import {BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
 
-export class WellnessClasses implements Service {
-    name: string;
-    description: string;
+export class WellnessClasses extends Service {
     pic: Picture;
 
     constructor() {
+        super();
         this.name = "Wellness Classes";
-        this.description = this.getDescription();
         this.pic = new Picture(BASE_SERVICES_DIR + "pic.jpg");
     }
 
-    private getDescription() {
+    getDescription() {
         return "we do that kind of wellness and this kind of wellness. Ex: swimming pool, excercises, good nutrition, vitamins";
     }
 

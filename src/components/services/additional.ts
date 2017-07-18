@@ -3,7 +3,7 @@
  */
 
 import {ArtClasses} from "./customers/art_classes";
-import {Service} from "../../resources/model/service";
+import {Service} from "./service";
 
 export class Additional {
 

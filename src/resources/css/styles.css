@@ -13,6 +13,11 @@
     margin-right: 50px;
 }
 
+.lr100 {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 .margin10 {
     margin: 10px;
 }

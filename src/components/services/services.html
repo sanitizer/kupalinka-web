@@ -3,7 +3,27 @@
     <require from="resources/css/styles.css"></require>
     <require from="semantic-ui/semantic.css"></require>
 
-    <div class="lr50">
+    <div class="ui three column equal wide grid">
+        <div class="column"></div>
+        <div class="six wide column">
+            <div class="ui basic segment common-font">
+                <div class="ui centered header">
+                    ${mainHeader}
+                </div>
+                <span>
+                    ${mainText}
+                </span>
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+
+    <div class="ui horizontal divider common-font">
+        ${dividerText}
+    </div>
+    <div class="ui basic segment"></div>
+
+    <div class="lr100">
         <div class = "ui five centered cards">
             <div class="ui grey raised link card" repeat.for="service of services">
                 <div class="image">

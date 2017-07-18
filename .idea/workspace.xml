@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ee93af-4776-488a-bce7-75aff0d657c6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pics/gallery/pic.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/gallery/constants.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app-bundle.js" afterPath="$PROJECT_DIR$/scripts/app-bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app-bundle.js.map" afterPath="$PROJECT_DIR$/scripts/app-bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/vendor-bundle.js" afterPath="$PROJECT_DIR$/scripts/vendor-bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/gallery/gallery.html" afterPath="$PROJECT_DIR$/src/components/gallery/gallery.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/gallery/gallery.ts" afterPath="$PROJECT_DIR$/src/components/gallery/gallery.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/additional.html" afterPath="$PROJECT_DIR$/src/components/services/additional.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/services/services.html" afterPath="$PROJECT_DIR$/src/components/services/services.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +17,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gallery.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gallery.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/gallery/gallery.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
@@ -34,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gallery.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gallery.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/gallery/gallery.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+            <state relative-caret-position="368">
+              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -84,8 +77,8 @@
         <option value="$PROJECT_DIR$/src/components/services/additional.html" />
         <option value="$PROJECT_DIR$/src/components/gallery/constants.ts" />
         <option value="$PROJECT_DIR$/src/components/contact/contact.ts" />
-        <option value="$PROJECT_DIR$/src/components/gallery/gallery.ts" />
         <option value="$PROJECT_DIR$/src/components/gallery/gallery.html" />
+        <option value="$PROJECT_DIR$/src/components/gallery/gallery.ts" />
       </list>
     </option>
   </component>
@@ -819,12 +812,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1500344488431</updated>
-      <workItem from="1500344490506" duration="5940000" />
+      <workItem from="1500344490506" duration="6069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5940000" />
+    <option name="totallyTimeSpent" value="6069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="951" extended-state="6" />
@@ -998,21 +991,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/gallery/gallery.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/gallery/gallery.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/gallery/gallery.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

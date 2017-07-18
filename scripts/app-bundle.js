@@ -109,16 +109,16 @@ define('components/gallery/gallery',["require", "exports", "../../resources/mode
     Object.defineProperty(exports, "__esModule", { value: true });
     var Gallery = (function () {
         function Gallery() {
-            this.pics = [new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Some Pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Some Pic, but another"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Even better pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Amazing pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Hahaha pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Pic pic pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "A pic is a pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Well you know pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Another pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "/pic.jpg", "Another pic")];
+            this.pics = [new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic"),
+                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic, but another"),
+                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Even better pic"),
+                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Amazing pic"),
+                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Hahaha pic"),
+                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Pic pic pic"),
+                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "A pic is a pic"),
+                new picture_1.Picture("/pics/misc" + "/sign.jpg", "Well you know pic"),
+                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic"),
+                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic")];
         }
         return Gallery;
     }());

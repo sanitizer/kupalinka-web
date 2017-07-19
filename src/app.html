@@ -1,21 +1,10 @@
 <template>
-  <require from="bootstrap/css/bootstrap.css"></require>
-  <require from="resources/css/styles.css"></require>
+  <require from="materialize-css/dist/css/materialize.css"></require>
+  <require from="./nav-bar.html"></require>
 
-  <h2 class="ui top attached blue header" style = "background-color: lightcyan">
-    Kupalinka <small>Adult Daycare</small>
-  </h2>
+  <nav-bar router.bind="router"></nav-bar>
 
-  <div class="default-margin-around">
-    <div class = "ui fluid six item menu">
-      <a href = ${row.href} class = "${row.isActive ? 'item blue active' : 'item'}" repeat.for = "row of router.navigation">
-        ${row.title}
-      </a>
-    </div>
-  </div>
-
-  <div class ="page-host">
+  <div class="page-host">
     <router-view></router-view>
   </div>
-
 </template>

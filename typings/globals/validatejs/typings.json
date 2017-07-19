@@ -1,8 +1,0 @@
-{
-  "resolution": "main",
-  "tree": {
-    "src": "https://raw.githubusercontent.com/aurelia/validatejs/master/lib/validatejs.d.ts",
-    "raw": "github:aurelia/validatejs/lib/validatejs.d.ts",
-    "typings": "https://raw.githubusercontent.com/aurelia/validatejs/master/lib/validatejs.d.ts"
-  }
-}

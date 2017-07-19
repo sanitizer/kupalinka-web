@@ -51,13 +51,27 @@ define('environment',["require", "exports"], function (require, exports) {
     };
 });
 
-define('main',["require", "exports", "./environment"], function (require, exports, environment_1) {
+define('main',["require", "exports", "./environment", "aurelia-i18n", "i18next-xhr-backend"], function (require, exports, environment_1, aurelia_i18n_1, Backend) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function configure(aurelia) {
         aurelia.use
             .standardConfiguration()
-            .feature('resources');
+            .feature('resources')
+            .plugin('aurelia-i18n', function (instance) {
+            var aliases = ['t', 'i18n'];
+            aurelia_i18n_1.TCustomAttribute.configureAliases(aliases);
+            instance.i18next.use(Backend);
+            return instance.setup({
+                backend: {
+                    loadPath: './locales/{{lng}}/{{ns}}.json',
+                },
+                attributes: aliases,
+                lng: 'en',
+                fallbackLng: 'ru',
+                debug: false
+            });
+        });
         if (environment_1.default.debug) {
             aurelia.use.developmentLogging();
         }
@@ -316,6 +330,18 @@ define('resources/model/route-model',["require", "exports"], function (require, 
         return RouteModel;
     }());
     exports.default = RouteModel;
+});
+
+define('resources/utils/common',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    function loadDataFromFile(filePath) {
+        var reader = new XMLHttpRequest();
+        reader.open("GET", filePath, false);
+        reader.send(false);
+        return reader.responseText;
+    }
+    exports.loadDataFromFile = loadDataFromFile;
 });
 
 var __extends = (this && this.__extends) || (function () {
@@ -808,18 +834,6 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
         return IrinaMonosova;
     }(employee_1.Employee));
     exports.IrinaMonosova = IrinaMonosova;
-});
-
-define('resources/utils/common',["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    function loadDataFromFile(filePath) {
-        var reader = new XMLHttpRequest();
-        reader.open("GET", filePath, false);
-        reader.send(false);
-        return reader.responseText;
-    }
-    exports.loadDataFromFile = loadDataFromFile;
 });
 
 define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing inverted menu\"><h2 class=\"ui top attached blue header item\"><img class=\"ui image\" src=\"${headerPic.path}\"> &ensp;<span class=\"common-font\"> ${header} <small>&ensp;${subHeader}</small></span></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });

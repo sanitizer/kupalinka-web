@@ -19,7 +19,9 @@
   "filesGlob": [
     "./src/**/*.ts",
     "./test/**/*.ts",
-    "./custom_typings/**/*.d.ts"
+    "./custom_typings/**/*.d.ts",
+    "./typings/*.d.ts" // this must be specified in case you use typings(https://github.com/typings/typings)
+//    "./your_custom_typings_folder_path/**/*.d.ts", // if you use both typings files from this repository (`doc/*.d.ts`)
   ],
   "atom": {
     "rewriteTsconfig": false

@@ -7,25 +7,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define('app',["require", "exports", "./resources/model/route-model", "aurelia-templating", "./resources/model/picture", "./constants"], function (require, exports, route_model_1, aurelia_templating_1, picture_1, constants_1) {
+define('app',["require", "exports", "./resources/model/route-model", "aurelia-templating", "aurelia-framework", "./resources/model/picture", "./constants", "aurelia-i18n", "./resources/model/language"], function (require, exports, route_model_1, aurelia_templating_1, aurelia_framework_1, picture_1, constants_1, aurelia_i18n_1, language_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var App = (function () {
-        function App() {
-        }
-        App.prototype.configureRouter = function (config, router) {
+        function App(i18n) {
+            this.i18n = i18n;
             this.header = "Kupalinka";
             this.subHeader = "Adult Daycare";
+            this.dropDownText = this.i18n.tr(this.getDropDownTextKey());
             this.headerPic = new picture_1.Picture(constants_1.BASE_MISC_DIR + "sign.jpg");
+            this.languages = [new language_1.Language("en", "English"),
+                new language_1.Language("ru", "Russian")];
+        }
+        App.prototype.configureRouter = function (config, router) {
             config.title = "Kupalinka";
             var routes = [];
-            routes.push(new route_model_1.default(["", "home"], "home", "home/home", "Home"));
-            routes.push(new route_model_1.default(["services"], "services", "services/services", "Services"));
-            routes.push(new route_model_1.default(["staff"], "staff", "staff/staff", "Staff"));
-            routes.push(new route_model_1.default(["gallery"], "gallery", "gallery/gallery", "Photo Gallery"));
-            routes.push(new route_model_1.default(["contact"], "contact", "contact/contact", "Contact Us"));
+            routes.push(new route_model_1.default(["", "home"], "home", "home/home", this.i18n.tr("nav:home")));
+            routes.push(new route_model_1.default(["services"], "services", "services/services", this.i18n.tr("nav:services")));
+            routes.push(new route_model_1.default(["staff"], "staff", "staff/staff", this.i18n.tr("nav:staff")));
+            routes.push(new route_model_1.default(["gallery"], "gallery", "gallery/gallery", this.i18n.tr("nav:gallery")));
+            routes.push(new route_model_1.default(["contact"], "contact", "contact/contact", this.i18n.tr("nav:contact")));
             config.map(routes);
             this.router = router;
+        };
+        App.prototype.getDropDownTextKey = function () {
+            return "dropDownText";
         };
         return App;
     }());
@@ -33,6 +40,30 @@ define('app',["require", "exports", "./resources/model/route-model", "aurelia-te
         aurelia_templating_1.bindable,
         __metadata("design:type", Object)
     ], App.prototype, "router", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], App.prototype, "header", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], App.prototype, "subHeader", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", picture_1.Picture)
+    ], App.prototype, "headerPic", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], App.prototype, "dropDownText", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", Array)
+    ], App.prototype, "languages", void 0);
+    App = __decorate([
+        aurelia_framework_1.inject(aurelia_i18n_1.I18N),
+        __metadata("design:paramtypes", [Object])
+    ], App);
     exports.App = App;
 });
 
@@ -70,8 +101,8 @@ define('main',["require", "exports", "./environment", "aurelia-i18n", "i18next-x
                 lng: 'en',
                 fallbackLng: 'ru',
                 debug: false,
-                ns: ["translation", "nav"],
-                defaultNS: "translation"
+                ns: ["tr", "nav"],
+                defaultNS: "tr"
             });
         });
         if (environment_1.default.debug) {
@@ -152,15 +183,23 @@ define('components/home/home',["require", "exports"], function (require, exports
     exports.Home = Home;
 });
 
-define('components/services/service',["require", "exports", "../../resources/utils/common"], function (require, exports, common_1) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+define('components/services/service',["require", "exports", "aurelia-templating"], function (require, exports, aurelia_templating_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Service = (function () {
-        function Service() {
-            this.mainHeader = this.getMainHeader();
-            this.mainText = this.getMainText();
-            this.dividerText = this.getDividerText();
-            this.data = common_1.loadDataFromFile(this.getDataPath());
+        function Service(i18n) {
+            this.i18n = i18n;
+            this.name = this.i18n.tr(this.getNameKey());
+            this.data = this.i18n.tr(this.getDataKey());
             this.partialData = this.getPartOfData();
         }
         Service.prototype.getPartOfData = function () {
@@ -175,14 +214,13 @@ define('components/services/service',["require", "exports", "../../resources/uti
         Service.prototype.showFullData = function () {
             return this.getData().length <= this.getMaxDescrSize();
         };
-        Service.prototype.getMainHeader = function () {
-            return "";
-        };
-        Service.prototype.getDividerText = function () {
-            return "";
-        };
-        Service.prototype.getMainText = function () { return ""; };
         Service.prototype.getDataPath = function () {
+            return "";
+        };
+        Service.prototype.getDataKey = function () {
+            return "";
+        };
+        Service.prototype.getNameKey = function () {
             return "";
         };
         Service.prototype.onClick = function () {
@@ -190,65 +228,68 @@ define('components/services/service',["require", "exports", "../../resources/uti
         };
         return Service;
     }());
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], Service.prototype, "name", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], Service.prototype, "partialData", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], Service.prototype, "data", void 0);
     exports.Service = Service;
 });
 
-define('components/services/services',["require", "exports", "./customers/art_classes", "./customers/bioceramics", "./customers/computer_class", "./customers/drama_club", "./customers/esl_class", "./customers/extended_working_hours", "./customers/field_trips", "./customers/haircuts", "./customers/karaoke", "./customers/massage_therapist", "./customers/skin_care_classes", "./customers/social_dances", "./customers/wellness_classes"], function (require, exports, art_classes_1, bioceramics_1, computer_class_1, drama_club_1, esl_class_1, extended_working_hours_1, field_trips_1, haircuts_1, karaoke_1, massage_therapist_1, skin_care_classes_1, social_dances_1, wellness_classes_1) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+define('components/services/services',["require", "exports", "./customers/art_classes", "./customers/bioceramics", "./customers/computer_class", "./customers/drama_club", "./customers/esl_class", "./customers/extended_working_hours", "./customers/field_trips", "./customers/haircuts", "./customers/karaoke", "./customers/massage_therapist", "./customers/skin_care_classes", "./customers/social_dances", "./customers/wellness_classes", "aurelia-i18n", "aurelia-framework"], function (require, exports, art_classes_1, bioceramics_1, computer_class_1, drama_club_1, esl_class_1, extended_working_hours_1, field_trips_1, haircuts_1, karaoke_1, massage_therapist_1, skin_care_classes_1, social_dances_1, wellness_classes_1, aurelia_i18n_1, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Services = (function () {
-        function Services() {
-            this.mainHeader = this.getMainHeader();
-            this.mainText = this.getMainText();
-            this.dividerText = this.getDividerText();
-            this.services = [new art_classes_1.ArtClasses(),
-                new bioceramics_1.Bioceramics(),
-                new computer_class_1.ComputerClass(),
-                new drama_club_1.DramaClub(),
-                new esl_class_1.EslClass(),
-                new extended_working_hours_1.ExtendedWorkingHours(),
-                new field_trips_1.FieldTrips(),
-                new haircuts_1.Haircuts(),
-                new karaoke_1.Karaoke(),
-                new massage_therapist_1.MassageTherapist(),
-                new skin_care_classes_1.SkinCareClass(),
-                new social_dances_1.SocialDances(),
-                new wellness_classes_1.WellnessClasses()];
+        function Services(i18n) {
+            this.i18n = i18n;
+            this.mainHeader = this.i18n.tr(this.getMainHeaderKey());
+            this.mainText = this.i18n.tr(this.getMainTextKey());
+            this.dividerText = this.i18n.tr(this.getDividerTextKey());
+            this.services = [new art_classes_1.ArtClasses(i18n),
+                new bioceramics_1.Bioceramics(i18n),
+                new computer_class_1.ComputerClass(i18n),
+                new drama_club_1.DramaClub(i18n),
+                new esl_class_1.EslClass(i18n),
+                new extended_working_hours_1.ExtendedWorkingHours(i18n),
+                new field_trips_1.FieldTrips(i18n),
+                new haircuts_1.Haircuts(i18n),
+                new karaoke_1.Karaoke(i18n),
+                new massage_therapist_1.MassageTherapist(i18n),
+                new skin_care_classes_1.SkinCareClass(i18n),
+                new social_dances_1.SocialDances(i18n),
+                new wellness_classes_1.WellnessClasses(i18n)];
         }
-        Services.prototype.getMainHeader = function () {
-            return "We are here to make your stay pleasant and fun";
+        Services.prototype.getMainHeaderKey = function () {
+            return "servicesHeader";
         };
-        Services.prototype.getDividerText = function () {
-            return "List Of Services";
+        Services.prototype.getDividerTextKey = function () {
+            return "dividerText";
         };
-        Services.prototype.getMainText = function () {
-            return "Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
-                "                d fk vdsnalkfhndsalkjfhn vsdkljafh nvsdkfhn vlksjdfhn vdslkfm njklh lkdjsafh nlkdshfn vsnldkjfh\n" +
-                "                sdf nksdhflk vjhsdfl vlkjsd dhflksdjdhf kldsjdhf nvksdjdfhn kldsjdhn flkjsdh fnlkdsjhf nvsd\n" +
-                "                dfdslkfh sldnkjhf lskdjhf nldjkshf lkjsddhf lkjds nf lkjsflkjsdhfn vkljsdhf vklsdj fvs'd\n" +
-                "                ds f sdl;kf nfndsl;kfh vnsldkjhf lsdkjfhdsakjghl ahdsjhljv mcnv,mzriutyewpiytdo[ifygaspd;j hv198367tyewdsofh nsd\n" +
-                "                 lhds fhp283ty09du fhni2 ht9hdfnil hn289 fhsd9uvn 8o7h2 9fnwdasp9h v8yw er.\n" +
-                "                Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
-                "                d fk vdsnalkfhndsalkjfhn vsdkljafh nvsdkfhn vlksjdfhn vdslkfm njklh lkdjsafh nlkdshfn vsnldkjfh\n" +
-                "                sdf nksdhflk vjhsdfl vlkjsd dhflksdjdhf kldsjdhf nvksdjdfhn kldsjdhn flkjsdh fnlkdsjhf nvsd\n" +
-                "                dfdslkfh sldnkjhf lskdjhf nldjkshf lkjsddhf lkjds nf lkjsflkjsdhfn vkljsdhf vklsdj fvs'd\n" +
-                "                ds f sdl;kf nfndsl;kfh vnsldkjhf lsdkjfhdsakjghl ahdsjhljv mcnv,mzriutyewpiytdo[ifygaspd;j hv198367tyewdsofh nsd\n" +
-                "                 lhds fhp283ty09du fhni2 ht9hdfnil hn289 fhsd9uvn 8o7h2 9fnwdasp9h v8yw er.\n" +
-                "                Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
-                "                d fk vdsnalkfhndsalkjfhn vsdkljafh nvsdkfhn vlksjdfhn vdslkfm njklh lkdjsafh nlkdshfn vsnldkjfh\n" +
-                "                sdf nksdhflk vjhsdfl vlkjsd dhflksdjdhf kldsjdhf nvksdjdfhn kldsjdhn flkjsdh fnlkdsjhf nvsd\n" +
-                "                dfdslkfh sldnkjhf lskdjhf nldjkshf lkjsddhf lkjds nf lkjsflkjsdhfn vkljsdhf vklsdj fvs'd\n" +
-                "                ds f sdl;kf nfndsl;kfh vnsldkjhf lsdkjfhdsakjghl ahdsjhljv mcnv,mzriutyewpiytdo[ifygaspd;j hv198367tyewdsofh nsd\n" +
-                "                 lhds fhp283ty09du fhni2 ht9hdfnil hn289 fhsd9uvn 8o7h2 9fnwdasp9h v8yw er.\n" +
-                "                Helsfkd jsaf;l kdslfk jsd ;lfkjsd ;klf dslk fjdl;sj fnvlksdjfnvdsjf;ln kdskjfn vkjsdh nfv\n" +
-                "                d fk vdsnalkfhndsalkjfhn vsdkljafh nvsdkfhn vlksjdfhn vdslkfm njklh lkdjsafh nlkdshfn vsnldkjfh\n" +
-                "                sdf nksdhflk vjhsdfl vlkjsd dhflksdjdhf kldsjdhf nvksdjdfhn kldsjdhn flkjsdh fnlkdsjhf nvsd\n" +
-                "                dfdslkfh sldnkjhf lskdjhf nldjkshf lkjsddhf lkjds nf lkjsflkjsdhfn vkljsdhf vklsdj fvs'd\n" +
-                "                ds f sdl;kf nfndsl;kfh vnsldkjhf lsdkjfhdsakjghl ahdsjhljv mcnv,mzriutyewpiytdo[ifygaspd;j hv198367tyewdsofh nsd\n" +
-                "                 lhds fhp283ty09du fhni2 ht9hdfnil hn289 fhsd9uvn 8o7h2 9fnwdasp9h v8yw er.";
+        Services.prototype.getMainTextKey = function () {
+            return "servicesText";
         };
         return Services;
     }());
+    Services = __decorate([
+        aurelia_framework_1.inject(aurelia_i18n_1.I18N),
+        __metadata("design:paramtypes", [Object])
+    ], Services);
     exports.Services = Services;
 });
 
@@ -300,6 +341,19 @@ define('resources/model/address',["require", "exports"], function (require, expo
 define('resources/model/data_format',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+});
+
+define('resources/model/language',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Language = (function () {
+        function Language(locale, displayName) {
+            this.locale = locale;
+            this.displayName = displayName;
+        }
+        return Language;
+    }());
+    exports.Language = Language;
 });
 
 define('resources/model/picture',["require", "exports"], function (require, exports) {
@@ -361,14 +415,19 @@ define('components/services/customers/art_classes',["require", "exports", "../..
     Object.defineProperty(exports, "__esModule", { value: true });
     var ArtClasses = (function (_super) {
         __extends(ArtClasses, _super);
-        function ArtClasses() {
-            var _this = _super.call(this) || this;
-            _this.name = "Art Classes";
+        function ArtClasses(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
         }
         ArtClasses.prototype.getDataPath = function () {
             return constants_1.BASE_DATA_DIR + "art_classes.txt";
+        };
+        ArtClasses.prototype.getNameKey = function () {
+            return "artName";
+        };
+        ArtClasses.prototype.getDataKey = function () {
+            return "artData";
         };
         return ArtClasses;
     }(service_1.Service));
@@ -390,8 +449,8 @@ define('components/services/customers/bioceramics',["require", "exports", "../..
     Object.defineProperty(exports, "__esModule", { value: true });
     var Bioceramics = (function (_super) {
         __extends(Bioceramics, _super);
-        function Bioceramics() {
-            var _this = _super.call(this) || this;
+        function Bioceramics(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Bioceramics";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -419,8 +478,8 @@ define('components/services/customers/computer_class',["require", "exports", "..
     Object.defineProperty(exports, "__esModule", { value: true });
     var ComputerClass = (function (_super) {
         __extends(ComputerClass, _super);
-        function ComputerClass() {
-            var _this = _super.call(this) || this;
+        function ComputerClass(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Computer Class";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -455,8 +514,8 @@ define('components/services/customers/drama_club',["require", "exports", "../../
     Object.defineProperty(exports, "__esModule", { value: true });
     var DramaClub = (function (_super) {
         __extends(DramaClub, _super);
-        function DramaClub() {
-            var _this = _super.call(this) || this;
+        function DramaClub(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Drama Club";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -484,8 +543,8 @@ define('components/services/customers/esl_class',["require", "exports", "../../.
     Object.defineProperty(exports, "__esModule", { value: true });
     var EslClass = (function (_super) {
         __extends(EslClass, _super);
-        function EslClass() {
-            var _this = _super.call(this) || this;
+        function EslClass(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "ESL Class";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -513,8 +572,8 @@ define('components/services/customers/extended_working_hours',["require", "expor
     Object.defineProperty(exports, "__esModule", { value: true });
     var ExtendedWorkingHours = (function (_super) {
         __extends(ExtendedWorkingHours, _super);
-        function ExtendedWorkingHours() {
-            var _this = _super.call(this) || this;
+        function ExtendedWorkingHours(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Extended Working Hours";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -542,8 +601,8 @@ define('components/services/customers/field_trips',["require", "exports", "../..
     Object.defineProperty(exports, "__esModule", { value: true });
     var FieldTrips = (function (_super) {
         __extends(FieldTrips, _super);
-        function FieldTrips() {
-            var _this = _super.call(this) || this;
+        function FieldTrips(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Field Trips";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -571,8 +630,8 @@ define('components/services/customers/haircuts',["require", "exports", "../../..
     Object.defineProperty(exports, "__esModule", { value: true });
     var Haircuts = (function (_super) {
         __extends(Haircuts, _super);
-        function Haircuts() {
-            var _this = _super.call(this) || this;
+        function Haircuts(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Haircuts";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -600,8 +659,8 @@ define('components/services/customers/karaoke',["require", "exports", "../../../
     Object.defineProperty(exports, "__esModule", { value: true });
     var Karaoke = (function (_super) {
         __extends(Karaoke, _super);
-        function Karaoke() {
-            var _this = _super.call(this) || this;
+        function Karaoke(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Karaoke";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -629,8 +688,8 @@ define('components/services/customers/massage_therapist',["require", "exports", 
     Object.defineProperty(exports, "__esModule", { value: true });
     var MassageTherapist = (function (_super) {
         __extends(MassageTherapist, _super);
-        function MassageTherapist() {
-            var _this = _super.call(this) || this;
+        function MassageTherapist(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Massage Therapist";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -658,8 +717,8 @@ define('components/services/customers/skin_care_classes',["require", "exports", 
     Object.defineProperty(exports, "__esModule", { value: true });
     var SkinCareClass = (function (_super) {
         __extends(SkinCareClass, _super);
-        function SkinCareClass() {
-            var _this = _super.call(this) || this;
+        function SkinCareClass(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Skin Care Class";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -687,8 +746,8 @@ define('components/services/customers/social_dances',["require", "exports", "../
     Object.defineProperty(exports, "__esModule", { value: true });
     var SocialDances = (function (_super) {
         __extends(SocialDances, _super);
-        function SocialDances() {
-            var _this = _super.call(this) || this;
+        function SocialDances(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Social Dances";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -716,8 +775,8 @@ define('components/services/customers/wellness_classes',["require", "exports", "
     Object.defineProperty(exports, "__esModule", { value: true });
     var WellnessClasses = (function (_super) {
         __extends(WellnessClasses, _super);
-        function WellnessClasses() {
-            var _this = _super.call(this) || this;
+        function WellnessClasses(i18n) {
+            var _this = _super.call(this, i18n) || this;
             _this.name = "Wellness Classes";
             _this.pic = new picture_1.Picture(constants_1.BASE_SERVICES_DIR + "pic.jpg");
             return _this;
@@ -838,7 +897,7 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
     exports.IrinaMonosova = IrinaMonosova;
 });
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing inverted menu\"><h2 class=\"ui top attached blue header item\"><img class=\"ui image\" src=\"${headerPic.path}\"> &ensp;<span class=\"common-font\"> ${header} <small>&ensp;${subHeader}</small></span></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><img class=\"ui image\" src=\"${headerPic.path}\"> &ensp;<span class=\"common-font\"> ${header} <small>&ensp;${subHeader}</small></span></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><div class=\"ui vertical menu\"><div class=\"ui dropdown item\">${dropDownText} <i class=\"dropdown icon\"></i><div class=\"menu\"><div class=\"item\" repeat.for=\"l of languages\">${l.displayName}</div></div></div></div></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
 define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".lr20 {\n    margin-left: 20px;\n    margin-right: 20px;\n}\n\n.lr30 {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: \"SansSerif\";\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}"; });
 define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><h1 class=\"ui header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub header margin10\"><span class=\"common-font\">${text}</span></div></h1><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"header\"><bold>${addr.name}</bold></div><div class=\"ui divider\"></div>${addr.street}<br>Office Hours: ${addr.officeHours}<br>Phone: ${addr.phoneNum}<br>Fax: ${addr.fax}<br>Email: ${addr.email}<br></div></div></div></template>"; });
 define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><div class=\"ui four column centered equal width grid\"><div class=\"left floated column\" repeat.for=\"pic of pics\"><div class=\"ui basic segment common-font\"><a class=\"medium image\" href=\"${pic.path}\" target=\"_blank\"><img class=\"ui bordered rounded medium image\" src=\"${pic.path}\"></a><div class=\"content\">${pic.description}</div></div></div></div></div></template>"; });

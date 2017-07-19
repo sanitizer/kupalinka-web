@@ -1,24 +1,21 @@
 import {DataFormat} from "../../resources/model/data_format";
-import {loadDataFromFile} from "../../resources/utils/common";
+import {I18N} from "aurelia-i18n";
+import {bindable} from "aurelia-templating";
 
 /**
  * Created by sanitizer on 7/14/17.
  */
-
 export class Service implements DataFormat {
 
-    name: string;
-    mainHeader: string;
-    mainText: string;
-    dividerText: string;
-    partialData: string;
-    data: string;
+    @bindable name: string;
+    @bindable partialData: string;
+    @bindable data: string;
+    i18n: I18N;
 
-    constructor(){
-        this.mainHeader = this.getMainHeader();
-        this.mainText = this.getMainText();
-        this.dividerText = this.getDividerText();
-        this.data = loadDataFromFile(this.getDataPath());
+    constructor(i18n){
+        this.i18n = i18n;
+        this.name = this.i18n.tr(this.getNameKey());
+        this.data = this.i18n.tr(this.getDataKey());
         this.partialData = this.getPartOfData();
     }
 
@@ -38,17 +35,15 @@ export class Service implements DataFormat {
         return this.getData().length <= this.getMaxDescrSize();
     }
 
-    getMainHeader(): string {
-        return "";
-    }
-
-    getDividerText(): string {
-        return "";
-    }
-
-    getMainText(): string {return "";}
-
     getDataPath(): string {
+        return "";
+    }
+
+    getDataKey(): string {
+        return "";
+    }
+
+    getNameKey(): string {
         return "";
     }
 

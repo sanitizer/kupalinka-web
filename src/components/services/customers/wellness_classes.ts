@@ -8,8 +8,8 @@ import {BASE_DATA_DIR, BASE_SERVICES_DIR} from "./constants";
 export class WellnessClasses extends Service {
     pic: Picture;
 
-    constructor() {
-        super();
+    constructor(i18n) {
+        super(i18n);
         this.name = "Wellness Classes";
         this.pic = new Picture(BASE_SERVICES_DIR + "pic.jpg");
     }

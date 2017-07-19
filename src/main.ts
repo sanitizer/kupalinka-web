@@ -23,9 +23,12 @@ export function configure(aurelia) {
               attributes: aliases,
               lng : 'en',
               fallbackLng : 'ru',
-              debug : false
+              debug : false,
+              ns: ["translation", "nav"],
+              defaultNS: "translation"
           });
       });
+
 
   if (environment.debug) {
     aurelia.use.developmentLogging();

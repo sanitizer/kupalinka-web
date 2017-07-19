@@ -69,7 +69,9 @@ define('main',["require", "exports", "./environment", "aurelia-i18n", "i18next-x
                 attributes: aliases,
                 lng: 'en',
                 fallbackLng: 'ru',
-                debug: false
+                debug: false,
+                ns: ["translation", "nav"],
+                defaultNS: "translation"
             });
         });
         if (environment_1.default.debug) {

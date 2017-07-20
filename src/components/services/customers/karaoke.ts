@@ -1,18 +1,25 @@
+import {Service} from "../service";
+import {BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
 
-export class Karaoke implements Service {
-    name: string;
-    description: string;
+export class Karaoke extends Service {
 
-    constructor() {
-        this.name = "Karaoke";
-        this.description = this.getDescription();
+    constructor(i18n) {
+        super(i18n);
     }
 
-    private getDescription() {
-        return "We also sing. Like proooooossss!!!";
+    getPicPath(): string {
+        return BASE_SERVICES_DIR + "pic.jpg";
+    }
+
+    getNameKey(): string {
+        return "karaokeName";
+    }
+
+    getDataKey(): string {
+        return "karaokeData";
     }
 
 }

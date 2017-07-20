@@ -1,18 +1,25 @@
+import {Service} from "../service";
+import {BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
 
-export class DramaClub implements Service {
-    name: string;
-    description: string;
+export class DramaClub extends Service {
 
-    constructor() {
-        this.name = "Drama Club";
-        this.description = this.getDescription();
+    constructor(i18n) {
+        super(i18n);
     }
 
-    private getDescription() {
-        return "Oh yes!!! We have a lot of drama here.";
+    getPicPath(): string {
+        return BASE_SERVICES_DIR + "pic.jpg";
+    }
+
+    getNameKey(): string {
+        return "dramaName";
+    }
+
+    getDataKey(): string {
+        return "dramaData";
     }
 
 }

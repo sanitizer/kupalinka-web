@@ -1,18 +1,25 @@
+import {Service} from "../service";
+import {BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
 
-export class SkinCareClass implements Service {
-    name: string;
-    description: string;
+export class SkinCareClass extends Service {
 
-    constructor() {
-        this.name = "Skin Care Class";
-        this.description = this.getDescription();
+    constructor(i18n) {
+        super(i18n);
     }
 
-    private getDescription() {
-        return "We teach you how to care of your skin.";
+    getPicPath(): string {
+        return BASE_SERVICES_DIR + "pic.jpg";
+    }
+
+    getNameKey(): string {
+        return "skinCareName";
+    }
+
+    getDataKey(): string {
+        return "skinCareData";
     }
 
 }

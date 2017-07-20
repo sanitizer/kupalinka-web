@@ -1,18 +1,26 @@
+import {Service} from "../service";
+import {BASE_SERVICES_DIR} from "./constants";
+
 /**
  * Created by sanitizer on 7/14/17.
  */
 
-export class Bioceramics implements Service {
-    name: string;
-    description: string;
+export class Bioceramics extends Service {
 
-    constructor() {
-        this.name = "Bioceramics";
-        this.description = this.getDescription();
+    constructor(i18n) {
+        super(i18n);
     }
 
-    private getDescription() {
-        return "We do whatever bioceramics is. Cool isnt it?";
+    getPicPath(): string {
+        return BASE_SERVICES_DIR + "pic.jpg";
+    }
+
+    getNameKey(): string {
+        return "bioName";
+    }
+
+    getDataKey(): string {
+        return "bioData";
     }
 
 }

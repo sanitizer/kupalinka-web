@@ -41,12 +41,12 @@ export class App {
         //
         // config.map(routes);
         config.map([
-            { route: ['', 'home'], name: 'home',       moduleId: PLATFORM.moduleName('./components/home/home'),           nav: true, title: 'Home' },
-            { route: 'welcome',    name: 'welcome',    moduleId: PLATFORM.moduleName('./welcome'),                        nav: true, title: 'Welcome' },
-            { route: 'services',   name: 'services',   moduleId: PLATFORM.moduleName('./components/services/services'),   nav: true, title: 'Services' },
-            { route: 'staff',      name: 'staff',      moduleId: PLATFORM.moduleName('./components/staff/staff'),         nav: true, title: 'Staff' },
-            { route: 'gallery',    name: 'gallery',    moduleId: PLATFORM.moduleName('./components/gallery/gallery'),     nav: true, title: 'Photo Gallery' },
-            { route: 'contact',    name: 'contact',    moduleId: PLATFORM.moduleName('./components/contact/contact'),     nav: true, title: 'Contact Us' }
+            { route: ['', 'home'], name: 'home',       moduleId: PLATFORM.moduleName('./components/home/home'),           nav: true, title: this.i18n.tr('nav:Home') },
+            { route: 'welcome',    name: 'welcome',    moduleId: PLATFORM.moduleName('./welcome'),                        nav: true, title: this.i18n.tr('nav:Welcome') },
+            { route: 'services',   name: 'services',   moduleId: PLATFORM.moduleName('./components/services/services'),   nav: true, title: this.i18n.tr('nav:Services') },
+            { route: 'staff',      name: 'staff',      moduleId: PLATFORM.moduleName('./components/staff/staff'),         nav: true, title: this.i18n.tr('nav:Staff') },
+            { route: 'gallery',    name: 'gallery',    moduleId: PLATFORM.moduleName('./components/gallery/gallery'),     nav: true, title: this.i18n.tr('nav:Photo Gallery') },
+            { route: 'contact',    name: 'contact',    moduleId: PLATFORM.moduleName('./components/contact/contact'),     nav: true, title: this.i18n.tr('nav:Contact Us') }
         ]);
 
         this.router = router;

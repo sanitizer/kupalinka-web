@@ -1,6 +1,6 @@
 {
   "name": "typescript-project",
-  "description": "An Aurelia client application.",
+  "description": "Kupalinka adult daycare info site.",
   "version": "0.1.0",
   "repository": {
     "type": "???",
@@ -8,12 +8,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "aurelia-animator-css": "^1.0.1",
     "aurelia-bootstrapper": "^2.1.0",
-    "aurelia-fetch-client": "^1.1.2",
-    "aurelia-i18n": "^1.6.2",
     "aurelia-validatejs": "^0.7.0",
-    "aurelia-validation": "^1.0.0",
     "axios": "^0.16.1",
     "bluebird": "^3.4.1",
     "bootstrap": "^3.3.7",
@@ -21,8 +17,7 @@
     "i18next-xhr-backend": "^1.4.2",
     "jquery": "^3.2.1",
     "requirejs": "^2.3.2",
-    "text": "github:requirejs/text#latest",
-    "whatwg-fetch": "^2.0.3"
+    "text": "github:requirejs/text#latest"
   },
   "peerDependencies": {},
   "scripts": {
@@ -62,11 +57,7 @@
     "@types/jasmine": "^2.2.0"
   },
   "jspm": {
-    "dependencies": {
-      "aurelia-i18n": "npm:aurelia-i18n@^1.6.2",
-      "fetch": "github:github/fetch@^1.0.0",
-      "martingust/aurelia-repeat-strategies": "github:martingust/aurelia-repeat-strategies@master"
-    },
+    "dependencies": {},
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",

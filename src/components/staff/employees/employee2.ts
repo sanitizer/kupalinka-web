@@ -7,29 +7,25 @@ import {BASE_EMPLOYEES_DIR} from "./constants";
  */
 
 export class IrinaMonosova extends Employee {
-    pic: Picture;
 
-    constructor() {
-        super();
-        this.name = "Irina Monosova";
-        this.position = "Assistant to regional manager";
-        this.pic = new Picture(BASE_EMPLOYEES_DIR + "pic.jpg");
+    constructor(i18n) {
+        super(i18n);
     }
 
-    getDescription(): string{
-        return "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
-            "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
-            "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
-            "i work here. yes i work here. es i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
-            "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
-            "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
-            "i work here. yes i work here. es i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
-            "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
-            "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
-            "i work here. yes i work here. es i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. " +
-            "yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i " +
-            "work here. yes i work here. yes i work here. yes i work here. yes i work here. yes i work here. yes " +
-            "i work here. yes i work here. ";
+    getPicPath(): string {
+        return BASE_EMPLOYEES_DIR + "pic.jpg";
+    }
+
+    getDataKey(): string {
+        return "e2Data";
+    }
+
+    getNameKey(): string {
+        return "e2Name";
+    }
+
+    getPositionKey(): string {
+        return "e2Position";
     }
 
 }

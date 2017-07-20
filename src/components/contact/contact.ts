@@ -1,17 +1,22 @@
 import {Address} from "../../resources/model/address";
+import {I18N} from "aurelia-i18n";
+import {inject} from 'aurelia-framework';
+
 /**
  * Created by sanitizer on 7/14/17.
  */
-
+@inject(I18N)
 export class Contact {
 
     mainHeader: string;
     text: string;
     addresses: Array<Address>;
+    i18n: I18N;
 
-    constructor() {
-        this.mainHeader = this.getMainHeader();
-        this.text = this.getText();
+    constructor(i18n) {
+        this.i18n = i18n;
+        this.mainHeader = this.i18n.tr(this.getHeaderKey());
+        this.text = this.i18n.tr(this.getTextKey());
         this.addresses = [new Address("Main Office",
                                       "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012",
                                       "9 am - 5 pm, Monday-Friday",
@@ -20,14 +25,12 @@ export class Contact {
                                       "kupalinkaadc@gmail.com")];
     }
 
-    private getMainHeader(): string {
-        return "We are here to help - Contact us";
+    private getHeaderKey(): string {
+        return "contactHeader";
     }
 
-    private getText(): string {
-        return "Give us a call, send an email, or drop by to have a conversation. We are here to help out in whatever way we can.";
-
-
+    private getTextKey(): string {
+        return "contactText";
     }
 
 }

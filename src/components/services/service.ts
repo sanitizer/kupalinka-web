@@ -1,6 +1,7 @@
 import {DataFormat} from "../../resources/model/data_format";
 import {I18N} from "aurelia-i18n";
 import {bindable} from "aurelia-templating";
+import {Picture} from "../../resources/model/picture";
 
 /**
  * Created by sanitizer on 7/14/17.
@@ -10,6 +11,7 @@ export class Service implements DataFormat {
     @bindable name: string;
     @bindable partialData: string;
     @bindable data: string;
+    @bindable pic: Picture;
     i18n: I18N;
 
     constructor(i18n){
@@ -17,9 +19,10 @@ export class Service implements DataFormat {
         this.name = this.i18n.tr(this.getNameKey());
         this.data = this.i18n.tr(this.getDataKey());
         this.partialData = this.getPartOfData();
+        this.pic = new Picture(this.getPicPath());
     }
 
-    getPartOfData(): string {
+    protected getPartOfData(): string {
         return this.showFullData() ? this.getData() : this.getData().substring(0, this.getMaxDescrSize()/2) + "...";
     }
 
@@ -27,16 +30,12 @@ export class Service implements DataFormat {
         return this.data;
     }
 
-    getMaxDescrSize(): number {
+    protected getMaxDescrSize(): number {
         return 100;
     }
 
-    showFullData(): boolean {
+    protected showFullData(): boolean {
         return this.getData().length <= this.getMaxDescrSize();
-    }
-
-    getDataPath(): string {
-        return "";
     }
 
     getDataKey(): string {
@@ -44,6 +43,10 @@ export class Service implements DataFormat {
     }
 
     getNameKey(): string {
+        return "";
+    }
+
+    getPicPath(): string {
         return "";
     }
 

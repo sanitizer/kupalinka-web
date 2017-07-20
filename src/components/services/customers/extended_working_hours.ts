@@ -1,18 +1,25 @@
+import {Service} from "../service";
+import {BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
 
-export class ExtendedWorkingHours implements Service {
-    name: string;
-    description: string;
+export class ExtendedWorkingHours extends Service {
 
-    constructor() {
-        this.name = "Extended Working Hours";
-        this.description = this.getDescription();
+    constructor(i18n) {
+        super(i18n);
     }
 
-    private getDescription() {
-        return "We work long and hard for you.";
+    getPicPath(): string {
+        return BASE_SERVICES_DIR + "pic.jpg";
+    }
+
+    getNameKey(): string {
+        return "ewhName";
+    }
+
+    getDataKey(): string {
+        return "ewhData";
     }
 
 }

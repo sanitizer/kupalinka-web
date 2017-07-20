@@ -8,6 +8,7 @@
     "sourceRoot": "src",
     "allowJs": true,
     "baseUrl": "src",
+    "allowSyntheticDefaultImports": true,
     "lib": [
       "es2017", "dom"
     ]

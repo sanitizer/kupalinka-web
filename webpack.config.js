@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { AureliaPlugin } = require('aurelia-webpack-plugin');
+const { AureliaPlugin, ModuleDependenciesPlugin } = require('aurelia-webpack-plugin');
 const { optimize: { CommonsChunkPlugin }, ProvidePlugin } = require('webpack');
 const { TsConfigPathsPlugin, CheckerPlugin } = require('awesome-typescript-loader');
 
@@ -93,6 +93,14 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
   },
   plugins: [
     new AureliaPlugin(),
+    // new ModuleDependenciesPlugin({
+    //   "aurelia-i18n": [
+    //     { name: "locales/en/tr.json", chunk: "lang-en" },
+    //     { name: "locales/en/nav.json", chunk: "lang-en" },
+    //     { name: "locales/ru/tr.json", chunk: "lang-ru" },
+    //     { name: "locales/ru/nav.json", chunk: "lang-ru" },
+    //   ]
+    // }),
     new ProvidePlugin({
       'Promise': 'bluebird',
       '$': 'jquery',
@@ -113,7 +121,8 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       },
     }),
     new CopyWebpackPlugin([
-      { from: 'static/favicon.ico', to: 'favicon.ico' }
+      { from: 'static/favicon.ico', to: 'favicon.ico' },
+      { from: 'pics', to: 'pics' }
     ]),
     ...when(extractCss, new ExtractTextPlugin({
       filename: production ? '[contenthash].css' : '[id].css',

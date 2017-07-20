@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "i18next": "registry:dt/i18next#2.3.4+20170122020951"
+  },
+  "globalDependencies": {
+    "i18next-xhr-backend": "registry:dt/i18next-xhr-backend#1.2.0+20161005184000"
+  }
+}

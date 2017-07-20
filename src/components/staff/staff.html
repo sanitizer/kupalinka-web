@@ -1,3 +1,21 @@
 <template>
-    <h2>${data}</h2>
+    <require from="resources/css/styles.css"></require>
+
+    <div class="ui divided items">
+        <div class="item" repeat.for="employee of employees">
+            <div class="ui medium image">
+                <img src="${employee.pic.path}">
+            </div>
+            <div class="content common-font">
+                <div class="header">${employee.name}</div>
+                <div class="meta">
+                    <span>${employee.position}</span>
+                </div>
+                <div class="description">
+                    <p>${employee.data}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </template>

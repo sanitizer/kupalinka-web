@@ -1,18 +1,25 @@
+import {Service} from "../service";
+import {BASE_SERVICES_DIR} from "./constants";
 /**
  * Created by sanitizer on 7/14/17.
  */
 
-export class EslClass implements Service {
-    name: string;
-    description: string;
+export class EslClass extends Service {
 
-    constructor() {
-        this.name = "ESL Class";
-        this.description = this.getDescription();
+    constructor(i18n) {
+        super(i18n);
     }
 
-    private getDescription() {
-        return "This is the ESL class. We study English as a second language.";
+    getPicPath(): string {
+        return BASE_SERVICES_DIR + "pic.jpg";
+    }
+
+    getNameKey(): string {
+        return "eslName";
+    }
+
+    getDataKey(): string {
+        return "eslData";
     }
 
 }

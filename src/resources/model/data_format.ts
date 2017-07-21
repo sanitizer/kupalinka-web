@@ -5,6 +5,6 @@ import {Picture} from "./picture";
 
 export interface DataFormat {
     name: string;
-    data: string;
+    data: Array<string>;
     pic?: Picture;
 }

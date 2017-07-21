@@ -10,14 +10,16 @@ export class Service implements DataFormat {
 
     @bindable name: string;
     @bindable partialData: string;
-    @bindable data: string;
+    @bindable data: Array<string>;
+    rawData: string;
     @bindable pic: Picture;
     i18n: I18N;
 
     constructor(i18n){
         this.i18n = i18n;
         this.name = this.i18n.tr(this.getNameKey());
-        this.data = this.i18n.tr(this.getDataKey());
+        this.rawData = this.i18n.tr(this.getDataKey());
+        this.data = this.rawData.split("\n");
         this.partialData = this.getPartOfData();
         this.pic = new Picture(this.getPicPath());
     }
@@ -27,7 +29,7 @@ export class Service implements DataFormat {
     }
 
     getData(): string {
-        return this.data;
+        return this.rawData;
     }
 
     protected getMaxDescrSize(): number {

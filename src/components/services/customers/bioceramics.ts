@@ -20,7 +20,7 @@ export class Bioceramics extends Service {
     }
 
     getDataKey(): string {
-        return "bioData";
+        return "biodataData";
     }
 
 }

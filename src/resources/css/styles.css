@@ -26,6 +26,24 @@
     font-family: "SansSerif";
 }
 
+div.central-text {
+    max-width: 1000px;
+    margin: 50px auto;
+    border-left: 10px solid forestgreen;
+}
+
+
+p.central-text {
+    padding: 10px 50px;
+    font: 1.5em SansSerif, Helvetica, Arial;
+    text-decoration: none;
+    text-align: justify;
+    line-height: 2em;
+    white-space: pre-line; /*allows \n to create a new line in html*/
+}
+
+
+
 .main-gradient {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */
     background: rgb(155,205,255); /* Old browsers */

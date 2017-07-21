@@ -1,3 +1,9 @@
 <template>
-    <h2>${data}</h2>
+    <require from="bootstrap/css/bootstrap.css"></require>
+    <require from="resources/css/styles.css"></require>
+    <require from="semantic-ui/semantic.css"></require>
+
+    <div class="central-text">
+        <p class="central-text" repeat.for="d of data">${d}</p>
+    </div>
 </template>

@@ -7,14 +7,14 @@ import {Picture} from "../../resources/model/picture";
 
 export class Employee implements DataFormat {
     name: string;
-    data: string;
+    data: Array<string>;
     position: string;
     pic: Picture;
     i18n: I18N;
 
     constructor(i18n) {
         this.i18n = i18n;
-        this.data = this.i18n.tr(this.getDataKey());
+        this.data = this.i18n.tr(this.getDataKey()).split("\n");
         this.position = this.i18n.tr(this.getPositionKey());
         this.name = this.i18n.tr(this.getNameKey());
         this.pic = this.pic = new Picture(this.getPicPath());

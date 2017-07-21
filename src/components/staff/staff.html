@@ -14,7 +14,7 @@
                     <span>${employee.position}</span>
                 </div>
                 <div class="description">
-                    <p>${employee.data}</p>
+                    <p repeat.for="d of employee.data">${d}</p>
                 </div>
             </div>
         </div>

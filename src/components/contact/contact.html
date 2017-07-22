@@ -1,31 +1,35 @@
 <template>
     <require from="bootstrap/css/bootstrap.css"></require>
-    <require from="resources/css/styles.css"></require>
     <require from="semantic-ui/semantic.css"></require>
+    <require from="resources/css/styles.css"></require>
 
-    <div class="lr50">
-        <h1 class="ui header">
+    <div class="pad20">
+        <h1 class="ui large header">
             <span class="common-font">
                 ${mainHeader}
             </span>
-            <div class="sub header margin10">
-                <span class="common-font">
+            <div class="sub large header margin10">
+                <p class="common-font justify-right20">
                     ${text}
-                </span>
+                </p>
             </div>
         </h1>
 
-        <div class="ui list">
-            <div class="item common-font" repeat.for="addr of addresses">
-                <div class="header">
-                    <bold>${addr.name}</bold>
+        <div class="pad20">
+            <div class="ui list">
+                <div class="item common-font" repeat.for="addr of addresses">
+                    <div class="ui medium header">
+                        <bold>${addr.name}</bold>
+                    </div>
+                    <p class="justify-right20">
+                        ${addr.street}</br>
+                        Office Hours: ${addr.officeHours}</br>
+                        Phone: ${addr.phoneNum}</br>
+                        Fax: ${addr.fax}</br>
+                        Email: ${addr.email}</br>
+                    </p>
+                    <div class="ui green divider"></div>
                 </div>
-                <div class="ui divider"></div>
-                ${addr.street}</br>
-                Office Hours: ${addr.officeHours}</br>
-                Phone: ${addr.phoneNum}</br>
-                Fax: ${addr.fax}</br>
-                Email: ${addr.email}</br>
             </div>
         </div>
     </div>

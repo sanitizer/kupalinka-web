@@ -28,6 +28,10 @@
     padding: 20px 20px 0;
 }
 
+.pad-r10 {
+    padding-right: 10px;
+}
+
 div.central-text {
     max-width: 1000px;
     margin: 50px auto;

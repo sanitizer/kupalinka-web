@@ -46,4 +46,12 @@ export class App {
     return "dropDownText";
   }
 
+  // attached() {
+  //     $(document).ready(function() {
+  //         $(document).on("click", "#langSelect", function () {
+  //             alert($(this).val());
+  //         });
+  //     });
+  // }
+
 }

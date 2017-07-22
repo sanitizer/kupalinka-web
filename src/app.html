@@ -18,16 +18,12 @@
         ${row.title}
       </a>
       <div class="ui right item">
-        <div class="ui vertical menu">
-          <div class="ui dropdown item">
-            ${dropDownText} <i class="dropdown icon"></i>
-            <div class="menu">
-              <div class="item" repeat.for = "l of languages">
-                ${l.displayName}
-              </div>
-            </div>
-          </div>
-        </div>
+        <label for="langSelect" class="common-font pad-r10">${dropDownText}</label>
+        <select id="langSelect" style="background-color: dimgrey; border-radius: 2px;">
+          <option repeat.for="l of languages" >
+            ${l.displayName}
+          </option>
+        </select>
       </div>
     </div>
   </div>

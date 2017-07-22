@@ -21,7 +21,7 @@ import {inject} from 'aurelia-framework';
 export class Services {
 
     mainHeader: string;
-    mainText: string;
+    mainText: Array<string>;
     dividerText: string;
     services: Array<Service>;
     i18n: I18N;
@@ -29,7 +29,7 @@ export class Services {
     constructor(i18n) {
         this.i18n = i18n;
         this.mainHeader = this.i18n.tr(this.getMainHeaderKey());
-        this.mainText = this.i18n.tr(this.getMainTextKey());
+        this.mainText = this.i18n.tr(this.getMainTextKey()).split("\n");
         this.dividerText = this.i18n.tr(this.getDividerTextKey());
         this.services = [new ArtClasses(i18n),
                          new Bioceramics(i18n),

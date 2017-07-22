@@ -1,11 +1,5 @@
-.lr20 {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.lr30 {
-    margin-left: 30px;
-    margin-right: 30px;
+.margin5 {
+    margin: 5px;
 }
 
 .lr50 {
@@ -23,7 +17,11 @@
 }
 
 .common-font {
-    font-family: "SansSerif";
+    font-family: sans-serif;
+}
+
+.pad20 {
+    padding: 20px 20px 0;
 }
 
 div.central-text {
@@ -35,14 +33,19 @@ div.central-text {
 
 p.central-text {
     padding: 10px 50px;
-    font: 1.5em SansSerif, Helvetica, Arial;
+    font: 1.2em sans-serif;
     text-decoration: none;
     text-align: justify;
     line-height: 2em;
     white-space: pre-line; /*allows \n to create a new line in html*/
 }
 
-
+p.justify-right20 {
+    font-size: 1.2em;
+    padding-right: 20px;
+    text-align: justify;
+    white-space: pre-line;
+}
 
 .main-gradient {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */

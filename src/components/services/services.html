@@ -7,12 +7,14 @@
         <div class="column"></div>
         <div class="six wide column">
             <div class="ui basic segment common-font">
-                <div class="ui centered header">
+                <div class="ui centered large header">
                     ${mainHeader}
                 </div>
-                <span>
-                    ${mainText}
-                </span>
+                <div class="central-text">
+                    <p class="central-text justify-right20" repeat.for="t of mainText">
+                        ${t}
+                    </p>
+                </div>
             </div>
         </div>
         <div class="column"></div>

@@ -3,18 +3,20 @@
     <require from="resources/css/styles.css"></require>
     <require from="semantic-ui/semantic.css"></require>
 
-    <div class="ui divided items">
-        <div class="item" repeat.for="employee of employees">
-            <div class="ui medium image">
-                <img src="${employee.pic.path}">
-            </div>
-            <div class="content common-font">
-                <div class="header">${employee.name}</div>
-                <div class="meta">
-                    <span>${employee.position}</span>
+    <div class="margin10">
+        <div class="ui divided items">
+            <div class="item common-font" repeat.for="employee of employees">
+                <div class="ui medium image">
+                    <img src="${employee.pic.path}">
                 </div>
-                <div class="description">
-                    <p repeat.for="d of employee.data">${d}</p>
+                <div class="content">
+                    <div class="header">${employee.name}</div>
+                    <div class="meta">
+                        <span>${employee.position}</span>
+                    </div>
+                    <div class="description">
+                        <p class="justify-right20" repeat.for="d of employee.data">${d}</p>
+                    </div>
                 </div>
             </div>
         </div>

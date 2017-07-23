@@ -1,0 +1,13 @@
+<template>
+    <require from="resources/css/styles.css"></require>
+
+    <label for="langSelect" class="common-font pad-r10">
+        ${dropDownText}
+    </label>
+    <select id="langSelect" value.two-way="selectedLang" style="background-color: dimgrey; border-radius: 2px;">
+        <option model.bind="l" selected.bind="selectedLang" repeat.for="l of languages">
+            ${l.displayName}
+        </option>
+    </select>
+
+</template>

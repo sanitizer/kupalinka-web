@@ -17,13 +17,9 @@
       <a href = ${row.href} class = "${row.isActive ? 'item active common-font' : 'item common-font'}" repeat.for = "row of router.navigation">
         ${row.title}
       </a>
+
       <div class="ui right item">
-        <label for="langSelect" class="common-font pad-r10">${dropDownText}</label>
-        <select id="langSelect" style="background-color: dimgrey; border-radius: 2px;">
-          <option repeat.for="l of languages" >
-            ${l.displayName}
-          </option>
-        </select>
+        <compose view-model="components/lang/lang_picker"></compose>
       </div>
     </div>
   </div>

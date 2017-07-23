@@ -13,17 +13,18 @@ import {SocialDances} from "./customers/social_dances";
 import {WellnessClasses} from "./customers/wellness_classes";
 import {Service} from "./service";
 import {I18N} from "aurelia-i18n";
-import {inject} from 'aurelia-framework';
+import {inject, bindable, customElement} from 'aurelia-framework';
+import {LanguagePicker} from "../lang/lang_picker";
 /**
  * Created by sanitizer on 7/14/17.
  */
 @inject(I18N)
 export class Services {
 
-    mainHeader: string;
-    mainText: Array<string>;
-    dividerText: string;
-    services: Array<Service>;
+    @bindable mainHeader: string;
+    @bindable mainText: Array<string>;
+    @bindable dividerText: string;
+    @bindable services: Array<Service>;
     i18n: I18N;
 
     constructor(i18n) {

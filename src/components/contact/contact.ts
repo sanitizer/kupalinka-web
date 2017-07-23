@@ -1,4 +1,4 @@
-import {Address} from "../../resources/model/address";
+import {Address} from "./model/address";
 import {I18N} from "aurelia-i18n";
 import {inject} from 'aurelia-framework';
 

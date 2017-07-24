@@ -11,6 +11,7 @@ import {Localized} from "../../resources/model/localized";
 export class Home implements Localized {
 
     @bindable data: Array<string>;
+    @bindable header: Array<string>;
     i18n: I18N;
     ea: EventAggregator;
     subscriber: Subscription;
@@ -23,13 +24,16 @@ export class Home implements Localized {
 
     setLocalizedStrings() {
         this.data = this.i18n.tr("homeText").split("\n");
+        this.header = this.i18n.tr("homeHeader").split("\n");
     }
 
     attached() {
+        this.subscribe();
+    }
+
+    subscribe() {
         let curObj = this;
         this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
-            console.log("GOT RESPONSE TO SUBSCRIPTION");
-            console.log(response);
             curObj.i18n.setLocale(response.locale);
             curObj.setLocalizedStrings();
         });

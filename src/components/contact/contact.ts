@@ -45,10 +45,12 @@ export class Contact implements Localized {
     }
 
     attached() {
+        this.subscribe();
+    }
+
+    subscribe() {
         let curObj = this;
         this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
-            console.log("GOT RESPONSE TO SUBSCRIPTION");
-            console.log(response);
             curObj.i18n.setLocale(response.locale);
             curObj.setLocalizedStrings();
         });

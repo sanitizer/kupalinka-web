@@ -24,17 +24,4 @@ export class Staff {
                           new IrinaMonosova(i18n, ea)];
     }
 
-    attached() {
-        let curObj = this;
-        this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
-            curObj.i18n.setLocale(response.locale);
-        });
-    }
-
-    detached() {
-        if(this.subscriber){
-            this.subscriber.dispose();
-        }
-    }
-
 }

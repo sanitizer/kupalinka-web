@@ -21,8 +21,8 @@ export class Employee implements DataFormat, Localized {
     constructor(i18n, ea) {
         this.i18n = i18n;
         this.ea = ea;
-        this.subscribe();
         this.setLocalizedStrings();
+        this.subscribe();
         this.pic = this.pic = new Picture(this.getPicPath());
     }
 
@@ -48,24 +48,12 @@ export class Employee implements DataFormat, Localized {
         this.name = this.i18n.tr(this.getNameKey());
     }
 
-    attached() {
-        this.subscribe();
-    }
-
     subscribe() {
         let curObj = this;
         this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
-            console.log("GOT RESPONSE TO SUBSCRIPTION");
-            console.log(response);
             curObj.i18n.setLocale(response.locale);
             curObj.setLocalizedStrings();
         });
-    }
-
-    detached() {
-        if(this.subscriber){
-            this.subscriber.dispose();
-        }
     }
 
 }

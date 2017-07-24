@@ -8,9 +8,9 @@ import {Localized} from "../../resources/model/localized";
 @inject(I18N, EventAggregator)
 export class LanguagePicker implements Localized{
 
-    @bindable({defaultValue: "", name: "dropDownText"}) dropDownText: string;
-    @bindable({defaultValue: "", name: "languages"}) languages: Array<Language>;
-    @bindable({defaultValue: "", name: "selectedLang"}) selectedLang: Language;
+    @bindable dropDownText: string;
+    @bindable languages: Array<Language>;
+    @bindable selectedLang: Language;
     ea: EventAggregator;
     i18n: I18N;
 
@@ -28,16 +28,15 @@ export class LanguagePicker implements Localized{
 
     selectedLangChanged(newVal) {
         this.publishSelectedLang();
-        this.resetLocale();
     }
 
-    activate() {
+    attached() {
         this.publishSelectedLang();
-        this.resetLocale();
     }
 
     private publishSelectedLang() {
         this.ea.publish(LANG_CHANGED, this.selectedLang);
+        this.resetLocale();
     }
 
     private resetLocale(){

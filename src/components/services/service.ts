@@ -67,14 +67,13 @@ export class Service implements DataFormat {
     }
 
     attached() {
+        console.log("Service is attached " + this.name);
         this.subscribe();
     }
 
     subscribe() {
         let curObj = this;
         this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
-            console.log("GOT RESPONSE TO SUBSCRIPTION from service " + this.name);
-            console.log(response);
             curObj.i18n.setLocale(response.locale);
             curObj.setLocalizedStrings();
         });
@@ -82,6 +81,7 @@ export class Service implements DataFormat {
 
 
     detached() {
+        console.log("Service is detached " + this.name);
         if(this.subscriber){
             this.subscriber.dispose();
         }

@@ -22,9 +22,8 @@ export class Service implements DataFormat {
     constructor(i18n, ea){
         this.i18n = i18n;
         this.ea = ea;
+        this.subscribe();
         this.setLocalizedStrings();
-        this.data = this.rawData.split("\n");
-        this.partialData = this.getPartOfData();
         this.pic = new Picture(this.getPicPath());
     }
 
@@ -63,12 +62,18 @@ export class Service implements DataFormat {
     setLocalizedStrings() {
         this.name = this.i18n.tr(this.getNameKey());
         this.rawData = this.i18n.tr(this.getDataKey());
+        this.data = this.getData().split("\n");
+        this.partialData = this.getPartOfData();
     }
 
     attached() {
+        this.subscribe();
+    }
+
+    subscribe() {
         let curObj = this;
         this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
-            console.log("GOT RESPONSE TO SUBSCRIPTION");
+            console.log("GOT RESPONSE TO SUBSCRIPTION from service " + this.name);
             console.log(response);
             curObj.i18n.setLocale(response.locale);
             curObj.setLocalizedStrings();

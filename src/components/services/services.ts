@@ -76,14 +76,6 @@ export class Services {
         });
     }
 
-    activate() {
-        let curObj = this;
-        this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
-            curObj.i18n.setLocale(response.locale);
-            curObj.setLocalizedStrings();
-        });
-    }
-
     detached() {
         if(this.subscriber){
             this.subscriber.dispose();

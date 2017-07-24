@@ -341,9 +341,8 @@ define('components/services/service',["require", "exports", "aurelia-templating"
         function Service(i18n, ea) {
             this.i18n = i18n;
             this.ea = ea;
+            this.subscribe();
             this.setLocalizedStrings();
-            this.data = this.rawData.split("\n");
-            this.partialData = this.getPartOfData();
             this.pic = new picture_1.Picture(this.getPicPath());
         }
         Service.prototype.getPartOfData = function () {
@@ -373,11 +372,17 @@ define('components/services/service',["require", "exports", "aurelia-templating"
         Service.prototype.setLocalizedStrings = function () {
             this.name = this.i18n.tr(this.getNameKey());
             this.rawData = this.i18n.tr(this.getDataKey());
+            this.data = this.getData().split("\n");
+            this.partialData = this.getPartOfData();
         };
         Service.prototype.attached = function () {
+            this.subscribe();
+        };
+        Service.prototype.subscribe = function () {
+            var _this = this;
             var curObj = this;
             this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
-                console.log("GOT RESPONSE TO SUBSCRIPTION");
+                console.log("GOT RESPONSE TO SUBSCRIPTION from service " + _this.name);
                 console.log(response);
                 curObj.i18n.setLocale(response.locale);
                 curObj.setLocalizedStrings();
@@ -461,13 +466,6 @@ define('components/services/services',["require", "exports", "./customers/art_cl
                 curObj.setLocalizedStrings();
             });
         };
-        Services.prototype.activate = function () {
-            var curObj = this;
-            this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
-                curObj.i18n.setLocale(response.locale);
-                curObj.setLocalizedStrings();
-            });
-        };
         Services.prototype.detached = function () {
             if (this.subscriber) {
                 this.subscriber.dispose();
@@ -505,6 +503,7 @@ define('components/staff/employee',["require", "exports", "../../resources/model
         function Employee(i18n, ea) {
             this.i18n = i18n;
             this.ea = ea;
+            this.subscribe();
             this.setLocalizedStrings();
             this.pic = this.pic = new picture_1.Picture(this.getPicPath());
         }
@@ -526,6 +525,9 @@ define('components/staff/employee',["require", "exports", "../../resources/model
             this.name = this.i18n.tr(this.getNameKey());
         };
         Employee.prototype.attached = function () {
+            this.subscribe();
+        };
+        Employee.prototype.subscribe = function () {
             var curObj = this;
             this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
                 console.log("GOT RESPONSE TO SUBSCRIPTION");
@@ -538,13 +540,6 @@ define('components/staff/employee',["require", "exports", "../../resources/model
             if (this.subscriber) {
                 this.subscriber.dispose();
             }
-        };
-        Employee.prototype.activate = function () {
-            var curObj = this;
-            this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
-                curObj.i18n.setLocale(response.locale);
-                curObj.setLocalizedStrings();
-            });
         };
         return Employee;
     }());
@@ -560,14 +555,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define('components/staff/staff',["require", "exports", "./employees/employee1", "./employees/employee2", "aurelia-i18n", "aurelia-framework", "aurelia-event-aggregator"], function (require, exports, employee1_1, employee2_1, aurelia_i18n_1, aurelia_framework_1, aurelia_event_aggregator_1) {
+define('components/staff/staff',["require", "exports", "./employees/employee1", "./employees/employee2", "aurelia-i18n", "aurelia-framework", "aurelia-event-aggregator", "../lang/model/constants"], function (require, exports, employee1_1, employee2_1, aurelia_i18n_1, aurelia_framework_1, aurelia_event_aggregator_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Staff = (function () {
         function Staff(i18n, ea) {
+            this.i18n = i18n;
+            this.ea = ea;
             this.employees = [new employee1_1.AlenaVolchak(i18n, ea),
                 new employee2_1.IrinaMonosova(i18n, ea)];
         }
+        Staff.prototype.attached = function () {
+            var curObj = this;
+            this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
+                curObj.i18n.setLocale(response.locale);
+            });
+        };
+        Staff.prototype.detached = function () {
+            if (this.subscriber) {
+                this.subscriber.dispose();
+            }
+        };
         return Staff;
     }());
     Staff = __decorate([
@@ -724,7 +732,7 @@ define('components/services/customers/bioceramics',["require", "exports", "../se
             return "bioName";
         };
         Bioceramics.prototype.getDataKey = function () {
-            return "biodataData";
+            return "bioData";
         };
         return Bioceramics;
     }(service_1.Service));

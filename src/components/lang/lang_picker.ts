@@ -19,4 +19,9 @@ export class LanguagePicker {
         return "dropDownText";
     }
 
+    selectedLangChanged(newVal) {
+        console.log("got it");
+        console.log(this.selectedLang);
+    }
+
 }

@@ -4,8 +4,8 @@
     <label for="langSelect" class="common-font pad-r10">
         ${dropDownText}
     </label>
-    <select id="langSelect" class="select">
-        <option model.bind="l" selected.bind="selectedLang" repeat.for="l of languages">
+    <select class="select" id="langSelect" value.two-way="selectedLang">
+        <option model.bind="l" value="${l}" repeat.for="l of languages">
             ${l.displayName}
         </option>
     </select>

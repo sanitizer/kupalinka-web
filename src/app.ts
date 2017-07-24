@@ -41,11 +41,11 @@ export class App {
 
   getRoutes(): RouteModel[] {
       let routes: RouteModel[] = [];
-      routes.push(new RouteModel(["", "home"], "home", "home/home", this.i18n.tr("nav:home")));
-      routes.push(new RouteModel(["services"], "services", "services/services", this.i18n.tr("nav:services")));
-      routes.push(new RouteModel(["staff"], "staff", "staff/staff", this.i18n.tr("nav:staff")));
-      routes.push(new RouteModel(["gallery"], "gallery", "gallery/gallery", this.i18n.tr("nav:gallery")));
-      routes.push(new RouteModel(["contact"], "contact", "contact/contact", this.i18n.tr("nav:contact")));
+      routes.push(new RouteModel(["", "home"], "home", "home/home", this.i18n.tr(this.getKeyByHref("#/"))));
+      routes.push(new RouteModel(["services"], "services", "services/services", this.i18n.tr(this.getKeyByHref("#/services"))));
+      routes.push(new RouteModel(["staff"], "staff", "staff/staff", this.i18n.tr(this.getKeyByHref("#/staff"))));
+      routes.push(new RouteModel(["gallery"], "gallery", "gallery/gallery", this.i18n.tr(this.getKeyByHref("#/gallery"))));
+      routes.push(new RouteModel(["contact"], "contact", "contact/contact", this.i18n.tr(this.getKeyByHref("#/contact"))));
       return routes;
   }
 
@@ -53,8 +53,50 @@ export class App {
       let curObj = this;
       this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
           curObj.i18n.setLocale(response.locale);
-          this.configureRouter(this.config, this.router);
+          curObj.localizeRouter();
       });
+  }
+
+  localizeRouter() {
+      let curObj = this;
+      this.router.navigation.forEach(nav => {
+          nav.setTitle(this.i18n.tr(curObj.getKeyByHref(nav.href)));
+      });
+  }
+
+  getHomeTitleKey(): string {
+      return "nav:home";
+  }
+
+  getServicesTitleKey(): string {
+      return "nav:services";
+  }
+
+  getStaffTitleKey(): string {
+      return "nav:staff";
+  }
+
+  getGalleryTitleKey(): string {
+      return "nav:gallery";
+  }
+
+  getContactTitleKey(): string {
+      return "nav:contact";
+  }
+
+  getKeyByHref(href: string) {
+      switch(href) {
+          case "#/services":
+              return this.getServicesTitleKey();
+          case "#/staff":
+              return this.getStaffTitleKey();
+          case "#/gallery":
+              return this.getGalleryTitleKey();
+          case "#/contact":
+              return this.getContactTitleKey();
+          default:
+              return this.getHomeTitleKey();
+      }
   }
 
   detached() {

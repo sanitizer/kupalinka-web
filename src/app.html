@@ -10,10 +10,12 @@
         <a href = "#">
           <img class="ui tiny image" src="${headerPic.path}">
         </a>
-        &ensp;<span class="common-font">
-          ${header}
-          <small>&ensp;${subHeader}</small>
-        </span>
+        <a href = "#">
+          <span class="common-font">
+            &ensp;${header}
+            <small>&ensp;${subHeader}</small>
+          </span>
+        </a>
       </h2>
       <a href = ${row.href} class = "${row.isActive ? 'item active common-font' : 'item common-font'}" repeat.for = "row of router.navigation">
         ${row.title}

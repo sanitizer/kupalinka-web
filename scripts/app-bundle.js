@@ -30,20 +30,55 @@ define('app',["require", "exports", "./resources/model/route-model", "aurelia-fr
         };
         App.prototype.getRoutes = function () {
             var routes = [];
-            routes.push(new route_model_1.default(["", "home"], "home", "home/home", this.i18n.tr("nav:home")));
-            routes.push(new route_model_1.default(["services"], "services", "services/services", this.i18n.tr("nav:services")));
-            routes.push(new route_model_1.default(["staff"], "staff", "staff/staff", this.i18n.tr("nav:staff")));
-            routes.push(new route_model_1.default(["gallery"], "gallery", "gallery/gallery", this.i18n.tr("nav:gallery")));
-            routes.push(new route_model_1.default(["contact"], "contact", "contact/contact", this.i18n.tr("nav:contact")));
+            routes.push(new route_model_1.default(["", "home"], "home", "home/home", this.i18n.tr(this.getKeyByHref("#/"))));
+            routes.push(new route_model_1.default(["services"], "services", "services/services", this.i18n.tr(this.getKeyByHref("#/services"))));
+            routes.push(new route_model_1.default(["staff"], "staff", "staff/staff", this.i18n.tr(this.getKeyByHref("#/staff"))));
+            routes.push(new route_model_1.default(["gallery"], "gallery", "gallery/gallery", this.i18n.tr(this.getKeyByHref("#/gallery"))));
+            routes.push(new route_model_1.default(["contact"], "contact", "contact/contact", this.i18n.tr(this.getKeyByHref("#/contact"))));
             return routes;
         };
         App.prototype.subscribe = function () {
-            var _this = this;
             var curObj = this;
             this.subscriber = this.ea.subscribe(constants_2.LANG_CHANGED, function (response) {
                 curObj.i18n.setLocale(response.locale);
-                _this.configureRouter(_this.config, _this.router);
+                curObj.localizeRouter();
             });
+        };
+        App.prototype.localizeRouter = function () {
+            var _this = this;
+            var curObj = this;
+            this.router.navigation.forEach(function (nav) {
+                nav.setTitle(_this.i18n.tr(curObj.getKeyByHref(nav.href)));
+            });
+        };
+        App.prototype.getHomeTitleKey = function () {
+            return "nav:home";
+        };
+        App.prototype.getServicesTitleKey = function () {
+            return "nav:services";
+        };
+        App.prototype.getStaffTitleKey = function () {
+            return "nav:staff";
+        };
+        App.prototype.getGalleryTitleKey = function () {
+            return "nav:gallery";
+        };
+        App.prototype.getContactTitleKey = function () {
+            return "nav:contact";
+        };
+        App.prototype.getKeyByHref = function (href) {
+            switch (href) {
+                case "#/services":
+                    return this.getServicesTitleKey();
+                case "#/staff":
+                    return this.getStaffTitleKey();
+                case "#/gallery":
+                    return this.getGalleryTitleKey();
+                case "#/contact":
+                    return this.getContactTitleKey();
+                default:
+                    return this.getHomeTitleKey();
+            }
         };
         App.prototype.detached = function () {
             if (this.subscriber) {
@@ -1169,9 +1204,9 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
     exports.IrinaMonosova = IrinaMonosova;
 });
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><a href=\"#\"><img class=\"ui tiny image\" src=\"${headerPic.path}\"> </a>&ensp;<span class=\"common-font\"> ${header} <small>&ensp;${subHeader}</small></span></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><compose view-model=\"components/lang/lang_picker\"></compose></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><a href=\"#\"><img class=\"ui tiny image\" src=\"${headerPic.path}\"> </a><a href=\"#\"><span class=\"common-font\">&ensp;${header} <small>&ensp;${subHeader}</small></span></a></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><compose view-model=\"components/lang/lang_picker\"></compose></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
 define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><h1 class=\"ui large header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub large header margin10\"><p class=\"common-font justify-right20\">${text}</p></div></h1><div class=\"pad20\"><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"ui medium header\"><bold>${addr.name}</bold></div><p class=\"justify-right20\">${addr.street}<br>Office Hours: ${addr.officeHours}<br>Phone: ${addr.phoneNum}<br>Fax: ${addr.fax}<br>Email: ${addr.email}<br></p><div class=\"ui divider\"></div></div></div></div></div></template>"; });
-define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n}"; });
+define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n    text-decoration: none;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n}"; });
 define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"lr50\"><div class=\"ui four column centered equal width grid\"><div class=\"left floated column\" repeat.for=\"pic of pics\"><div class=\"ui basic segment common-font\"><a class=\"medium image\" href=\"${pic.path}\" target=\"_blank\"><img class=\"ui bordered rounded medium image\" src=\"${pic.path}\"></a><div class=\"content\">${pic.description}</div></div></div></div></div></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><div class=\"ui centered large header common-font\">${header}</div></div><div class=\"central-text common-font\"><p class=\"central-text common-font\" repeat.for=\"d of data\">${d}</p></div></template>"; });
 define('text!components/lang/lang_picker.html', ['module'], function(module) { module.exports = "<template><require from=\"resources/css/styles.css\"></require><label for=\"langSelect\" class=\"common-font pad-r10\">${dropDownText}</label><select class=\"select\" id=\"langSelect\" value.two-way=\"selectedLang\"><option model.bind=\"l\" value=\"${l}\" repeat.for=\"l of languages\">${l.displayName}</option></select></template>"; });

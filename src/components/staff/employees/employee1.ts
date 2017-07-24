@@ -6,8 +6,8 @@ import {BASE_EMPLOYEES_DIR} from "./constants";
  */
 export class AlenaVolchak extends Employee {
 
-    constructor(i18n) {
-        super(i18n);
+    constructor(i18n, ea) {
+        super(i18n, ea);
     }
 
     getPicPath(): string {

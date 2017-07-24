@@ -13,12 +13,14 @@ import {SocialDances} from "./customers/social_dances";
 import {WellnessClasses} from "./customers/wellness_classes";
 import {Service} from "./service";
 import {I18N} from "aurelia-i18n";
-import {inject, bindable, customElement} from 'aurelia-framework';
-import {LanguagePicker} from "../lang/lang_picker";
+import {inject, bindable} from 'aurelia-framework';
+import {EventAggregator, Subscription} from "aurelia-event-aggregator";
+import {LANG_CHANGED} from "../lang/model/constants";
+
 /**
  * Created by sanitizer on 7/14/17.
  */
-@inject(I18N)
+@inject(I18N, EventAggregator)
 export class Services {
 
     @bindable mainHeader: string;
@@ -26,25 +28,26 @@ export class Services {
     @bindable dividerText: string;
     @bindable services: Array<Service>;
     i18n: I18N;
+    ea: EventAggregator;
+    subscriber: Subscription;
 
-    constructor(i18n) {
+    constructor(i18n, ea) {
         this.i18n = i18n;
-        this.mainHeader = this.i18n.tr(this.getMainHeaderKey());
-        this.mainText = this.i18n.tr(this.getMainTextKey()).split("\n");
-        this.dividerText = this.i18n.tr(this.getDividerTextKey());
-        this.services = [new ArtClasses(i18n),
-                         new Bioceramics(i18n),
-                         new ComputerClass(i18n),
-                         new DramaClub(i18n),
-                         new EslClass(i18n),
-                         new ExtendedWorkingHours(i18n),
-                         new FieldTrips(i18n),
-                         new Haircuts(i18n),
-                         new Karaoke(i18n),
-                         new MassageTherapist(i18n),
-                         new SkinCareClass(i18n),
-                         new SocialDances(i18n),
-                         new WellnessClasses(i18n)];
+        this.ea = ea;
+        this.setLocalizedStrings();
+        this.services = [new ArtClasses(i18n, ea),
+                         new Bioceramics(i18n, ea),
+                         new ComputerClass(i18n, ea),
+                         new DramaClub(i18n, ea),
+                         new EslClass(i18n, ea),
+                         new ExtendedWorkingHours(i18n, ea),
+                         new FieldTrips(i18n, ea),
+                         new Haircuts(i18n, ea),
+                         new Karaoke(i18n, ea),
+                         new MassageTherapist(i18n, ea),
+                         new SkinCareClass(i18n, ea),
+                         new SocialDances(i18n, ea),
+                         new WellnessClasses(i18n, ea)];
     }
 
     private getMainHeaderKey(): string {
@@ -57,6 +60,34 @@ export class Services {
 
     private getMainTextKey(): string {
         return "servicesText";
+    }
+
+    setLocalizedStrings() {
+        this.mainHeader = this.i18n.tr(this.getMainHeaderKey());
+        this.mainText = this.i18n.tr(this.getMainTextKey()).split("\n");
+        this.dividerText = this.i18n.tr(this.getDividerTextKey());
+    }
+
+    attached() {
+        let curObj = this;
+        this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
+            curObj.i18n.setLocale(response.locale);
+            curObj.setLocalizedStrings();
+        });
+    }
+
+    activate() {
+        let curObj = this;
+        this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
+            curObj.i18n.setLocale(response.locale);
+            curObj.setLocalizedStrings();
+        });
+    }
+
+    detached() {
+        if(this.subscriber){
+            this.subscriber.dispose();
+        }
     }
 
 }

@@ -2,15 +2,43 @@
  * Created by sanitizer on 7/14/17.
  */
 import {I18N} from "aurelia-i18n";
-import {inject} from 'aurelia-framework';
+import {inject, bindable} from 'aurelia-framework';
+import {EventAggregator, Subscription} from "aurelia-event-aggregator";
+import {LANG_CHANGED} from "../lang/model/constants";
+import {Localized} from "../../resources/model/localized";
 
-@inject(I18N)
-export class Home {
+@inject(I18N, EventAggregator)
+export class Home implements Localized {
 
-    data: Array<string>;
+    @bindable data: Array<string>;
+    i18n: I18N;
+    ea: EventAggregator;
+    subscriber: Subscription;
 
-    constructor(i18n) {
-        this.data = i18n.tr("homeText").split("\n");
+    constructor(i18n, ea) {
+        this.i18n = i18n;
+        this.ea = ea;
+        this.setLocalizedStrings();
+    }
+
+    setLocalizedStrings() {
+        this.data = this.i18n.tr("homeText").split("\n");
+    }
+
+    attached() {
+        let curObj = this;
+        this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
+            console.log("GOT RESPONSE TO SUBSCRIPTION");
+            console.log(response);
+            curObj.i18n.setLocale(response.locale);
+            curObj.setLocalizedStrings();
+        });
+    }
+
+    detached() {
+        if(this.subscriber){
+            this.subscriber.dispose();
+        }
     }
 
 }

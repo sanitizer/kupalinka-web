@@ -3,8 +3,10 @@ import {bindable, inject} from "aurelia-framework";
 import {Picture} from "./resources/model/picture";
 import {BASE_MISC_DIR} from "./constants";
 import {I18N} from "aurelia-i18n";
+import {EventAggregator, Subscription} from "aurelia-event-aggregator";
+import {LANG_CHANGED} from "./components/lang/model/constants";
 
-@inject(I18N)
+@inject(I18N, EventAggregator)
 export class App {
 
   @bindable router;
@@ -12,9 +14,12 @@ export class App {
   @bindable subHeader: string;
   @bindable headerPic: Picture;
   i18n: I18N;
+  ea: EventAggregator;
+  subscriber: Subscription;
 
-  constructor(i18n) {
+  constructor(i18n, ea) {
       this.i18n = i18n;
+      this.ea = ea;
       this.header = "Kupalinka";
       this.subHeader = "Adult Daycare";
       this.headerPic = new Picture(BASE_MISC_DIR + "sign.jpg");
@@ -34,5 +39,20 @@ export class App {
 
     this.router = router;
   }
+
+    attached() {
+        let curObj = this;
+        this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
+            console.log("GOT RESPONSE TO SUBSCRIPTION in app.ts");
+            console.log(response);
+            curObj.i18n.setLocale(response.locale);
+        });
+    }
+
+    detached() {
+      if(this.subscriber){
+          this.subscriber.dispose();
+      }
+    }
 
 }

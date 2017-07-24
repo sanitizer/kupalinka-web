@@ -6,8 +6,8 @@ import {BASE_SERVICES_DIR} from "./constants";
  */
 export class ArtClasses extends Service {
 
-    constructor(i18n) {
-        super(i18n);
+    constructor(i18n, ea) {
+        super(i18n, ea);
     }
 
     getPicPath(): string {

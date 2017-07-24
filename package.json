@@ -9,6 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "aurelia-bootstrapper": "^2.1.0",
+    "aurelia-i18n": "^1.6.2",
     "aurelia-validatejs": "^0.7.0",
     "axios": "^0.16.1",
     "bluebird": "^3.4.1",

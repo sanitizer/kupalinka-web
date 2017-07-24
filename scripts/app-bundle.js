@@ -273,10 +273,6 @@ define('components/lang/lang_picker',["require", "exports", "aurelia-framework",
         LanguagePicker.prototype.getDropDownTextKey = function () {
             return "dropDownText";
         };
-        LanguagePicker.prototype.selectedLangChanged = function (newVal) {
-            console.log("got it");
-            console.log(this.selectedLang);
-        };
         return LanguagePicker;
     }());
     __decorate([

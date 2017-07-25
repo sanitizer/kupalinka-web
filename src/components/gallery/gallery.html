@@ -4,13 +4,14 @@
     <require from="semantic-ui/semantic.css"></require>
 
     <div class="container">
-        <h2>Adult Daycare Kupalinka Memories</h2>
+        <div class="ui large header centered">
+            ${header}
+        </div>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="${$index}" class="${$index == 0 ? 'active' : ''}" repeat.for="pic of pics"></li>
             </ol>
-
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="${$index == 0 ? 'item active' : 'item'}" repeat.for="pic of pics">
@@ -22,7 +23,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -34,20 +34,5 @@
             </a>
         </div>
     </div>
-
-    <!--<div class="lr50">-->
-        <!--<div class="ui four column centered equal width grid">-->
-            <!--<div class="left floated column"  repeat.for="pic of pics">-->
-                <!--<div class="ui basic segment common-font">-->
-                    <!--<a class="medium image" href="${pic.path}" target="_blank">-->
-                        <!--<img class="ui bordered rounded medium image" src="${pic.path}">-->
-                    <!--</a>-->
-                    <!--<div class="content">-->
-                        <!--${pic.description}-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
 
 </template>

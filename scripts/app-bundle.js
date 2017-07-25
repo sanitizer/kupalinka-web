@@ -242,11 +242,23 @@ define('components/gallery/constants',["require", "exports"], function (require,
     exports.BASE_GALLERY_DIR = "/pics/gallery/";
 });
 
-define('components/gallery/gallery',["require", "exports", "../../resources/model/picture", "./constants"], function (require, exports, picture_1, constants_1) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+define('components/gallery/gallery',["require", "exports", "../../resources/model/picture", "./constants", "aurelia-framework", "../lang/model/constants", "aurelia-i18n", "aurelia-event-aggregator"], function (require, exports, picture_1, constants_1, aurelia_framework_1, constants_2, aurelia_i18n_1, aurelia_event_aggregator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Gallery = (function () {
-        function Gallery() {
+        function Gallery(i18n, ea) {
+            this.i18n = i18n;
+            this.ea = ea;
+            this.setLocalizedStrings();
             this.pics = [new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic"),
                 new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic, but another"),
                 new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Even better pic"),
@@ -258,8 +270,41 @@ define('components/gallery/gallery',["require", "exports", "../../resources/mode
                 new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic"),
                 new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic")];
         }
+        Gallery.prototype.setLocalizedStrings = function () {
+            this.header = this.i18n.tr(this.getHeaderKey());
+        };
+        Gallery.prototype.getHeaderKey = function () {
+            return "galleryHeader";
+        };
+        Gallery.prototype.attached = function () {
+            this.subscribe();
+        };
+        Gallery.prototype.subscribe = function () {
+            var curObj = this;
+            this.subscriber = this.ea.subscribe(constants_2.LANG_CHANGED, function (response) {
+                curObj.i18n.setLocale(response.locale);
+                curObj.setLocalizedStrings();
+            });
+        };
+        Gallery.prototype.detached = function () {
+            if (this.subscriber) {
+                this.subscriber.dispose();
+            }
+        };
         return Gallery;
     }());
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Array)
+    ], Gallery.prototype, "pics", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Gallery.prototype, "header", void 0);
+    Gallery = __decorate([
+        aurelia_framework_1.inject(aurelia_i18n_1.I18N, aurelia_event_aggregator_1.EventAggregator),
+        __metadata("design:paramtypes", [Object, Object])
+    ], Gallery);
     exports.Gallery = Gallery;
 });
 
@@ -1207,9 +1252,9 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
 define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><a href=\"#\"><img class=\"ui tiny image\" src=\"${headerPic.path}\"> </a><a href=\"#\"><span class=\"common-font\">&ensp;${header} <small>&ensp;${subHeader}</small></span></a></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><compose view-model=\"components/lang/lang_picker\"></compose></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
 define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n    text-decoration: none;\n    white-space: pre-line;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\n.picDescription {\n    text-shadow: 3px 2px black;\n    font-weight: bold;\n    font-size: 2em;\n    background-color: #1C1E1F;\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n}"; });
 define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><h1 class=\"ui large header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub large header margin10\"><p class=\"common-font justify-right20\">${text}</p></div></h1><div class=\"pad20\"><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"ui medium header\"><bold>${addr.name}</bold></div><p class=\"justify-right20\">${addr.street}<br>Office Hours: ${addr.officeHours}<br>Phone: ${addr.phoneNum}<br>Fax: ${addr.fax}<br>Email: ${addr.email}<br></p><div class=\"ui divider\"></div></div></div></div></div></template>"; });
-define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"container\"><h2>Adult Daycare Kupalinka Memories</h2><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"${$index}\" class=\"${$index == 0 ? 'active' : ''}\" repeat.for=\"pic of pics\"></li></ol><div class=\"carousel-inner\"><div class=\"${$index == 0 ? 'item active' : 'item'}\" repeat.for=\"pic of pics\"><img src=\"${pic.path}\" alt=\"${pic.description}\" style=\"width:100%\"><div class=\"carousel-caption\"><p class=\"common-font picDescription\">${pic.description}</p></div></div></div><a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span> <span class=\"sr-only\">Previous</span> </a><a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span> <span class=\"sr-only\">Next</span></a></div></div></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><div class=\"ui centered large header common-font\">${header}</div></div><div class=\"central-text common-font\"><p class=\"central-text common-font\" repeat.for=\"d of data\">${d}</p></div></template>"; });
 define('text!components/lang/lang_picker.html', ['module'], function(module) { module.exports = "<template><require from=\"resources/css/styles.css\"></require><label for=\"langSelect\" class=\"common-font pad-r10\">${dropDownText}</label><select class=\"select\" id=\"langSelect\" value.two-way=\"selectedLang\"><option model.bind=\"l\" value=\"${l}\" repeat.for=\"l of languages\">${l.displayName}</option></select></template>"; });
 define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"central-text common-font\"><div class=\"ui centered large header\">${mainHeader}</div><p class=\"central-text common-font\" repeat.for=\"t of mainText\">${t}</p></div><div class=\"ui horizontal divider common-font\">${dividerText}</div><div class=\"ui basic segment\"></div><div class=\"lr100\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.partialData}</div></div><div class=\"extra content common-font\"><button class=\"${service.showFullData() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });
 define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"margin10\"><div class=\"ui divided items\"><div class=\"item common-font\" repeat.for=\"employee of employees\"><div class=\"ui medium image\"><img src=\"${employee.pic.path}\"></div><div class=\"content\"><div class=\"header\">${employee.name}</div><div class=\"meta\"><span>${employee.position}</span></div><div class=\"description\"><p class=\"justify-right20 common-font\" repeat.for=\"d of employee.data\">${d}</p></div></div></div></div></div></template>"; });
+define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"container\"><div class=\"ui large header centered\">${header}</div><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"${$index}\" class=\"${$index == 0 ? 'active' : ''}\" repeat.for=\"pic of pics\"></li></ol><div class=\"carousel-inner\"><div class=\"${$index == 0 ? 'item active' : 'item'}\" repeat.for=\"pic of pics\"><img src=\"${pic.path}\" alt=\"${pic.description}\" style=\"width:100%\"><div class=\"carousel-caption\"><p class=\"common-font picDescription\">${pic.description}</p></div></div></div><a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span> <span class=\"sr-only\">Previous</span> </a><a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span> <span class=\"sr-only\">Next</span></a></div></div></template>"; });
 //# sourceMappingURL=app-bundle.js.map

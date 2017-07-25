@@ -23,7 +23,7 @@ export class Gallery {
         this.setLocalizedStrings();
         this.pics = [new Picture(BASE_GALLERY_DIR + "pic.jpg", "Some Pic"),
                      new Picture(BASE_GALLERY_DIR + "pic.jpg", "Some Pic, but another"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Even better pic"),
+                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Even better picEven better picEven better picEven better picEven better picEven better pic"),
                      new Picture(BASE_GALLERY_DIR + "pic.jpg", "Amazing pic"),
                      new Picture(BASE_GALLERY_DIR + "pic.jpg", "Hahaha pic"),
                      new Picture(BASE_GALLERY_DIR + "pic.jpg", "Pic pic pic"),

@@ -35,10 +35,24 @@
 }
 
 .picDescription {
-    text-shadow: 3px 2px black;
-    font-weight: bold;
-    font-size: 2em;
-    background-color: #1C1E1F;
+    font-size: 1.5em;
+    max-width: 400px;
+    margin: auto;
+    font-weight: 900;
+    color: whitesmoke;
+    font-family: Georgia, sans-serif;
+
+    background: rgba(193,158,103,1);
+    background: -moz-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193,158,103,1)), color-stop(1%, rgba(110,72,14,1)), color-stop(7%, rgba(110,72,14,1)), color-stop(15%, rgba(110,72,14,1)), color-stop(26%, rgba(110,72,14,1)), color-stop(35%, rgba(110,72,14,1)), color-stop(48%, rgba(125,75,0,1)), color-stop(68%, rgba(150,104,36,1)), color-stop(100%, rgba(233,212,179,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
+    background: linear-gradient(135deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );
+
+    border-radius: 3px;
+    border: 5px outset #996515;
 }
 
 div.central-text {

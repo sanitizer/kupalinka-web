@@ -25,7 +25,7 @@ export class App {
       this.subscribe();
       this.header = "Kupalinka";
       this.subHeader = "Adult Daycare";
-      this.headerPic = new Picture(BASE_MISC_DIR + "sign.jpg");
+      this.headerPic = new Picture(i18n, ea, BASE_MISC_DIR + "sign.jpg");
   }
 
   configureRouter(config: RouteConfig, router: Router) {

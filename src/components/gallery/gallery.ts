@@ -21,16 +21,16 @@ export class Gallery {
         this.i18n = i18n;
         this.ea = ea;
         this.setLocalizedStrings();
-        this.pics = [new Picture(BASE_GALLERY_DIR + "pic.jpg", "Some Pic"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Some Pic, but another"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Even better picEven better picEven better picEven better picEven better picEven better pic"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Amazing pic"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Hahaha pic"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Pic pic pic"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "A pic is a pic"),
-                     new Picture("/pics/misc" + "/sign.jpg", "Well you know pic"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Another pic"),
-                     new Picture(BASE_GALLERY_DIR + "pic.jpg", "Another pic")];
+        this.pics = [new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "Some Pic"),
+                     new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "Some Pic, but another"),
+                     new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "Even better picEven better picEven better picEven better picEven better picEven better pic"),
+                     new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "Amazing pic"),
+                     new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "Hahaha pic"),
+                     new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "Pic pic pic"),
+                     new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "A pic is a pic"),
+                     new Picture(i18n, ea, "/pics/misc" + "/sign.jpg", "Well you know pic"),
+                     new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "Another pic"),
+                     new Picture(i18n, ea, BASE_GALLERY_DIR + "pic.jpg", "Another pic")];
     }
 
     setLocalizedStrings() {
@@ -38,7 +38,7 @@ export class Gallery {
     }
 
     getHeaderKey(): string {
-        return "galleryHeader";
+        return "pics:galleryHeader";
     }
 
     attached() {

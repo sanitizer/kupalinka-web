@@ -15,15 +15,15 @@ export class AlenaVolchak extends Employee {
     }
 
     getDataKey(): string {
-        return "e1Data";
+        return "emps:e1Data";
     }
 
     getNameKey(): string {
-        return "e1Name";
+        return "emps:e1Name";
     }
 
     getPositionKey(): string {
-        return "e1Position";
+        return "emps:e1Position";
     }
 
 }

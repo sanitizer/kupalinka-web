@@ -17,7 +17,7 @@ define('app',["require", "exports", "./resources/model/route-model", "aurelia-fr
             this.subscribe();
             this.header = "Kupalinka";
             this.subHeader = "Adult Daycare";
-            this.headerPic = new picture_1.Picture(constants_1.BASE_MISC_DIR + "sign.jpg");
+            this.headerPic = new picture_1.Picture(i18n, ea, constants_1.BASE_MISC_DIR + "sign.jpg");
         }
         App.prototype.configureRouter = function (config, router) {
             config.title = "Kupalinka";
@@ -148,8 +148,8 @@ define('main',["require", "exports", "./environment", "aurelia-i18n", "i18next-x
                 lng: 'en',
                 fallbackLng: 'ru',
                 debug: false,
-                ns: ["tr", "nav"],
-                defaultNS: "tr"
+                ns: ["home", "nav", "pics", "emps", "services", "cont"],
+                defaultNS: "services"
             });
         });
         if (environment_1.default.debug) {
@@ -188,17 +188,33 @@ define('components/contact/contact',["require", "exports", "./model/address", "a
             this.i18n = i18n;
             this.ea = ea;
             this.setLocalizedStrings();
-            this.addresses = [new address_1.Address("Main Office", "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012", "9 am - 5 pm, Monday-Friday", "303-386-4508", "xxx-xxx-xxxx", "kupalinkaadc@gmail.com")];
+            this.addresses = [new address_1.Address(i18n, ea, "Main Office", "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012", "303-386-4508", "xxx-xxx-xxxx", "kupalinkaadc@gmail.com")];
         }
         Contact.prototype.getHeaderKey = function () {
-            return "contactHeader";
+            return "cont:contactHeader";
         };
         Contact.prototype.getTextKey = function () {
-            return "contactText";
+            return "cont:contactText";
+        };
+        Contact.prototype.getPhoneKey = function () {
+            return "cont:phone";
+        };
+        Contact.prototype.getFaxKey = function () {
+            return "cont:fax";
+        };
+        Contact.prototype.getEmailKey = function () {
+            return "cont:email";
+        };
+        Contact.prototype.getOfficeHoursKey = function () {
+            return "cont:officeHours";
         };
         Contact.prototype.setLocalizedStrings = function () {
             this.mainHeader = this.i18n.tr(this.getHeaderKey());
             this.text = this.i18n.tr(this.getTextKey());
+            this.phoneT = this.i18n.tr(this.getPhoneKey());
+            this.faxT = this.i18n.tr(this.getFaxKey());
+            this.emailT = this.i18n.tr(this.getEmailKey());
+            this.officeHoursT = this.i18n.tr(this.getOfficeHoursKey());
         };
         Contact.prototype.attached = function () {
             this.subscribe();
@@ -225,6 +241,22 @@ define('components/contact/contact',["require", "exports", "./model/address", "a
         aurelia_templating_1.bindable,
         __metadata("design:type", String)
     ], Contact.prototype, "text", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], Contact.prototype, "phoneT", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], Contact.prototype, "faxT", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], Contact.prototype, "emailT", void 0);
+    __decorate([
+        aurelia_templating_1.bindable,
+        __metadata("design:type", String)
+    ], Contact.prototype, "officeHoursT", void 0);
     __decorate([
         aurelia_templating_1.bindable,
         __metadata("design:type", Array)
@@ -259,22 +291,22 @@ define('components/gallery/gallery',["require", "exports", "../../resources/mode
             this.i18n = i18n;
             this.ea = ea;
             this.setLocalizedStrings();
-            this.pics = [new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic, but another"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Even better picEven better picEven better picEven better picEven better picEven better pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Amazing pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Hahaha pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Pic pic pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "A pic is a pic"),
-                new picture_1.Picture("/pics/misc" + "/sign.jpg", "Well you know pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic"),
-                new picture_1.Picture(constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic")];
+            this.pics = [new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic, but another"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Even better picEven better picEven better picEven better picEven better picEven better pic"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Amazing pic"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Hahaha pic"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Pic pic pic"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "A pic is a pic"),
+                new picture_1.Picture(i18n, ea, "/pics/misc" + "/sign.jpg", "Well you know pic"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic")];
         }
         Gallery.prototype.setLocalizedStrings = function () {
             this.header = this.i18n.tr(this.getHeaderKey());
         };
         Gallery.prototype.getHeaderKey = function () {
-            return "galleryHeader";
+            return "pics:galleryHeader";
         };
         Gallery.prototype.attached = function () {
             this.subscribe();
@@ -327,8 +359,8 @@ define('components/home/home',["require", "exports", "aurelia-i18n", "aurelia-fr
             this.setLocalizedStrings();
         }
         Home.prototype.setLocalizedStrings = function () {
-            this.data = this.i18n.tr("homeText").split("\n");
-            this.header = this.i18n.tr("homeHeader").split("\n");
+            this.data = this.i18n.tr("home:homeText").split("\n");
+            this.header = this.i18n.tr("home:homeHeader").split("\n");
         };
         Home.prototype.attached = function () {
             this.subscribe();
@@ -379,11 +411,11 @@ define('components/lang/lang_picker',["require", "exports", "aurelia-framework",
             this.i18n = i18n;
             this.ea = ea;
             this.setLocalizedStrings();
-            this.languages = [new language_1.Language("en", "English"),
-                new language_1.Language("ru", "Russian")];
+            this.languages = [new language_1.Language(i18n, ea, "en", "English"),
+                new language_1.Language(i18n, ea, "ru", "Russian")];
         }
         LanguagePicker.prototype.getDropDownTextKey = function () {
-            return "dropDownText";
+            return "home:dropDownText";
         };
         LanguagePicker.prototype.selectedLangChanged = function (newVal) {
             this.publishSelectedLang();
@@ -441,7 +473,7 @@ define('components/services/service',["require", "exports", "aurelia-templating"
             this.ea = ea;
             this.subscribe();
             this.setLocalizedStrings();
-            this.pic = new picture_1.Picture(this.getPicPath());
+            this.pic = new picture_1.Picture(i18n, ea, this.getPicPath());
         }
         Service.prototype.getPartOfData = function () {
             return this.showFullData() ? this.getData() : this.getData().substring(0, this.getMaxDescrSize() / 2) + "...";
@@ -474,7 +506,6 @@ define('components/services/service',["require", "exports", "aurelia-templating"
             this.partialData = this.getPartOfData();
         };
         Service.prototype.attached = function () {
-            console.log("Service is attached " + this.name);
             this.subscribe();
         };
         Service.prototype.subscribe = function () {
@@ -485,7 +516,6 @@ define('components/services/service',["require", "exports", "aurelia-templating"
             });
         };
         Service.prototype.detached = function () {
-            console.log("Service is detached " + this.name);
             if (this.subscriber) {
                 this.subscriber.dispose();
             }
@@ -602,7 +632,7 @@ define('components/staff/employee',["require", "exports", "../../resources/model
             this.ea = ea;
             this.setLocalizedStrings();
             this.subscribe();
-            this.pic = this.pic = new picture_1.Picture(this.getPicPath());
+            this.pic = this.pic = new picture_1.Picture(i18n, ea, this.getPicPath());
         }
         Employee.prototype.getPicPath = function () {
             return "";
@@ -654,6 +684,10 @@ define('components/staff/staff',["require", "exports", "./employees/employee1", 
         }
         return Staff;
     }());
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Array)
+    ], Staff.prototype, "employees", void 0);
     Staff = __decorate([
         aurelia_framework_1.inject(aurelia_i18n_1.I18N, aurelia_event_aggregator_1.EventAggregator),
         __metadata("design:paramtypes", [Object, Object])
@@ -671,17 +705,63 @@ define('resources/model/localized',["require", "exports"], function (require, ex
     Object.defineProperty(exports, "__esModule", { value: true });
 });
 
-define('resources/model/picture',["require", "exports"], function (require, exports) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+define('resources/model/picture',["require", "exports", "aurelia-i18n", "aurelia-framework", "aurelia-event-aggregator", "../../components/lang/model/constants"], function (require, exports, aurelia_i18n_1, aurelia_framework_1, aurelia_event_aggregator_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Picture = (function () {
-        function Picture(path, description) {
+        function Picture(i18n, ea, path, description) {
             if (description === void 0) { description = ""; }
+            this.ea = ea;
+            this.i18n = i18n;
             this.path = path;
-            this.description = description;
+            this.setLocalizedStrings();
+            this.subscribe();
         }
+        Picture.prototype.setLocalizedStrings = function () {
+            console.log(this.getDescKey());
+            this.description = this.i18n.tr(this.getDescKey());
+        };
+        Picture.prototype.getDescKey = function () {
+            return "pics:" + this.path.replace(".", "_");
+        };
+        Picture.prototype.attached = function () {
+            this.subscribe();
+        };
+        Picture.prototype.subscribe = function () {
+            var curObj = this;
+            this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
+                curObj.i18n.setLocale(response.locale);
+                curObj.setLocalizedStrings();
+            });
+        };
+        Picture.prototype.detached = function () {
+            if (this.subscriber) {
+                this.subscriber.dispose();
+            }
+        };
         return Picture;
     }());
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Picture.prototype, "path", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Picture.prototype, "description", void 0);
+    Picture = __decorate([
+        aurelia_framework_1.inject(aurelia_i18n_1.I18N, aurelia_event_aggregator_1.EventAggregator),
+        __metadata("design:paramtypes", [Object, Object, String, String])
+    ], Picture);
     exports.Picture = Picture;
 });
 
@@ -715,20 +795,85 @@ define('resources/utils/common',["require", "exports"], function (require, expor
     exports.loadDataFromFile = loadDataFromFile;
 });
 
-define('components/contact/model/address',["require", "exports"], function (require, exports) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+define('components/contact/model/address',["require", "exports", "aurelia-framework", "aurelia-event-aggregator", "aurelia-i18n", "../../lang/model/constants"], function (require, exports, aurelia_framework_1, aurelia_event_aggregator_1, aurelia_i18n_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Address = (function () {
-        function Address(name, street, officeHours, phoneNum, fax, email) {
-            this.name = name;
+        function Address(i18n, ea, name, street, phoneNum, fax, email) {
+            this.ea = ea;
+            this.i18n = i18n;
+            this.nameKeyPart = name;
             this.street = street;
-            this.officeHours = officeHours;
             this.phoneNum = phoneNum;
             this.fax = fax;
             this.email = email;
+            this.setLocalizedStrings();
+            this.subscribe();
         }
+        Address.prototype.setLocalizedStrings = function () {
+            this.name = this.i18n.tr(this.getNameKey());
+            this.officeHours = this.i18n.tr(this.getHoursKey());
+        };
+        Address.prototype.getNameKey = function () {
+            return "cont:" + this.nameKeyPart;
+        };
+        Address.prototype.getHoursKey = function () {
+            return "cont:" + this.nameKeyPart + "/hours";
+        };
+        Address.prototype.attached = function () {
+            this.subscribe();
+        };
+        Address.prototype.subscribe = function () {
+            var curObj = this;
+            this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
+                curObj.i18n.setLocale(response.locale);
+                curObj.setLocalizedStrings();
+            });
+        };
+        Address.prototype.detached = function () {
+            if (this.subscriber) {
+                this.subscriber.dispose();
+            }
+        };
         return Address;
     }());
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Address.prototype, "name", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Address.prototype, "street", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Address.prototype, "officeHours", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Address.prototype, "phoneNum", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Address.prototype, "fax", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Address.prototype, "email", void 0);
+    Address = __decorate([
+        aurelia_framework_1.inject(aurelia_i18n_1.I18N, aurelia_event_aggregator_1.EventAggregator),
+        __metadata("design:paramtypes", [Object, Object, String, String, String, String, String])
+    ], Address);
     exports.Address = Address;
 });
 
@@ -738,16 +883,61 @@ define('components/lang/model/constants',["require", "exports"], function (requi
     exports.LANG_CHANGED = "langChanged";
 });
 
-define('components/lang/model/language',["require", "exports"], function (require, exports) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+define('components/lang/model/language',["require", "exports", "aurelia-i18n", "aurelia-framework", "aurelia-event-aggregator", "./constants"], function (require, exports, aurelia_i18n_1, aurelia_framework_1, aurelia_event_aggregator_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Language = (function () {
-        function Language(locale, displayName) {
+        function Language(i18n, ea, locale, displayName) {
+            this.i18n = i18n;
+            this.ea = ea;
             this.locale = locale;
-            this.displayName = displayName;
+            this.setLocalizedStrings();
+            this.subscribe();
         }
+        Language.prototype.setLocalizedStrings = function () {
+            this.displayName = this.i18n.tr(this.getLangKey());
+        };
+        Language.prototype.getLangKey = function () {
+            return "home:" + this.locale;
+        };
+        Language.prototype.attached = function () {
+            this.subscribe();
+        };
+        Language.prototype.subscribe = function () {
+            var curObj = this;
+            this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
+                curObj.i18n.setLocale(response.locale);
+                curObj.setLocalizedStrings();
+            });
+        };
+        Language.prototype.detached = function () {
+            if (this.subscriber) {
+                this.subscriber.dispose();
+            }
+        };
         return Language;
     }());
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Language.prototype, "locale", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], Language.prototype, "displayName", void 0);
+    Language = __decorate([
+        aurelia_framework_1.inject(aurelia_i18n_1.I18N, aurelia_event_aggregator_1.EventAggregator),
+        __metadata("design:paramtypes", [Object, Object, String, String])
+    ], Language);
     exports.Language = Language;
 });
 
@@ -1201,13 +1391,13 @@ define('components/staff/employees/employee1',["require", "exports", "../employe
             return constants_1.BASE_EMPLOYEES_DIR + "pic.jpg";
         };
         AlenaVolchak.prototype.getDataKey = function () {
-            return "e1Data";
+            return "emps:e1Data";
         };
         AlenaVolchak.prototype.getNameKey = function () {
-            return "e1Name";
+            return "emps:e1Name";
         };
         AlenaVolchak.prototype.getPositionKey = function () {
-            return "e1Position";
+            return "emps:e1Position";
         };
         return AlenaVolchak;
     }(employee_1.Employee));
@@ -1236,13 +1426,13 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
             return constants_1.BASE_EMPLOYEES_DIR + "pic.jpg";
         };
         IrinaMonosova.prototype.getDataKey = function () {
-            return "e2Data";
+            return "emps:e2Data";
         };
         IrinaMonosova.prototype.getNameKey = function () {
-            return "e2Name";
+            return "emps:e2Name";
         };
         IrinaMonosova.prototype.getPositionKey = function () {
-            return "e2Position";
+            return "emps:e2Position";
         };
         return IrinaMonosova;
     }(employee_1.Employee));
@@ -1250,9 +1440,9 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
 });
 
 define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><a href=\"#\"><img class=\"ui tiny image\" src=\"${headerPic.path}\"> </a><a href=\"#\"><span class=\"common-font\">&ensp;${header} <small>&ensp;${subHeader}</small></span></a></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><compose view-model=\"components/lang/lang_picker\"></compose></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
-define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n    text-decoration: none;\n    white-space: pre-line;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\n.picDescription {\n    font-size: 1.5em;\n    max-width: 400px;\n    margin: auto;\n    font-weight: 900;\n    color: whitesmoke;\n    font-family: Georgia, sans-serif;\n\n    background: rgba(193,158,103,1);\n    background: -moz-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193,158,103,1)), color-stop(1%, rgba(110,72,14,1)), color-stop(7%, rgba(110,72,14,1)), color-stop(15%, rgba(110,72,14,1)), color-stop(26%, rgba(110,72,14,1)), color-stop(35%, rgba(110,72,14,1)), color-stop(48%, rgba(125,75,0,1)), color-stop(68%, rgba(150,104,36,1)), color-stop(100%, rgba(233,212,179,1)));\n    background: -webkit-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -o-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -ms-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: linear-gradient(135deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );\n\n    border-radius: 3px;\n    border: 5px outset #996515;\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n}"; });
-define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><h1 class=\"ui large header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub large header margin10\"><p class=\"common-font justify-right20\">${text}</p></div></h1><div class=\"pad20\"><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"ui medium header\"><bold>${addr.name}</bold></div><p class=\"justify-right20\">${addr.street}<br>Office Hours: ${addr.officeHours}<br>Phone: ${addr.phoneNum}<br>Fax: ${addr.fax}<br>Email: ${addr.email}<br></p><div class=\"ui divider\"></div></div></div></div></div></template>"; });
-define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"container\"><div class=\"ui large header centered\">${header}</div><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"${$index}\" class=\"${$index == 0 ? 'active' : ''}\" repeat.for=\"pic of pics\"></li></ol><div class=\"carousel-inner\"><div class=\"${$index == 0 ? 'item active' : 'item'}\" repeat.for=\"pic of pics\"><img src=\"${pic.path}\" alt=\"${pic.description}\" style=\"width:100%\"><div class=\"carousel-caption\"><p class=\"common-font picDescription\">${pic.description}</p></div></div></div><a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span> <span class=\"sr-only\">Previous</span> </a><a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span> <span class=\"sr-only\">Next</span></a></div></div></template>"; });
+define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n    text-decoration: none;\n    white-space: pre-line;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\n.headerShadow {\n    position: relative;\n    text-shadow: 20px 22px 42px 32px blue;\n}\n\n.picDescription {\n    font-size: 1.5em;\n    max-width: 400px;\n    margin: auto;\n    font-weight: 900;\n    color: whitesmoke;\n    font-family: Georgia, sans-serif;\n\n    background: rgba(193,158,103,1);\n    background: -moz-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193,158,103,1)), color-stop(1%, rgba(110,72,14,1)), color-stop(7%, rgba(110,72,14,1)), color-stop(15%, rgba(110,72,14,1)), color-stop(26%, rgba(110,72,14,1)), color-stop(35%, rgba(110,72,14,1)), color-stop(48%, rgba(125,75,0,1)), color-stop(68%, rgba(150,104,36,1)), color-stop(100%, rgba(233,212,179,1)));\n    background: -webkit-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -o-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -ms-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: linear-gradient(135deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );\n\n    border-radius: 3px;\n    border: 5px outset #996515;\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n}"; });
+define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><h1 class=\"ui large header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub large header margin10\"><p class=\"common-font justify-right20\">${text}</p></div></h1><div class=\"pad20\"><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"ui medium header\"><bold>${addr.name}</bold></div><p class=\"justify-right20\">${addr.street}<br>${officeHoursT}: ${addr.officeHours}<br>${phoneT}: ${addr.phoneNum}<br>${faxT}: ${addr.fax}<br>${emailT}: ${addr.email}<br></p><div class=\"ui divider\"></div></div></div></div></div></template>"; });
+define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"container\"><h1 class=\"common-font headerShadow\">${header}</h1><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"${$index}\" class=\"${$index == 0 ? 'active' : ''}\" repeat.for=\"pic of pics\"></li></ol><div class=\"carousel-inner\"><div class=\"${$index == 0 ? 'item active' : 'item'}\" repeat.for=\"pic of pics\"><img src=\"${pic.path}\" alt=\"${pic.description}\" style=\"width:100%\"><div class=\"carousel-caption\"><p class=\"common-font picDescription\">${pic.description}</p></div></div></div><a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span> <span class=\"sr-only\">Previous</span> </a><a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span> <span class=\"sr-only\">Next</span></a></div></div></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><div class=\"ui centered large header common-font\">${header}</div></div><div class=\"central-text common-font\"><p class=\"central-text common-font\" repeat.for=\"d of data\">${d}</p></div></template>"; });
 define('text!components/lang/lang_picker.html', ['module'], function(module) { module.exports = "<template><require from=\"resources/css/styles.css\"></require><label for=\"langSelect\" class=\"common-font pad-r10\">${dropDownText}</label><select class=\"select\" id=\"langSelect\" value.two-way=\"selectedLang\"><option model.bind=\"l\" value=\"${l}\" repeat.for=\"l of languages\">${l.displayName}</option></select></template>"; });
 define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"central-text common-font\"><div class=\"ui centered large header\">${mainHeader}</div><p class=\"central-text common-font\" repeat.for=\"t of mainText\">${t}</p></div><div class=\"ui horizontal divider common-font\">${dividerText}</div><div class=\"ui basic segment\"></div><div class=\"lr100\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.partialData}</div></div><div class=\"extra content common-font\"><button class=\"${service.showFullData() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });

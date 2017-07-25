@@ -14,6 +14,10 @@ export class Contact implements Localized {
 
     @bindable mainHeader: string;
     @bindable text: string;
+    @bindable phoneT: string;
+    @bindable faxT: string;
+    @bindable emailT: string;
+    @bindable officeHoursT: string;
     @bindable addresses: Array<Address>;
     i18n: I18N;
     ea: EventAggregator;
@@ -23,25 +27,46 @@ export class Contact implements Localized {
         this.i18n = i18n;
         this.ea = ea;
         this.setLocalizedStrings();
-        this.addresses = [new Address("Main Office",
+        this.addresses = [new Address(i18n,
+                                      ea,
+                                      "Main Office",
                                       "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012",
-                                      "9 am - 5 pm, Monday-Friday",
                                       "303-386-4508",
                                       "xxx-xxx-xxxx",
                                       "kupalinkaadc@gmail.com")];
     }
 
     private getHeaderKey(): string {
-        return "contactHeader";
+        return "cont:contactHeader";
     }
 
     private getTextKey(): string {
-        return "contactText";
+        return "cont:contactText";
+    }
+
+    private getPhoneKey(): string {
+        return "cont:phone";
+    }
+
+    private getFaxKey(): string {
+        return "cont:fax";
+    }
+
+    private getEmailKey(): string {
+        return "cont:email";
+    }
+
+    private getOfficeHoursKey(): string {
+        return "cont:officeHours";
     }
 
     setLocalizedStrings() {
         this.mainHeader = this.i18n.tr(this.getHeaderKey());
         this.text = this.i18n.tr(this.getTextKey());
+        this.phoneT = this.i18n.tr(this.getPhoneKey());
+        this.faxT = this.i18n.tr(this.getFaxKey());
+        this.emailT = this.i18n.tr(this.getEmailKey());
+        this.officeHoursT = this.i18n.tr(this.getOfficeHoursKey());
     }
 
     attached() {

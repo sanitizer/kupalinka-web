@@ -17,15 +17,15 @@ export class IrinaMonosova extends Employee {
     }
 
     getDataKey(): string {
-        return "e2Data";
+        return "emps:e2Data";
     }
 
     getNameKey(): string {
-        return "e2Name";
+        return "emps:e2Name";
     }
 
     getPositionKey(): string {
-        return "e2Position";
+        return "emps:e2Position";
     }
 
 }

@@ -18,12 +18,12 @@ export class LanguagePicker implements Localized{
         this.i18n = i18n;
         this.ea = ea;
         this.setLocalizedStrings();
-        this.languages = [new Language("en", "English"),
-                          new Language("ru", "Russian")];
+        this.languages = [new Language(i18n, ea, "en", "English"),
+                          new Language(i18n, ea, "ru", "Russian")];
     }
 
     private getDropDownTextKey():string {
-        return "dropDownText";
+        return "home:dropDownText";
     }
 
     selectedLangChanged(newVal) {

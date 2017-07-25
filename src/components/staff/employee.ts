@@ -23,7 +23,7 @@ export class Employee implements DataFormat, Localized {
         this.ea = ea;
         this.setLocalizedStrings();
         this.subscribe();
-        this.pic = this.pic = new Picture(this.getPicPath());
+        this.pic = this.pic = new Picture(i18n, ea, this.getPicPath());
     }
 
     getPicPath(): string {

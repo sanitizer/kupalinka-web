@@ -24,7 +24,7 @@ export class Service implements DataFormat {
         this.ea = ea;
         this.subscribe();
         this.setLocalizedStrings();
-        this.pic = new Picture(this.getPicPath());
+        this.pic = new Picture(i18n, ea, this.getPicPath());
     }
 
     protected getPartOfData(): string {
@@ -67,7 +67,6 @@ export class Service implements DataFormat {
     }
 
     attached() {
-        console.log("Service is attached " + this.name);
         this.subscribe();
     }
 
@@ -81,7 +80,6 @@ export class Service implements DataFormat {
 
 
     detached() {
-        console.log("Service is detached " + this.name);
         if(this.subscriber){
             this.subscriber.dispose();
         }

@@ -23,8 +23,8 @@ export class Home implements Localized {
     }
 
     setLocalizedStrings() {
-        this.data = this.i18n.tr("homeText").split("\n");
-        this.header = this.i18n.tr("homeHeader").split("\n");
+        this.data = this.i18n.tr("home:homeText").split("\n");
+        this.header = this.i18n.tr("home:homeHeader").split("\n");
     }
 
     attached() {

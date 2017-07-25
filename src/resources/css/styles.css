@@ -34,11 +34,6 @@
     padding-right: 10px;
 }
 
-.headerShadow {
-    position: relative;
-    text-shadow: 20px 22px 42px 32px blue;
-}
-
 .picDescription {
     font-size: 1.5em;
     max-width: 400px;

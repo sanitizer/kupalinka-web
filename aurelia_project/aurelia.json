@@ -146,7 +146,7 @@
           {
             "name": "bootstrap",
             "path": "../node_modules/bootstrap/dist",
-            "main": "js/bootstrap.min.js",
+            "main": "js/bootstrap.min",
             "deps": ["jquery"],
             "exports": "$",
             "resources": [
@@ -193,6 +193,11 @@
           }
         ]
       }
-    ]
+    ],
+    "copyFiles": {
+      "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2": "bootstrap/fonts",
+      "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff":  "bootstrap/fonts",
+      "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf":   "bootstrap/fonts"
+    }
   }
 }

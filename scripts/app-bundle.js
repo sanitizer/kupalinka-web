@@ -997,38 +997,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define('components/services/customers/art_classes',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var ArtClasses = (function (_super) {
-        __extends(ArtClasses, _super);
-        function ArtClasses(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        ArtClasses.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
-        };
-        ArtClasses.prototype.getNameKey = function () {
-            return "artName";
-        };
-        ArtClasses.prototype.getDataKey = function () {
-            return "artData";
-        };
-        return ArtClasses;
-    }(service_1.Service));
-    exports.ArtClasses = ArtClasses;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 define('components/services/customers/bioceramics',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -1038,7 +1006,7 @@ define('components/services/customers/bioceramics',["require", "exports", "../se
             return _super.call(this, i18n, ea) || this;
         }
         Bioceramics.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "bioceramics.jpg";
         };
         Bioceramics.prototype.getNameKey = function () {
             return "bioName";
@@ -1061,6 +1029,38 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+define('components/services/customers/club_of_curious',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var ClubOfCurious = (function (_super) {
+        __extends(ClubOfCurious, _super);
+        function ClubOfCurious(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        ClubOfCurious.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "curious.jpg";
+        };
+        ClubOfCurious.prototype.getNameKey = function () {
+            return "cocName";
+        };
+        ClubOfCurious.prototype.getDataKey = function () {
+            return "cocData";
+        };
+        return ClubOfCurious;
+    }(service_1.Service));
+    exports.ClubOfCurious = ClubOfCurious;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 define('components/services/customers/computer_class',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -1070,7 +1070,7 @@ define('components/services/customers/computer_class',["require", "exports", "..
             return _super.call(this, i18n, ea) || this;
         }
         ComputerClass.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "computer_class.jpg";
         };
         ComputerClass.prototype.getNameKey = function () {
             return "compName";
@@ -1099,38 +1099,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define('components/services/customers/drama_club',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var DramaClub = (function (_super) {
-        __extends(DramaClub, _super);
-        function DramaClub(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        DramaClub.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
-        };
-        DramaClub.prototype.getNameKey = function () {
-            return "dramaName";
-        };
-        DramaClub.prototype.getDataKey = function () {
-            return "dramaData";
-        };
-        return DramaClub;
-    }(service_1.Service));
-    exports.DramaClub = DramaClub;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 define('components/services/customers/esl_class',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -1140,7 +1108,7 @@ define('components/services/customers/esl_class',["require", "exports", "../serv
             return _super.call(this, i18n, ea) || this;
         }
         EslClass.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "esl.jpg";
         };
         EslClass.prototype.getNameKey = function () {
             return "eslName";
@@ -1163,58 +1131,26 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define('components/services/customers/extended_working_hours',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+define('components/services/customers/excursion_trips',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var ExtendedWorkingHours = (function (_super) {
-        __extends(ExtendedWorkingHours, _super);
-        function ExtendedWorkingHours(i18n, ea) {
+    var ExcursionTrips = (function (_super) {
+        __extends(ExcursionTrips, _super);
+        function ExcursionTrips(i18n, ea) {
             return _super.call(this, i18n, ea) || this;
         }
-        ExtendedWorkingHours.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+        ExcursionTrips.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "excursion.jpg";
         };
-        ExtendedWorkingHours.prototype.getNameKey = function () {
-            return "ewhName";
+        ExcursionTrips.prototype.getNameKey = function () {
+            return "tripsName";
         };
-        ExtendedWorkingHours.prototype.getDataKey = function () {
-            return "ewhData";
+        ExcursionTrips.prototype.getDataKey = function () {
+            return "tripsData";
         };
-        return ExtendedWorkingHours;
+        return ExcursionTrips;
     }(service_1.Service));
-    exports.ExtendedWorkingHours = ExtendedWorkingHours;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define('components/services/customers/field_trips',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var FieldTrips = (function (_super) {
-        __extends(FieldTrips, _super);
-        function FieldTrips(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        FieldTrips.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
-        };
-        FieldTrips.prototype.getNameKey = function () {
-            return "fieldName";
-        };
-        FieldTrips.prototype.getDataKey = function () {
-            return "fieldData";
-        };
-        return FieldTrips;
-    }(service_1.Service));
-    exports.FieldTrips = FieldTrips;
+    exports.ExcursionTrips = ExcursionTrips;
 });
 
 var __extends = (this && this.__extends) || (function () {
@@ -1268,7 +1204,7 @@ define('components/services/customers/karaoke',["require", "exports", "../servic
             return _super.call(this, i18n, ea) || this;
         }
         Karaoke.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "karaoke.jpg";
         };
         Karaoke.prototype.getNameKey = function () {
             return "karaokeName";
@@ -1300,7 +1236,7 @@ define('components/services/customers/massage_therapist',["require", "exports", 
             return _super.call(this, i18n, ea) || this;
         }
         MassageTherapist.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "massage.jpg";
         };
         MassageTherapist.prototype.getNameKey = function () {
             return "massageName";
@@ -1332,7 +1268,7 @@ define('components/services/customers/skin_care_classes',["require", "exports", 
             return _super.call(this, i18n, ea) || this;
         }
         SkinCareClass.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "skin_care.jpg";
         };
         SkinCareClass.prototype.getNameKey = function () {
             return "skinCareName";
@@ -1364,7 +1300,7 @@ define('components/services/customers/social_dances',["require", "exports", "../
             return _super.call(this, i18n, ea) || this;
         }
         SocialDances.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "social_dances.jpg";
         };
         SocialDances.prototype.getNameKey = function () {
             return "socialName";
@@ -1387,6 +1323,38 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+define('components/services/customers/theatre_studio',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var TheatreStudio = (function (_super) {
+        __extends(TheatreStudio, _super);
+        function TheatreStudio(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        TheatreStudio.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "theater.jpg";
+        };
+        TheatreStudio.prototype.getNameKey = function () {
+            return "theaterName";
+        };
+        TheatreStudio.prototype.getDataKey = function () {
+            return "theaterData";
+        };
+        return TheatreStudio;
+    }(service_1.Service));
+    exports.TheatreStudio = TheatreStudio;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 define('components/services/customers/wellness_classes',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -1396,7 +1364,7 @@ define('components/services/customers/wellness_classes',["require", "exports", "
             return _super.call(this, i18n, ea) || this;
         }
         WellnessClasses.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "wellness.jpg";
         };
         WellnessClasses.prototype.getNameKey = function () {
             return "wellnessName";
@@ -1485,104 +1453,8 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
     exports.IrinaMonosova = IrinaMonosova;
 });
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define('components/services/customers/theatre_studio',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var TheatreStudio = (function (_super) {
-        __extends(TheatreStudio, _super);
-        function TheatreStudio(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        TheatreStudio.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
-        };
-        TheatreStudio.prototype.getNameKey = function () {
-            return "theaterName";
-        };
-        TheatreStudio.prototype.getDataKey = function () {
-            return "theaterData";
-        };
-        return TheatreStudio;
-    }(service_1.Service));
-    exports.TheatreStudio = TheatreStudio;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define('components/services/customers/excursion_trips',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var ExcursionTrips = (function (_super) {
-        __extends(ExcursionTrips, _super);
-        function ExcursionTrips(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        ExcursionTrips.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
-        };
-        ExcursionTrips.prototype.getNameKey = function () {
-            return "tripsName";
-        };
-        ExcursionTrips.prototype.getDataKey = function () {
-            return "tripsData";
-        };
-        return ExcursionTrips;
-    }(service_1.Service));
-    exports.ExcursionTrips = ExcursionTrips;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define('components/services/customers/club_of_curious',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var ClubOfCurious = (function (_super) {
-        __extends(ClubOfCurious, _super);
-        function ClubOfCurious(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        ClubOfCurious.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
-        };
-        ClubOfCurious.prototype.getNameKey = function () {
-            return "cocName";
-        };
-        ClubOfCurious.prototype.getDataKey = function () {
-            return "cocData";
-        };
-        return ClubOfCurious;
-    }(service_1.Service));
-    exports.ClubOfCurious = ClubOfCurious;
-});
-
 define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><a href=\"#\"><img class=\"ui tiny image\" src=\"${headerPic.path}\"> </a><a href=\"#\"><span class=\"common-font\">&ensp;${header} <small>&ensp;${subHeader}</small></span></a></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><compose view-model=\"components/lang/lang_picker\"></compose></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
-define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n    text-decoration: none;\n    white-space: pre-line;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\n.picDescription {\n    font-size: 1.5em;\n    max-width: 400px;\n    max-height: 100px;\n    margin: auto;\n    color: white;\n    font-family: Georgia, sans-serif;\n\n    background: rgba(193,158,103,1);\n    background: -moz-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193,158,103,1)), color-stop(1%, rgba(110,72,14,1)), color-stop(7%, rgba(110,72,14,1)), color-stop(15%, rgba(110,72,14,1)), color-stop(26%, rgba(110,72,14,1)), color-stop(35%, rgba(110,72,14,1)), color-stop(48%, rgba(125,75,0,1)), color-stop(68%, rgba(150,104,36,1)), color-stop(100%, rgba(233,212,179,1)));\n    background: -webkit-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -o-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -ms-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: linear-gradient(135deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );\n\n    border-radius: 3px;\n    border: 5px outset #996515;\n    /*overflow-y: auto;*/\n}\n\nimg.imageStandard {\n    max-width: 100%;\n    max-height: 650px;\n    margin: auto;\n    image-orientation: from-image;\n    object-fit: contain;\n    border: 7px outset darkgoldenrod;\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n    text-align: center;\n}"; });
+define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n    text-decoration: none;\n    white-space: pre-line;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\n.picDescription {\n    font-size: 1.5em;\n    max-width: 400px;\n    max-height: 100px;\n    margin: auto;\n    color: white;\n    font-family: Georgia, sans-serif;\n\n    background: rgba(193,158,103,1);\n    background: -moz-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193,158,103,1)), color-stop(1%, rgba(110,72,14,1)), color-stop(7%, rgba(110,72,14,1)), color-stop(15%, rgba(110,72,14,1)), color-stop(26%, rgba(110,72,14,1)), color-stop(35%, rgba(110,72,14,1)), color-stop(48%, rgba(125,75,0,1)), color-stop(68%, rgba(150,104,36,1)), color-stop(100%, rgba(233,212,179,1)));\n    background: -webkit-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -o-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -ms-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: linear-gradient(135deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );\n\n    border-radius: 3px;\n    border: 10px outset #996515;\n    /*overflow-y: auto;*/\n}\n\nimg.imageStandard {\n    max-width: 100%;\n    max-height: 650px;\n    margin: auto;\n    image-orientation: from-image;\n    object-fit: contain;\n    /*border: 7px outset darkgoldenrod;*/\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n    text-align: center;\n}"; });
 define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><h1 class=\"ui large header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub large header margin10\"><p class=\"common-font justify-right20\">${text}</p></div></h1><div class=\"pad20\"><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"ui medium header\"><bold>${addr.name}</bold></div><p class=\"justify-right20\">${addr.street}<br>${officeHoursT}: ${addr.officeHours}<br>${phoneT}: ${addr.phoneNum}<br>${faxT}: ${addr.fax}<br>${emailT}: ${addr.email}<br></p><div class=\"ui divider\"></div></div></div></div></div></template>"; });
 define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"container\"><h1 class=\"common-font ud50\">${header}</h1><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><div class=\"carousel-inner\"><div class=\"${$index == 0 ? 'item active' : 'item'}\" repeat.for=\"pic of pics\"><img src=\"${pic.path}\" alt=\"${pic.description}\" class=\"imageStandard\"><div class=\"carousel-caption\"><p class=\"common-font picDescription\">${pic.description}</p></div></div></div><a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span> <span class=\"sr-only\">Previous</span> </a><a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span> <span class=\"sr-only\">Next</span></a></div></div></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><div class=\"ui centered large header common-font\">${header}</div></div><div class=\"central-text common-font\"><p class=\"central-text common-font\" repeat.for=\"d of data\">${d}</p></div></template>"; });

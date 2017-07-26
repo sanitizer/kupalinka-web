@@ -11,7 +11,7 @@ export class SocialDances extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "social_dances.jpg";
     }
 
     getNameKey(): string {

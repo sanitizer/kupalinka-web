@@ -11,7 +11,7 @@ export class EslClass extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "esl.jpg";
     }
 
     getNameKey(): string {

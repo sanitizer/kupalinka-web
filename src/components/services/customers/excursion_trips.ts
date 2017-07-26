@@ -11,7 +11,7 @@ export class ExcursionTrips extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "excursion.jpg";
     }
 
     getNameKey(): string {

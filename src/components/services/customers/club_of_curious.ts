@@ -11,7 +11,7 @@ export class ClubOfCurious extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "curious.jpg";
     }
 
     getNameKey(): string {

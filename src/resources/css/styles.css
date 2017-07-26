@@ -52,7 +52,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );
 
     border-radius: 3px;
-    border: 5px outset #996515;
+    border: 10px outset #996515;
     /*overflow-y: auto;*/
 }
 
@@ -62,7 +62,7 @@ img.imageStandard {
     margin: auto;
     image-orientation: from-image;
     object-fit: contain;
-    border: 7px outset darkgoldenrod;
+    /*border: 7px outset darkgoldenrod;*/
 }
 
 div.central-text {

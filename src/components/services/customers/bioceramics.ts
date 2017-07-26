@@ -12,7 +12,7 @@ export class Bioceramics extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "bioceramics.jpg";
     }
 
     getNameKey(): string {

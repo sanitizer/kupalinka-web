@@ -11,7 +11,7 @@ export class ComputerClass extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "computer_class.jpg";
     }
 
     getNameKey(): string {

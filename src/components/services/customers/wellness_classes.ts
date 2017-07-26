@@ -11,7 +11,7 @@ export class WellnessClasses extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "wellness.jpg";
     }
 
     getNameKey(): string {

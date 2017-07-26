@@ -11,7 +11,7 @@ export class MassageTherapist extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "massage.jpg";
     }
 
     getNameKey(): string {

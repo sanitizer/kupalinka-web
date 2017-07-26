@@ -26,6 +26,10 @@
     white-space: pre-line;
 }
 
+a.noDecor {
+    text-decoration: none;
+}
+
 .pad20 {
     padding: 20px 20px 0;
 }

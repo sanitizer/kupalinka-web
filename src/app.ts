@@ -24,7 +24,7 @@ export class App {
       this.ea = ea;
       this.subscribe();
       this.header = "Kupalinka";
-      this.subHeader = "Adult Daycare";
+      this.subHeader = "Adult Day Care Center";
       this.headerPic = new Picture(i18n, ea, BASE_MISC_DIR + "sign.jpg");
   }
 

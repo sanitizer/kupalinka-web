@@ -1,17 +1,16 @@
-import {ArtClasses} from "./customers/art_classes";
+import {Service} from "./service";
 import {Bioceramics} from "./customers/bioceramics";
 import {ComputerClass} from "./customers/computer_class";
-import {DramaClub} from "./customers/drama_club";
+import {TheatreStudio} from "./customers/theatre_studio";
 import {EslClass} from "./customers/esl_class";
-import {ExtendedWorkingHours} from "./customers/extended_working_hours";
-import {FieldTrips} from "./customers/field_trips";
+import {ExcursionTrips} from "./customers/excursion_trips";
 import {Haircuts} from "./customers/haircuts";
 import {Karaoke} from "./customers/karaoke";
 import {MassageTherapist} from "./customers/massage_therapist";
 import {SkinCareClass} from "./customers/skin_care_classes";
 import {SocialDances} from "./customers/social_dances";
+import {ClubOfCurious} from "./customers/club_of_curious";
 import {WellnessClasses} from "./customers/wellness_classes";
-import {Service} from "./service";
 import {I18N} from "aurelia-i18n";
 import {inject, bindable} from 'aurelia-framework';
 import {EventAggregator, Subscription} from "aurelia-event-aggregator";
@@ -35,18 +34,17 @@ export class Services {
         this.i18n = i18n;
         this.ea = ea;
         this.setLocalizedStrings();
-        this.services = [new ArtClasses(i18n, ea),
-                         new Bioceramics(i18n, ea),
+        this.services = [new Bioceramics(i18n, ea),
                          new ComputerClass(i18n, ea),
-                         new DramaClub(i18n, ea),
+                         new TheatreStudio(i18n, ea),
                          new EslClass(i18n, ea),
-                         new ExtendedWorkingHours(i18n, ea),
-                         new FieldTrips(i18n, ea),
+                         new ExcursionTrips(i18n, ea),
                          new Haircuts(i18n, ea),
                          new Karaoke(i18n, ea),
                          new MassageTherapist(i18n, ea),
                          new SkinCareClass(i18n, ea),
                          new SocialDances(i18n, ea),
+                         new ClubOfCurious(i18n, ea),
                          new WellnessClasses(i18n, ea)];
     }
 

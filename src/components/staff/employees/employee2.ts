@@ -13,7 +13,7 @@ export class IrinaMonosova extends Employee {
     }
 
     getPicPath(): string {
-        return BASE_EMPLOYEES_DIR + "pic.jpg";
+        return "";
     }
 
     getDataKey(): string {

@@ -16,7 +16,7 @@ define('app',["require", "exports", "./resources/model/route-model", "aurelia-fr
             this.ea = ea;
             this.subscribe();
             this.header = "Kupalinka";
-            this.subHeader = "Adult Daycare";
+            this.subHeader = "Adult Day Care Center";
             this.headerPic = new picture_1.Picture(i18n, ea, constants_1.BASE_MISC_DIR + "sign.jpg");
         }
         App.prototype.configureRouter = function (config, router) {
@@ -188,7 +188,7 @@ define('components/contact/contact',["require", "exports", "./model/address", "a
             this.i18n = i18n;
             this.ea = ea;
             this.setLocalizedStrings();
-            this.addresses = [new address_1.Address(i18n, ea, "Main Office", "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012", "303-386-4508", "xxx-xxx-xxxx", "kupalinkaadc@gmail.com")];
+            this.addresses = [new address_1.Address(i18n, ea, "Main Office", "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012", "303-386-4508", "720-379-7553", "kupalinkaadc@gmail.com")];
         }
         Contact.prototype.getHeaderKey = function () {
             return "cont:contactHeader";
@@ -291,16 +291,64 @@ define('components/gallery/gallery',["require", "exports", "../../resources/mode
             this.i18n = i18n;
             this.ea = ea;
             this.setLocalizedStrings();
-            this.pics = [new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic"),
-                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Some Pic, but another"),
-                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Even better picEven better picEven better picEven better picEven better picEven better pic"),
-                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Amazing pic"),
-                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Hahaha pic"),
-                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Pic pic pic"),
-                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "A pic is a pic"),
-                new picture_1.Picture(i18n, ea, "/pics/misc" + "/sign.jpg", "Well you know pic"),
-                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic"),
-                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "pic.jpg", "Another pic")];
+            this.pics = [new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "1.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "2.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "3.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "4.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "5.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "6.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "7.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "8.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "9.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "10.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "11.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "12.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "13.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "14.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "15.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "16.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "17.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "18.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "19.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "20.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "21.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "22.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "23.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "24.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "25.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "26.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "27.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "28.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "29.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "30.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "31.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "32.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "33.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "34.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "35.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "36.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "37.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "38.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "39.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "40.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "41.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "42.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "43.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "44.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "45.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "46.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "47.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "48.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "49.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "50.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "51.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "52.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "53.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "54.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "55.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "56.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "57.jpg"),
+                new picture_1.Picture(i18n, ea, constants_1.BASE_GALLERY_DIR + "58.jpg")];
         }
         Gallery.prototype.setLocalizedStrings = function () {
             this.header = this.i18n.tr(this.getHeaderKey());
@@ -550,7 +598,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define('components/services/services',["require", "exports", "./customers/art_classes", "./customers/bioceramics", "./customers/computer_class", "./customers/drama_club", "./customers/esl_class", "./customers/extended_working_hours", "./customers/field_trips", "./customers/haircuts", "./customers/karaoke", "./customers/massage_therapist", "./customers/skin_care_classes", "./customers/social_dances", "./customers/wellness_classes", "aurelia-i18n", "aurelia-framework", "aurelia-event-aggregator", "../lang/model/constants"], function (require, exports, art_classes_1, bioceramics_1, computer_class_1, drama_club_1, esl_class_1, extended_working_hours_1, field_trips_1, haircuts_1, karaoke_1, massage_therapist_1, skin_care_classes_1, social_dances_1, wellness_classes_1, aurelia_i18n_1, aurelia_framework_1, aurelia_event_aggregator_1, constants_1) {
+define('components/services/services',["require", "exports", "./customers/bioceramics", "./customers/computer_class", "./customers/theatre_studio", "./customers/esl_class", "./customers/excursion_trips", "./customers/haircuts", "./customers/karaoke", "./customers/massage_therapist", "./customers/skin_care_classes", "./customers/social_dances", "./customers/club_of_curious", "./customers/wellness_classes", "aurelia-i18n", "aurelia-framework", "aurelia-event-aggregator", "../lang/model/constants"], function (require, exports, bioceramics_1, computer_class_1, theatre_studio_1, esl_class_1, excursion_trips_1, haircuts_1, karaoke_1, massage_therapist_1, skin_care_classes_1, social_dances_1, club_of_curious_1, wellness_classes_1, aurelia_i18n_1, aurelia_framework_1, aurelia_event_aggregator_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Services = (function () {
@@ -558,18 +606,17 @@ define('components/services/services',["require", "exports", "./customers/art_cl
             this.i18n = i18n;
             this.ea = ea;
             this.setLocalizedStrings();
-            this.services = [new art_classes_1.ArtClasses(i18n, ea),
-                new bioceramics_1.Bioceramics(i18n, ea),
+            this.services = [new bioceramics_1.Bioceramics(i18n, ea),
                 new computer_class_1.ComputerClass(i18n, ea),
-                new drama_club_1.DramaClub(i18n, ea),
+                new theatre_studio_1.TheatreStudio(i18n, ea),
                 new esl_class_1.EslClass(i18n, ea),
-                new extended_working_hours_1.ExtendedWorkingHours(i18n, ea),
-                new field_trips_1.FieldTrips(i18n, ea),
+                new excursion_trips_1.ExcursionTrips(i18n, ea),
                 new haircuts_1.Haircuts(i18n, ea),
                 new karaoke_1.Karaoke(i18n, ea),
                 new massage_therapist_1.MassageTherapist(i18n, ea),
                 new skin_care_classes_1.SkinCareClass(i18n, ea),
                 new social_dances_1.SocialDances(i18n, ea),
+                new club_of_curious_1.ClubOfCurious(i18n, ea),
                 new wellness_classes_1.WellnessClasses(i18n, ea)];
         }
         Services.prototype.getMainHeaderKey = function () {
@@ -727,7 +774,6 @@ define('resources/model/picture',["require", "exports", "aurelia-i18n", "aurelia
             this.subscribe();
         }
         Picture.prototype.setLocalizedStrings = function () {
-            console.log(this.getDescKey());
             this.description = this.i18n.tr(this.getDescKey());
         };
         Picture.prototype.getDescKey = function () {
@@ -1190,7 +1236,7 @@ define('components/services/customers/haircuts',["require", "exports", "../servi
             return _super.call(this, i18n, ea) || this;
         }
         Haircuts.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+            return constants_1.BASE_SERVICES_DIR + "haircuts.jpg";
         };
         Haircuts.prototype.getNameKey = function () {
             return "haircutsName";
@@ -1260,7 +1306,7 @@ define('components/services/customers/massage_therapist',["require", "exports", 
             return "massageName";
         };
         MassageTherapist.prototype.getDataKey = function () {
-            return "masageData";
+            return "massageData";
         };
         return MassageTherapist;
     }(service_1.Service));
@@ -1388,7 +1434,7 @@ define('components/staff/employees/employee1',["require", "exports", "../employe
             return _super.call(this, i18n, ea) || this;
         }
         AlenaVolchak.prototype.getPicPath = function () {
-            return constants_1.BASE_EMPLOYEES_DIR + "pic.jpg";
+            return constants_1.BASE_EMPLOYEES_DIR + "emps.jpg";
         };
         AlenaVolchak.prototype.getDataKey = function () {
             return "emps:e1Data";
@@ -1414,7 +1460,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define('components/staff/employees/employee2',["require", "exports", "../employee", "./constants"], function (require, exports, employee_1, constants_1) {
+define('components/staff/employees/employee2',["require", "exports", "../employee"], function (require, exports, employee_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var IrinaMonosova = (function (_super) {
@@ -1423,7 +1469,7 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
             return _super.call(this, i18n, ea) || this;
         }
         IrinaMonosova.prototype.getPicPath = function () {
-            return constants_1.BASE_EMPLOYEES_DIR + "pic.jpg";
+            return "";
         };
         IrinaMonosova.prototype.getDataKey = function () {
             return "emps:e2Data";
@@ -1439,12 +1485,108 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
     exports.IrinaMonosova = IrinaMonosova;
 });
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/theatre_studio',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var TheatreStudio = (function (_super) {
+        __extends(TheatreStudio, _super);
+        function TheatreStudio(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        TheatreStudio.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+        };
+        TheatreStudio.prototype.getNameKey = function () {
+            return "theaterName";
+        };
+        TheatreStudio.prototype.getDataKey = function () {
+            return "theaterData";
+        };
+        return TheatreStudio;
+    }(service_1.Service));
+    exports.TheatreStudio = TheatreStudio;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/excursion_trips',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var ExcursionTrips = (function (_super) {
+        __extends(ExcursionTrips, _super);
+        function ExcursionTrips(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        ExcursionTrips.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+        };
+        ExcursionTrips.prototype.getNameKey = function () {
+            return "tripsName";
+        };
+        ExcursionTrips.prototype.getDataKey = function () {
+            return "tripsData";
+        };
+        return ExcursionTrips;
+    }(service_1.Service));
+    exports.ExcursionTrips = ExcursionTrips;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/club_of_curious',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var ClubOfCurious = (function (_super) {
+        __extends(ClubOfCurious, _super);
+        function ClubOfCurious(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        ClubOfCurious.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "pic.jpg";
+        };
+        ClubOfCurious.prototype.getNameKey = function () {
+            return "cocName";
+        };
+        ClubOfCurious.prototype.getDataKey = function () {
+            return "cocData";
+        };
+        return ClubOfCurious;
+    }(service_1.Service));
+    exports.ClubOfCurious = ClubOfCurious;
+});
+
 define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><a href=\"#\"><img class=\"ui tiny image\" src=\"${headerPic.path}\"> </a><a href=\"#\"><span class=\"common-font\">&ensp;${header} <small>&ensp;${subHeader}</small></span></a></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><compose view-model=\"components/lang/lang_picker\"></compose></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });
-define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n    text-decoration: none;\n    white-space: pre-line;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\n.picDescription {\n    font-size: 1.5em;\n    max-width: 400px;\n    margin: auto;\n    font-weight: 900;\n    color: whitesmoke;\n    font-family: Georgia, sans-serif;\n\n    background: rgba(193,158,103,1);\n    background: -moz-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193,158,103,1)), color-stop(1%, rgba(110,72,14,1)), color-stop(7%, rgba(110,72,14,1)), color-stop(15%, rgba(110,72,14,1)), color-stop(26%, rgba(110,72,14,1)), color-stop(35%, rgba(110,72,14,1)), color-stop(48%, rgba(125,75,0,1)), color-stop(68%, rgba(150,104,36,1)), color-stop(100%, rgba(233,212,179,1)));\n    background: -webkit-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -o-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -ms-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: linear-gradient(135deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );\n\n    border-radius: 3px;\n    border: 5px outset #996515;\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n}"; });
+define('text!resources/css/styles.css', ['module'], function(module) { module.exports = ".margin5 {\n    margin: 5px;\n}\n\n.lr50 {\n    margin-left: 50px;\n    margin-right: 50px;\n}\n\n.lr100 {\n    margin-left: 100px;\n    margin-right: 100px;\n}\n\n.ud50 {\n  margin: 50px 0;\n}\n\n.margin10 {\n    margin: 10px;\n}\n\n.common-font {\n    font-family: sans-serif;\n    text-decoration: none;\n    white-space: pre-line;\n}\n\n.pad20 {\n    padding: 20px 20px 0;\n}\n\n.pad-r10 {\n    padding-right: 10px;\n}\n\n.picDescription {\n    font-size: 1.5em;\n    max-width: 400px;\n    max-height: 100px;\n    margin: auto;\n    color: white;\n    font-family: Georgia, sans-serif;\n\n    background: rgba(193,158,103,1);\n    background: -moz-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193,158,103,1)), color-stop(1%, rgba(110,72,14,1)), color-stop(7%, rgba(110,72,14,1)), color-stop(15%, rgba(110,72,14,1)), color-stop(26%, rgba(110,72,14,1)), color-stop(35%, rgba(110,72,14,1)), color-stop(48%, rgba(125,75,0,1)), color-stop(68%, rgba(150,104,36,1)), color-stop(100%, rgba(233,212,179,1)));\n    background: -webkit-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -o-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: -ms-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    background: linear-gradient(135deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );\n\n    border-radius: 3px;\n    border: 5px outset #996515;\n    /*overflow-y: auto;*/\n}\n\nimg.imageStandard {\n    max-width: 100%;\n    max-height: 650px;\n    margin: auto;\n    image-orientation: from-image;\n    object-fit: contain;\n    border: 7px outset darkgoldenrod;\n}\n\ndiv.central-text {\n    max-width: 1000px;\n    margin: 50px auto;\n    border-left: 10px solid forestgreen;\n}\n\n\np.central-text {\n    padding: 10px 50px;\n    font: 1.2em sans-serif;\n    text-decoration: none;\n    text-align: justify;\n    line-height: 2em;\n    white-space: pre-line; /*allows \\n to create a new line in html*/\n}\n\np.justify-right20 {\n    font-size: 1.2em;\n    padding-right: 20px;\n    text-align: justify;\n    white-space: pre-line;\n}\n\n.main-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9bcdff+0,6eb0f2+0,86c0fa+76 */\n    background: rgb(155,205,255); /* Old browsers */\n    background: -moz-linear-gradient(top, rgb(155,205,255) 0%, rgb(110,176,242) 0%, rgb(134,192,250) 76%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgb(155,205,255) 0%,rgb(110,176,242) 0%,rgb(134,192,250) 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#86c0fa',GradientType=0 ); /* IE6-9 */\n}\n\n.header-gradient {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86dbfa+17,6ecff2+99,9be4ff+100 */\n    background: rgb(134,219,250); /* Old browsers */\n    background: -moz-linear-gradient(left, rgb(134,219,250) 17%, rgb(110,207,242) 99%, rgb(155,228,255) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(left, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, rgb(134,219,250) 17%,rgb(110,207,242) 99%,rgb(155,228,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86dbfa', endColorstr='#9be4ff',GradientType=1 ); /* IE6-9 */\n}\n\n.select {\n    background-color: #1C1E1F;\n    border: none;\n    text-align: center;\n}"; });
 define('text!components/contact/contact.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><h1 class=\"ui large header\"><span class=\"common-font\">${mainHeader}</span><div class=\"sub large header margin10\"><p class=\"common-font justify-right20\">${text}</p></div></h1><div class=\"pad20\"><div class=\"ui list\"><div class=\"item common-font\" repeat.for=\"addr of addresses\"><div class=\"ui medium header\"><bold>${addr.name}</bold></div><p class=\"justify-right20\">${addr.street}<br>${officeHoursT}: ${addr.officeHours}<br>${phoneT}: ${addr.phoneNum}<br>${faxT}: ${addr.fax}<br>${emailT}: ${addr.email}<br></p><div class=\"ui divider\"></div></div></div></div></div></template>"; });
-define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"container\"><h1 class=\"common-font\">${header}</h1><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"${$index}\" class=\"${$index == 0 ? 'active' : ''}\" repeat.for=\"pic of pics\"></li></ol><div class=\"carousel-inner\"><div class=\"${$index == 0 ? 'item active' : 'item'}\" repeat.for=\"pic of pics\"><img src=\"${pic.path}\" alt=\"${pic.description}\" style=\"width:100%\"><div class=\"carousel-caption\"><p class=\"common-font picDescription\">${pic.description}</p></div></div></div><a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span> <span class=\"sr-only\">Previous</span> </a><a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span> <span class=\"sr-only\">Next</span></a></div></div></template>"; });
+define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"container\"><h1 class=\"common-font ud50\">${header}</h1><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><div class=\"carousel-inner\"><div class=\"${$index == 0 ? 'item active' : 'item'}\" repeat.for=\"pic of pics\"><img src=\"${pic.path}\" alt=\"${pic.description}\" class=\"imageStandard\"><div class=\"carousel-caption\"><p class=\"common-font picDescription\">${pic.description}</p></div></div></div><a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span> <span class=\"sr-only\">Previous</span> </a><a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span> <span class=\"sr-only\">Next</span></a></div></div></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"pad20\"><div class=\"ui centered large header common-font\">${header}</div></div><div class=\"central-text common-font\"><p class=\"central-text common-font\" repeat.for=\"d of data\">${d}</p></div></template>"; });
 define('text!components/lang/lang_picker.html', ['module'], function(module) { module.exports = "<template><require from=\"resources/css/styles.css\"></require><label for=\"langSelect\" class=\"common-font pad-r10\">${dropDownText}</label><select class=\"select\" id=\"langSelect\" value.two-way=\"selectedLang\"><option model.bind=\"l\" value=\"${l}\" repeat.for=\"l of languages\">${l.displayName}</option></select></template>"; });
 define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"central-text common-font\"><div class=\"ui centered large header\">${mainHeader}</div><p class=\"central-text common-font\" repeat.for=\"t of mainText\">${t}</p></div><div class=\"ui horizontal divider common-font\">${dividerText}</div><div class=\"ui basic segment\"></div><div class=\"lr100\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><a class=\"header\" disabled=\"true\">${service.name}</a><div class=\"description\">${service.partialData}</div></div><div class=\"extra content common-font\"><button class=\"${service.showFullData() ? 'ui hidden button' : 'ui blue right floated basic button'}\" click.delegate=\"service.onClick()\">Read More</button></div></div></div></div></template>"; });
-define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"margin10\"><div class=\"ui divided items\"><div class=\"item common-font\" repeat.for=\"employee of employees\"><div class=\"ui medium image\"><img src=\"${employee.pic.path}\"></div><div class=\"content\"><div class=\"header\">${employee.name}</div><div class=\"meta\"><span>${employee.position}</span></div><div class=\"description\"><p class=\"justify-right20 common-font\" repeat.for=\"d of employee.data\">${d}</p></div></div></div></div></div></template>"; });
+define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"resources/css/styles.css\"></require><require from=\"semantic-ui/semantic.css\"></require><div class=\"margin10\"><div class=\"ui divided items\"><div class=\"item common-font\" repeat.for=\"employee of employees\"><div class=\"ui medium image\"><img class=\"imageStandard\" src=\"${employee.pic.path}\"></div><div class=\"content\"><div class=\"ui large header\">${employee.name}</div><div class=\"meta\"><span>${employee.position}</span></div><div class=\"description\"><p class=\"justify-right20 common-font\" repeat.for=\"d of employee.data\">${d}</p></div></div></div></div></div></template>"; });
 //# sourceMappingURL=app-bundle.js.map

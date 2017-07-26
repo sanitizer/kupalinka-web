@@ -24,7 +24,6 @@ export class Picture {
     }
 
     setLocalizedStrings() {
-        console.log(this.getDescKey());
         this.description = this.i18n.tr(this.getDescKey());
     }
 

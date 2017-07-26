@@ -11,7 +11,7 @@ export class Haircuts extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "pic.jpg";
+        return BASE_SERVICES_DIR + "haircuts.jpg";
     }
 
     getNameKey(): string {

@@ -11,7 +11,7 @@ export class AlenaVolchak extends Employee {
     }
 
     getPicPath(): string {
-        return BASE_EMPLOYEES_DIR + "pic.jpg";
+        return BASE_EMPLOYEES_DIR + "emps.jpg";
     }
 
     getDataKey(): string {

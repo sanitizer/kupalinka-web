@@ -32,7 +32,7 @@ export class Contact implements Localized {
                                       "Main Office",
                                       "12597 E Mississippi Ave, Unit# 300, Aurora, Co, 80012",
                                       "303-386-4508",
-                                      "xxx-xxx-xxxx",
+                                      "720-379-7553",
                                       "kupalinkaadc@gmail.com")];
     }
 

@@ -4,18 +4,14 @@
     <require from="resources/css/styles.css"></require>
 
     <div class="container">
-        <h1 class="common-font">
+        <h1 class="common-font ud50">
             ${header}
         </h1>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="${$index}" class="${$index == 0 ? 'active' : ''}" repeat.for="pic of pics"></li>
-            </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="${$index == 0 ? 'item active' : 'item'}" repeat.for="pic of pics">
-                    <img src="${pic.path}" alt="${pic.description}" style="width:100%;">
+                    <img src="${pic.path}" alt="${pic.description}" class="imageStandard">
                     <div class="carousel-caption">
                         <p class="common-font picDescription">
                             ${pic.description}

@@ -19,7 +19,7 @@ export class MassageTherapist extends Service {
     }
 
     getDataKey(): string {
-        return "masageData";
+        return "massageData";
     }
 
 }

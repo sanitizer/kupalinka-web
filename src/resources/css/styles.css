@@ -38,6 +38,41 @@ a.noDecor {
     padding-right: 10px;
 }
 
+div.links {
+    position: fixed;
+    top: 200px;
+    left: 100px;
+    max-width: 200px;
+}
+
+/*
+    created round buttons for
+    link buttons
+*/
+div.round-button:hover {
+    opacity: .9;
+    box-shadow: 0 0 20px #1C1E1F;
+    color: darkblue;
+}
+
+div.round-button {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 10px dimgrey;
+    display: block;
+}
+
+div.round-button img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+}
+
 div.centered-div {
     position: absolute;
     top: 50%;

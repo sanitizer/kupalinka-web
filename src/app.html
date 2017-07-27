@@ -20,11 +20,18 @@
       <a href = ${row.href} class = "${row.isActive ? 'item active common-font' : 'item common-font'}" repeat.for = "row of router.navigation">
         ${row.title}
       </a>
-
       <div class="ui right item">
         <compose view-model="components/lang/lang_picker"></compose>
         <!--<lang_picker></lang_picker>-->
       </div>
+    </div>
+  </div>
+
+  <div class="links">
+    <div class="round-button">
+      <a href="http://www.ave-tours.com" target="_blank">
+        <img src="/pics/misc/ave-tours-ico.ico"/>
+      </a>
     </div>
   </div>
 

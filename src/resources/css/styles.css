@@ -39,7 +39,7 @@ a.noDecor {
 }
 
 div.links {
-    position: absolute;
+    position: fixed;
     top: 400px;
     left: 100px;
     max-width: 300px;
@@ -55,15 +55,15 @@ div.links div {
 */
 div.round-button:hover{
     opacity: .8;
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     box-shadow: 0 0 20px #1C1E1F;
 }
 
 div.round-button:active{
     opacity: .8;
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     box-shadow: 0 0 20px #1C1E1F;
 }
 

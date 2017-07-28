@@ -57,14 +57,14 @@ div.round-button:hover{
     opacity: .8;
     width: 75px;
     height: 75px;
-    box-shadow: 0 0 20px green;
+    box-shadow: 0 0 20px lightseagreen;
 }
 
 div.round-button:active{
     opacity: .8;
     width: 70px;
     height: 70px;
-    box-shadow: 0 0 20px green;
+    box-shadow: 0 0 20px lightseagreen;
 }
 
 div.round-button:hover img{
@@ -81,7 +81,7 @@ div.round-button {
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 20px darkred;
+    box-shadow: 0 0 20px forestgreen;
     margin: 40px auto;
 }
 
@@ -89,7 +89,7 @@ div.round-button img {
     display: block;
     width: 100%;
     border-radius: 50%;
-    border: 5px solid forestgreen;
+    border: 5px solid mediumseagreen;
 }
 
 div.centered-div {

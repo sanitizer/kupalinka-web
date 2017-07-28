@@ -5,26 +5,16 @@
         </div>
     </div>
 
-    <div class="links common-font">
-        <div class="ui large header" style="text-align: left;">
-            <p>Our Partners</p>
+    <div class="links">
+        <div class="ui large header">
+            <p class="common-font">
+                ${partnersHeader}
+            </p>
         </div>
 
-        <div class="round-button">
-            <a href="http://www.ave-tours.com" target="_blank">
-                <img src="/pics/misc/ave-tours-ico.ico"/>
-            </a>
-        </div>
-
-        <div class="round-button">
-            <a href="http://www.hello.com" target="_blank">
-                <img src="/pics/misc/ave-tours-ico.ico"/>
-            </a>
-        </div>
-
-        <div class="round-button">
-            <a href="http://www.bye.com" target="_blank">
-                <img src="/pics/misc/ave-tours-ico.ico"/>
+        <div class="round-button" repeat.for="p of partners">
+            <a href="${p.refs}" target="_blank">
+                <img src="${p.pic.path}"/>
             </a>
         </div>
 

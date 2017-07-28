@@ -40,9 +40,9 @@ a.noDecor {
 
 div.links {
     position: absolute;
-    top: 200px;
+    top: 400px;
     left: 100px;
-    max-width: 200px;
+    max-width: 300px;
 }
 
 div.links div {
@@ -53,20 +53,28 @@ div.links div {
     created round buttons for
     link buttons
 */
-div.round-button:hover {
-    opacity: .9;
+div.round-button:hover{
+    opacity: .8;
+    width: 65px;
+    height: 65px;
     box-shadow: 0 0 20px #1C1E1F;
-    color: darkblue;
+}
+
+div.round-button:active{
+    opacity: .8;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 20px #1C1E1F;
 }
 
 div.round-button {
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     overflow: hidden;
     background: white;
-    box-shadow: 0 0 10px dimgrey;
+    box-shadow: 0 0 20px dimgrey;
     margin: 40px auto;
 }
 
@@ -74,6 +82,7 @@ div.round-button img {
     display: block;
     width: 100%;
     border-radius: 50%;
+    border: 5px solid whitesmoke;
 }
 
 div.centered-div {

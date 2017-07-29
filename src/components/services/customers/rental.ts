@@ -8,7 +8,7 @@ export class Rental extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "bioceramics.jpg";
+        return BASE_SERVICES_DIR + "rent.jpg";
     }
 
     getNameKey(): string {

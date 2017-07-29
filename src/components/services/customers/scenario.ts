@@ -8,7 +8,7 @@ export class Scenario extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "bioceramics.jpg";
+        return BASE_SERVICES_DIR + "scenario.jpg";
     }
 
     getNameKey(): string {

@@ -14,6 +14,7 @@ export class Service implements DataFormat {
     @bindable partialData: string;
     @bindable data: Array<string>;
     @bindable pic: Picture;
+    @bindable show: boolean;
     rawData: string;
     i18n: I18N;
     ea: EventAggregator;
@@ -25,6 +26,7 @@ export class Service implements DataFormat {
         this.subscribe();
         this.setLocalizedStrings();
         this.pic = new Picture(i18n, ea, this.getPicPath());
+        this.show = this.showFullData();
     }
 
     protected getPartOfData(): string {
@@ -62,7 +64,6 @@ export class Service implements DataFormat {
     setLocalizedStrings() {
         this.name = this.i18n.tr(this.getNameKey());
         this.rawData = this.i18n.tr(this.getDataKey());
-        this.data = this.getData().split("\n");
         this.partialData = this.getPartOfData();
     }
 
@@ -75,6 +76,7 @@ export class Service implements DataFormat {
         this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
             curObj.i18n.setLocale(response.locale);
             curObj.setLocalizedStrings();
+            curObj.show = curObj.showFullData();
         });
     }
 

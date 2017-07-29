@@ -8,7 +8,7 @@ export class Fashion extends Service {
     }
 
     getPicPath(): string {
-        return BASE_SERVICES_DIR + "bioceramics.jpg";
+        return BASE_SERVICES_DIR + "fashion.jpg";
     }
 
     getNameKey(): string {

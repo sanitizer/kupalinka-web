@@ -608,7 +608,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define('components/services/services',["require", "exports", "./customers/bioceramics", "./customers/computer_class", "./customers/theatre_studio", "./customers/esl_class", "./customers/excursion_trips", "./customers/haircuts", "./customers/karaoke", "./customers/massage_therapist", "./customers/skin_care_classes", "./customers/social_dances", "./customers/club_of_curious", "./customers/wellness_classes", "aurelia-i18n", "aurelia-framework", "aurelia-event-aggregator", "../lang/model/constants"], function (require, exports, bioceramics_1, computer_class_1, theatre_studio_1, esl_class_1, excursion_trips_1, haircuts_1, karaoke_1, massage_therapist_1, skin_care_classes_1, social_dances_1, club_of_curious_1, wellness_classes_1, aurelia_i18n_1, aurelia_framework_1, aurelia_event_aggregator_1, constants_1) {
+define('components/services/services',["require", "exports", "./customers/bioceramics", "./customers/computer_class", "./customers/theatre_studio", "./customers/esl_class", "./customers/excursion_trips", "./customers/haircuts", "./customers/karaoke", "./customers/massage_therapist", "./customers/skin_care_classes", "./customers/social_dances", "./customers/club_of_curious", "./customers/wellness_classes", "aurelia-i18n", "aurelia-framework", "aurelia-event-aggregator", "../lang/model/constants", "./customers/citizenship", "./customers/fashion", "./customers/rental", "./customers/scenario"], function (require, exports, bioceramics_1, computer_class_1, theatre_studio_1, esl_class_1, excursion_trips_1, haircuts_1, karaoke_1, massage_therapist_1, skin_care_classes_1, social_dances_1, club_of_curious_1, wellness_classes_1, aurelia_i18n_1, aurelia_framework_1, aurelia_event_aggregator_1, constants_1, citizenship_1, fashion_1, rental_1, scenario_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Services = (function () {
@@ -624,6 +624,10 @@ define('components/services/services',["require", "exports", "./customers/biocer
                 new haircuts_1.Haircuts(i18n, ea),
                 new karaoke_1.Karaoke(i18n, ea),
                 new massage_therapist_1.MassageTherapist(i18n, ea),
+                new citizenship_1.Citizenship(i18n, ea),
+                new fashion_1.Fashion(i18n, ea),
+                new rental_1.Rental(i18n, ea),
+                new scenario_1.Scenario(i18n, ea),
                 new skin_care_classes_1.SkinCareClass(i18n, ea),
                 new social_dances_1.SocialDances(i18n, ea),
                 new club_of_curious_1.ClubOfCurious(i18n, ea),
@@ -1476,6 +1480,134 @@ define('components/home/model/partner',["require", "exports"], function (require
         return Partner;
     }());
     exports.Partner = Partner;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/fashion',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Fashion = (function (_super) {
+        __extends(Fashion, _super);
+        function Fashion(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        Fashion.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "bioceramics.jpg";
+        };
+        Fashion.prototype.getNameKey = function () {
+            return "fashionName";
+        };
+        Fashion.prototype.getDataKey = function () {
+            return "fashionData";
+        };
+        return Fashion;
+    }(service_1.Service));
+    exports.Fashion = Fashion;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/rental',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Rental = (function (_super) {
+        __extends(Rental, _super);
+        function Rental(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        Rental.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "bioceramics.jpg";
+        };
+        Rental.prototype.getNameKey = function () {
+            return "rentName";
+        };
+        Rental.prototype.getDataKey = function () {
+            return "rentData";
+        };
+        return Rental;
+    }(service_1.Service));
+    exports.Rental = Rental;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/scenario',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Scenario = (function (_super) {
+        __extends(Scenario, _super);
+        function Scenario(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        Scenario.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "bioceramics.jpg";
+        };
+        Scenario.prototype.getNameKey = function () {
+            return "scenarioName";
+        };
+        Scenario.prototype.getDataKey = function () {
+            return "scenarioData";
+        };
+        return Scenario;
+    }(service_1.Service));
+    exports.Scenario = Scenario;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/citizenship',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Citizenship = (function (_super) {
+        __extends(Citizenship, _super);
+        function Citizenship(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        Citizenship.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "bioceramics.jpg";
+        };
+        Citizenship.prototype.getNameKey = function () {
+            return "citizenName";
+        };
+        Citizenship.prototype.getDataKey = function () {
+            return "citizenData";
+        };
+        return Citizenship;
+    }(service_1.Service));
+    exports.Citizenship = Citizenship;
 });
 
 define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><a href=\"#\"><img class=\"ui tiny image rounded\" src=\"${headerPic.path}\"> </a><a href=\"#\" class=\"noDecor\"><span class=\"common-font\">&ensp;${header} <small>&ensp;${subHeader}</small></span></a></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><compose view-model=\"components/lang/lang_picker\"></compose></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });

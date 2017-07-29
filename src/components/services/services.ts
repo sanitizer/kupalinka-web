@@ -15,6 +15,10 @@ import {I18N} from "aurelia-i18n";
 import {inject, bindable} from 'aurelia-framework';
 import {EventAggregator, Subscription} from "aurelia-event-aggregator";
 import {LANG_CHANGED} from "../lang/model/constants";
+import {Citizenship} from "./customers/citizenship";
+import {Fashion} from "./customers/fashion";
+import {Rental} from "./customers/rental";
+import {Scenario} from "./customers/scenario";
 
 /**
  * Created by sanitizer on 7/14/17.
@@ -42,6 +46,10 @@ export class Services {
                          new Haircuts(i18n, ea),
                          new Karaoke(i18n, ea),
                          new MassageTherapist(i18n, ea),
+                         new Citizenship(i18n, ea),
+                         new Fashion(i18n, ea),
+                         new Rental(i18n, ea),
+                         new Scenario(i18n, ea),
                          new SkinCareClass(i18n, ea),
                          new SocialDances(i18n, ea),
                          new ClubOfCurious(i18n, ea),

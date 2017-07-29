@@ -117,7 +117,7 @@ define('app',["require", "exports", "./resources/model/route-model", "aurelia-fr
 define('constants',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.BASE_MISC_DIR = "/pics/misc/";
+    exports.BASE_MISC_DIR = "images/misc/";
 });
 
 define('environment',["require", "exports"], function (require, exports) {
@@ -271,7 +271,7 @@ define('components/contact/contact',["require", "exports", "./model/address", "a
 define('components/gallery/constants',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.BASE_GALLERY_DIR = "/pics/gallery/";
+    exports.BASE_GALLERY_DIR = "images/gallery/";
 });
 
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -405,7 +405,7 @@ define('components/home/home',["require", "exports", "aurelia-i18n", "aurelia-fr
             this.i18n = i18n;
             this.ea = ea;
             this.setLocalizedStrings();
-            this.partners = [new partner_1.Partner("http://www.ave-tours.com", new picture_1.Picture(this.i18n, ea, "/pics/misc/ave-tours-ico.ico"))];
+            this.partners = [new partner_1.Partner("http://www.ave-tours.com", new picture_1.Picture(this.i18n, ea, "/images/misc/ave-tours-ico.ico"))];
         }
         Home.prototype.setLocalizedStrings = function () {
             this.data = this.i18n.tr("home:homeText").split("\n");
@@ -942,6 +942,21 @@ define('components/contact/model/address',["require", "exports", "aurelia-framew
     exports.Address = Address;
 });
 
+define('components/home/model/partner',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Partner = (function () {
+        function Partner(refs, pic, name) {
+            if (name === void 0) { name = ""; }
+            this.refs = refs;
+            this.name = name;
+            this.pic = pic;
+        }
+        return Partner;
+    }());
+    exports.Partner = Partner;
+});
+
 define('components/lang/model/constants',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -1048,6 +1063,38 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+define('components/services/customers/citizenship',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Citizenship = (function (_super) {
+        __extends(Citizenship, _super);
+        function Citizenship(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        Citizenship.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "citizenship.jpg";
+        };
+        Citizenship.prototype.getNameKey = function () {
+            return "citizenName";
+        };
+        Citizenship.prototype.getDataKey = function () {
+            return "citizenData";
+        };
+        return Citizenship;
+    }(service_1.Service));
+    exports.Citizenship = Citizenship;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 define('components/services/customers/club_of_curious',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -1105,7 +1152,7 @@ define('components/services/customers/computer_class',["require", "exports", "..
 define('components/services/customers/constants',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.BASE_SERVICES_DIR = "/pics/services/";
+    exports.BASE_SERVICES_DIR = "images/services/";
 });
 
 var __extends = (this && this.__extends) || (function () {
@@ -1170,6 +1217,38 @@ define('components/services/customers/excursion_trips',["require", "exports", ".
         return ExcursionTrips;
     }(service_1.Service));
     exports.ExcursionTrips = ExcursionTrips;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/fashion',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Fashion = (function (_super) {
+        __extends(Fashion, _super);
+        function Fashion(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        Fashion.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "fashion.jpg";
+        };
+        Fashion.prototype.getNameKey = function () {
+            return "fashionName";
+        };
+        Fashion.prototype.getDataKey = function () {
+            return "fashionData";
+        };
+        return Fashion;
+    }(service_1.Service));
+    exports.Fashion = Fashion;
 });
 
 var __extends = (this && this.__extends) || (function () {
@@ -1266,6 +1345,70 @@ define('components/services/customers/massage_therapist',["require", "exports", 
         return MassageTherapist;
     }(service_1.Service));
     exports.MassageTherapist = MassageTherapist;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/rental',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Rental = (function (_super) {
+        __extends(Rental, _super);
+        function Rental(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        Rental.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "rent.jpg";
+        };
+        Rental.prototype.getNameKey = function () {
+            return "rentName";
+        };
+        Rental.prototype.getDataKey = function () {
+            return "rentData";
+        };
+        return Rental;
+    }(service_1.Service));
+    exports.Rental = Rental;
+});
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+define('components/services/customers/scenario',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Scenario = (function (_super) {
+        __extends(Scenario, _super);
+        function Scenario(i18n, ea) {
+            return _super.call(this, i18n, ea) || this;
+        }
+        Scenario.prototype.getPicPath = function () {
+            return constants_1.BASE_SERVICES_DIR + "scenario.jpg";
+        };
+        Scenario.prototype.getNameKey = function () {
+            return "scenarioName";
+        };
+        Scenario.prototype.getDataKey = function () {
+            return "scenarioData";
+        };
+        return Scenario;
+    }(service_1.Service));
+    exports.Scenario = Scenario;
 });
 
 var __extends = (this && this.__extends) || (function () {
@@ -1399,7 +1542,7 @@ define('components/services/customers/wellness_classes',["require", "exports", "
 define('components/staff/employees/constants',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.BASE_EMPLOYEES_DIR = "/pics/employees/";
+    exports.BASE_EMPLOYEES_DIR = "images/employees/";
 });
 
 var __extends = (this && this.__extends) || (function () {
@@ -1470,149 +1613,6 @@ define('components/staff/employees/employee2',["require", "exports", "../employe
         return IrinaMonosova;
     }(employee_1.Employee));
     exports.IrinaMonosova = IrinaMonosova;
-});
-
-define('components/home/model/partner',["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Partner = (function () {
-        function Partner(refs, pic, name) {
-            if (name === void 0) { name = ""; }
-            this.refs = refs;
-            this.name = name;
-            this.pic = pic;
-        }
-        return Partner;
-    }());
-    exports.Partner = Partner;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define('components/services/customers/fashion',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Fashion = (function (_super) {
-        __extends(Fashion, _super);
-        function Fashion(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        Fashion.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "fashion.jpg";
-        };
-        Fashion.prototype.getNameKey = function () {
-            return "fashionName";
-        };
-        Fashion.prototype.getDataKey = function () {
-            return "fashionData";
-        };
-        return Fashion;
-    }(service_1.Service));
-    exports.Fashion = Fashion;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define('components/services/customers/rental',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Rental = (function (_super) {
-        __extends(Rental, _super);
-        function Rental(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        Rental.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "rent.jpg";
-        };
-        Rental.prototype.getNameKey = function () {
-            return "rentName";
-        };
-        Rental.prototype.getDataKey = function () {
-            return "rentData";
-        };
-        return Rental;
-    }(service_1.Service));
-    exports.Rental = Rental;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define('components/services/customers/scenario',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Scenario = (function (_super) {
-        __extends(Scenario, _super);
-        function Scenario(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        Scenario.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "scenario.jpg";
-        };
-        Scenario.prototype.getNameKey = function () {
-            return "scenarioName";
-        };
-        Scenario.prototype.getDataKey = function () {
-            return "scenarioData";
-        };
-        return Scenario;
-    }(service_1.Service));
-    exports.Scenario = Scenario;
-});
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-define('components/services/customers/citizenship',["require", "exports", "../service", "./constants"], function (require, exports, service_1, constants_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Citizenship = (function (_super) {
-        __extends(Citizenship, _super);
-        function Citizenship(i18n, ea) {
-            return _super.call(this, i18n, ea) || this;
-        }
-        Citizenship.prototype.getPicPath = function () {
-            return constants_1.BASE_SERVICES_DIR + "citizenship.jpg";
-        };
-        Citizenship.prototype.getNameKey = function () {
-            return "citizenName";
-        };
-        Citizenship.prototype.getDataKey = function () {
-            return "citizenData";
-        };
-        return Citizenship;
-    }(service_1.Service));
-    exports.Citizenship = Citizenship;
 });
 
 define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"bootstrap/css/bootstrap.css\"></require><require from=\"semantic-ui/semantic.css\"></require><require from=\"resources/css/styles.css\"></require><div class=\"ui inverted segment\"><div class=\"ui secondary pointing large inverted menu\"><h2 class=\"ui top attached blue header item\"><a href=\"#\"><img class=\"ui tiny image rounded\" src=\"${headerPic.path}\"> </a><a href=\"#\" class=\"noDecor\"><span class=\"common-font\">&ensp;${header} <small>&ensp;${subHeader}</small></span></a></h2><a href=\"${row.href}\" class=\"${row.isActive ? 'item active common-font' : 'item common-font'}\" repeat.for=\"row of router.navigation\">${row.title}</a><div class=\"ui right item\"><compose view-model=\"components/lang/lang_picker\"></compose></div></div></div><div class=\"page-host\"><router-view></router-view></div></template>"; });

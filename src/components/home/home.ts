@@ -24,7 +24,7 @@ export class Home implements Localized {
         this.i18n = i18n;
         this.ea = ea;
         this.setLocalizedStrings();
-        this.partners = [new Partner("http://www.ave-tours.com", new Picture(this.i18n, ea, "/images/misc/ave-tours-ico.ico"))];
+        this.partners = [new Partner("http://www.ave-tours.com", new Picture(this.i18n, ea, "images/misc/ave-tours-ico.ico"))];
     }
 
     setLocalizedStrings() {

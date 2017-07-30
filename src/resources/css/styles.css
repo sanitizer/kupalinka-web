@@ -40,8 +40,8 @@ a.noDecor {
 
 div.links {
     position: fixed;
-    top: 400px;
-    left: 100px;
+    top: 40%;
+    left: 5%;
     max-width: 300px;
 }
 
@@ -116,9 +116,6 @@ img.imageStandard {
     max-width: 100%;
     max-height: 650px;
     margin: auto;
-    image-orientation: from-image;
-    object-fit: contain;
-    /*border: 7px outset darkgoldenrod;*/
 }
 
 div.central-text {

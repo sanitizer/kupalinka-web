@@ -11,11 +11,8 @@ import {LANG_CHANGED} from "../lang/model/constants";
 export class Service implements DataFormat {
 
     @bindable name: string;
-    @bindable partialData: string;
     @bindable data: Array<string>;
     @bindable pic: Picture;
-    @bindable show: boolean;
-    rawData: string;
     i18n: I18N;
     ea: EventAggregator;
     subscriber: Subscription;
@@ -26,23 +23,6 @@ export class Service implements DataFormat {
         this.subscribe();
         this.setLocalizedStrings();
         this.pic = new Picture(i18n, ea, this.getPicPath());
-        this.show = this.showFullData();
-    }
-
-    protected getPartOfData(): string {
-        return this.showFullData() ? this.getData() : this.getData().substring(0, this.getData().length/2) + "...";
-    }
-
-    getData(): string {
-        return this.rawData;
-    }
-
-    protected getMaxDescrSize(): number {
-        return 190;
-    }
-
-    protected showFullData(): boolean {
-        return this.getData().length <= this.getMaxDescrSize();
     }
 
     getDataKey(): string {
@@ -57,14 +37,9 @@ export class Service implements DataFormat {
         return "";
     }
 
-    onClick() {
-        alert(this.getData());
-    }
-
     setLocalizedStrings() {
         this.name = this.i18n.tr(this.getNameKey());
-        this.rawData = this.i18n.tr(this.getDataKey());
-        this.partialData = this.getPartOfData();
+        this.data = this.i18n.tr(this.getDataKey()).split("\n");
     }
 
     attached() {
@@ -76,10 +51,8 @@ export class Service implements DataFormat {
         this.subscriber = this.ea.subscribe(LANG_CHANGED, response => {
             curObj.i18n.setLocale(response.locale);
             curObj.setLocalizedStrings();
-            curObj.show = curObj.showFullData();
         });
     }
-
 
     detached() {
         if(this.subscriber){

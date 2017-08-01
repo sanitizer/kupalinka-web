@@ -532,20 +532,7 @@ define('components/services/service',["require", "exports", "aurelia-templating"
             this.subscribe();
             this.setLocalizedStrings();
             this.pic = new picture_1.Picture(i18n, ea, this.getPicPath());
-            this.show = this.showFullData();
         }
-        Service.prototype.getPartOfData = function () {
-            return this.showFullData() ? this.getData() : this.getData().substring(0, this.getData().length / 2) + "...";
-        };
-        Service.prototype.getData = function () {
-            return this.rawData;
-        };
-        Service.prototype.getMaxDescrSize = function () {
-            return 190;
-        };
-        Service.prototype.showFullData = function () {
-            return this.getData().length <= this.getMaxDescrSize();
-        };
         Service.prototype.getDataKey = function () {
             return "";
         };
@@ -555,13 +542,9 @@ define('components/services/service',["require", "exports", "aurelia-templating"
         Service.prototype.getPicPath = function () {
             return "";
         };
-        Service.prototype.onClick = function () {
-            alert(this.getData());
-        };
         Service.prototype.setLocalizedStrings = function () {
             this.name = this.i18n.tr(this.getNameKey());
-            this.rawData = this.i18n.tr(this.getDataKey());
-            this.partialData = this.getPartOfData();
+            this.data = this.i18n.tr(this.getDataKey()).split("\n");
         };
         Service.prototype.attached = function () {
             this.subscribe();
@@ -571,7 +554,6 @@ define('components/services/service',["require", "exports", "aurelia-templating"
             this.subscriber = this.ea.subscribe(constants_1.LANG_CHANGED, function (response) {
                 curObj.i18n.setLocale(response.locale);
                 curObj.setLocalizedStrings();
-                curObj.show = curObj.showFullData();
             });
         };
         Service.prototype.detached = function () {
@@ -587,20 +569,12 @@ define('components/services/service',["require", "exports", "aurelia-templating"
     ], Service.prototype, "name", void 0);
     __decorate([
         aurelia_templating_1.bindable,
-        __metadata("design:type", String)
-    ], Service.prototype, "partialData", void 0);
-    __decorate([
-        aurelia_templating_1.bindable,
         __metadata("design:type", Array)
     ], Service.prototype, "data", void 0);
     __decorate([
         aurelia_templating_1.bindable,
         __metadata("design:type", picture_1.Picture)
     ], Service.prototype, "pic", void 0);
-    __decorate([
-        aurelia_templating_1.bindable,
-        __metadata("design:type", Boolean)
-    ], Service.prototype, "show", void 0);
     exports.Service = Service;
 });
 
@@ -1621,6 +1595,6 @@ define('text!components/contact/contact.html', ['module'], function(module) { mo
 define('text!components/gallery/gallery.html', ['module'], function(module) { module.exports = "<template><div class=\"container\"><h1 class=\"common-font ud50\">${header}</h1><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><div class=\"carousel-inner\"><div class=\"${$index == 0 ? 'item active' : 'item'}\" repeat.for=\"pic of pics\"><img src=\"${pic.path}\" alt=\"${pic.description}\" class=\"imageStandard\"><div class=\"carousel-caption\"><p class=\"common-font picDescription\">${pic.description}</p></div></div></div><a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span> <span class=\"sr-only\">Previous</span> </a><a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span> <span class=\"sr-only\">Next</span></a></div></div></template>"; });
 define('text!components/home/home.html', ['module'], function(module) { module.exports = "<template><div class=\"pad20\"><div class=\"ui centered large header common-font\">${header}</div></div><div class=\"links\"><div class=\"ui large header\"><p class=\"common-font\">${partnersHeader}</p></div><div class=\"round-button\" repeat.for=\"p of partners\"><a href=\"${p.refs}\" target=\"_blank\"><img src=\"${p.pic.path}\"></a></div></div><div class=\"central-text common-font\"><p class=\"central-text common-font\" repeat.for=\"d of data\">${d}</p></div></template>"; });
 define('text!components/lang/lang_picker.html', ['module'], function(module) { module.exports = "<template><label for=\"langSelect\" class=\"common-font pad-r10\">${dropDownText}</label><select class=\"select\" id=\"langSelect\" value.two-way=\"selectedLang\"><option model.bind=\"l\" value=\"${l}\" repeat.for=\"l of languages\">${l.displayName}</option></select></template>"; });
-define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><div class=\"central-text common-font\"><div class=\"ui centered large header\">${mainHeader}</div><p class=\"central-text common-font\" repeat.for=\"t of mainText\">${t}</p></div><div class=\"ui horizontal divider common-font\">${dividerText}</div><div class=\"ui basic segment\"></div><div class=\"lr100\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><div class=\"ui blue header\">${service.name}</div><div class=\"description card-description\">${service.rawData}</div></div></div></div></div></template>"; });
+define('text!components/services/services.html', ['module'], function(module) { module.exports = "<template><div class=\"central-text common-font\"><div class=\"ui centered large header\">${mainHeader}</div><p class=\"central-text common-font\" repeat.for=\"t of mainText\">${t}</p></div><div class=\"ui horizontal divider common-font\">${dividerText}</div><div class=\"ui basic segment\"></div><div class=\"lr100\"><div class=\"ui five centered cards\"><div class=\"ui grey raised link card\" repeat.for=\"service of services\"><div class=\"image\"><img src=\"${service.pic.path}\"></div><div class=\"content common-font\"><div class=\"ui blue header\">${service.name}</div><div class=\"description card-description\"><p repeat.for=\"d of service.data\">${d}</p></div></div></div></div></div></template>"; });
 define('text!components/staff/staff.html', ['module'], function(module) { module.exports = "<template><div class=\"margin10\"><div class=\"ui divided items\"><div class=\"item common-font\" repeat.for=\"employee of employees\"><div class=\"ui medium image\"><img class=\"imageStandard\" src=\"${employee.pic.path}\"></div><div class=\"content\"><div class=\"ui large header\">${employee.name}</div><div class=\"meta\"><span>${employee.position}</span></div><div class=\"description\"><p class=\"justify-right20 common-font\" repeat.for=\"d of employee.data\">${d}</p></div></div></div></div></div></template>"; });
 //# sourceMappingURL=app-bundle.js.map

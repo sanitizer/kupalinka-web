@@ -24,7 +24,9 @@
                         ${service.name}
                     </div>
                     <div class="description card-description">
-                        ${service.rawData}
+                        <p repeat.for="d of service.data">
+                            ${d}
+                        </p>
                     </div>
                 </div>
             </div>

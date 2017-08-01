@@ -26,6 +26,12 @@
     white-space: pre-line;
 }
 
+div.card-description {
+    overflow-y: auto;
+    max-height: 100px;
+    padding-right: 10px;
+}
+
 a.noDecor {
     text-decoration: none;
 }

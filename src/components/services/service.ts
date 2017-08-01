@@ -30,7 +30,7 @@ export class Service implements DataFormat {
     }
 
     protected getPartOfData(): string {
-        return this.showFullData() ? this.getData() : this.getData().substring(0, this.getMaxDescrSize()/2) + "...";
+        return this.showFullData() ? this.getData() : this.getData().substring(0, this.getData().length/2) + "...";
     }
 
     getData(): string {
@@ -38,7 +38,7 @@ export class Service implements DataFormat {
     }
 
     protected getMaxDescrSize(): number {
-        return 100;
+        return 190;
     }
 
     protected showFullData(): boolean {

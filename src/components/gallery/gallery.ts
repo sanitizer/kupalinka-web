@@ -76,7 +76,7 @@ export class Gallery {
                      new Picture(i18n, ea, BASE_GALLERY_DIR + "53.jpg"),
                      new Picture(i18n, ea, BASE_GALLERY_DIR + "54.jpg"),
                      new Picture(i18n, ea, BASE_GALLERY_DIR + "55.jpg"),
-                     new Picture(i18n, ea, BASE_GALLERY_DIR + "56.jpg"),
+                     // new Picture(i18n, ea, BASE_GALLERY_DIR + "56.jpg"),
                      new Picture(i18n, ea, BASE_GALLERY_DIR + "57.jpg"),
                      new Picture(i18n, ea, BASE_GALLERY_DIR + "58.jpg")];
     }

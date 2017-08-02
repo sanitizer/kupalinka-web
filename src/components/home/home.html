@@ -1,10 +1,4 @@
 <template>
-    <div class="pad20">
-        <div class="ui centered large header common-font">
-            ${header}
-        </div>
-    </div>
-
     <div class="links">
         <div class="ui large header">
             <p class="common-font">
@@ -20,6 +14,9 @@
     </div>
 
     <div class="central-text common-font">
+        <div class="ui centered large header common-font">
+            ${header}
+        </div>
         <p class="central-text common-font" repeat.for="d of data">${d}</p>
     </div>
 </template>

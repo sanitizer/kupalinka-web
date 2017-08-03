@@ -167,7 +167,16 @@ p.justify-right20 {
 }
 
 .select {
-    background-color: #1C1E1F;
+    background-color: forestgreen;
     border: none;
     text-align: center;
+}
+
+.menuHeader {
+    color: darkgrey;
+}
+
+.menuColor {
+    background-color: forestgreen;
+    border: none;
 }

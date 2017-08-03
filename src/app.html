@@ -4,19 +4,19 @@
   <require from="resources/css/styles.css"></require>
   <!--<require from="./lang_picker"></require>-->
 
-  <div class="ui inverted segment">
-    <div class="ui secondary pointing large inverted menu">
-      <h2 class="ui top attached blue header item">
+  <div class="ui inverted segment" style="background-color: forestgreen;">
+    <div class="ui secondary pointing large inverted menu" style="border: none">
+      <div class="ui blue header item">
         <a href = "#">
           <img class="ui tiny image rounded" src="${headerPic.path}">
         </a>
         <a href = "#" class="noDecor">
-          <span class="common-font">
+          <div class="common-font">
               &ensp;${header}
-              <small>&ensp;${subHeader}</small>
-          </span>
+              <small class="menuHeader">&ensp;${subHeader}</small>
+          </div>
         </a>
-      </h2>
+      </div>
       <a href = ${row.href} class = "${row.isActive ? 'item active common-font' : 'item common-font'}" repeat.for = "row of router.navigation">
         ${row.title}
       </a>

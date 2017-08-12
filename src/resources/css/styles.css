@@ -26,6 +26,13 @@
     white-space: pre-line;
 }
 
+.footer {
+    text-align: center;
+    bottom: 0;
+    margin: 20px auto;
+    max-width: 200px;
+}
+
 div.card-description {
     overflow-y: auto;
     max-height: 100px;

@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  text: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.text = "\u00A9 2017 Kupalinka ADC";
   }
 
 }

@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
-import {ContactComponent} from "./components/contact/contact.component";
+import {ContactComponent} from "./components/contact.component";
 
 @NgModule({
   imports: [

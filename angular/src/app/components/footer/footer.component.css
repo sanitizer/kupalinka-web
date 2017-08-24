@@ -1,5 +1,9 @@
-p {
-  font-size: 10px;
+div {
+  font-size: 12px;
   font-family: sans-serif;
   text-align: center;
+  text-decoration: none;
+  bottom: 0;
+  margin: 20px auto;
+  max-width: 200px;
 }

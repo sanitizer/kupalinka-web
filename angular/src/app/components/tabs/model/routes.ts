@@ -14,14 +14,19 @@ export const DEFINED_ROUTES: R[] = [
     display: "Services"
   },
   {
+    path: "staff",
+    loadChildren: "app/modules/staff/staff.module#StaffModule",
+    display: "Staff"
+  },
+  {
     path: "gallery",
     loadChildren: "app/modules/gallery/gallery.module#GalleryModule",
-    display: "Gallery"
+    display: "Photo Gallery"
   },
   {
     path: "contact",
     loadChildren: "app/modules/contact/contact.module#ContactModule",
-    display: "Contact"
+    display: "Contact Us"
   }
 ];
 

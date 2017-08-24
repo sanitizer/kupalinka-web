@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ContactComponent } from './components/contact/contact.component';
+import { ContactComponent } from './components/contact.component';
 import {SharedModule} from "../shared/shared.module";
 import {ContactRoutingModule} from "./contact-routing.module";
 

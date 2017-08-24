@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let r of routes">
+    <a routerLink="{{r.path}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      {{r.display}}
+    </a>
+  </li>
+</ul>

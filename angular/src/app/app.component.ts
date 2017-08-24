@@ -12,7 +12,7 @@ export class AppComponent {
   constructor() {}
 
   ngOnInit() {
-    this.text = "This is main app";
+    this.text = "Welcome to Kupalinka ADC";
   }
 
 }

@@ -4,3 +4,17 @@ div {
   width: 100%;
   height: 100%;
 }
+
+div::after {
+  content: "";
+  height: auto;
+  width: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -999;
+  opacity: 0.2;
+  background: url("../../images/misc/fern.jpg") no-repeat center;
+}

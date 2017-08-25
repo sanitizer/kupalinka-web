@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import { ContactComponent } from './components/contact.component';
+import {NgModule} from '@angular/core';
+import {ContactComponent} from './components/contact.component';
 import {SharedModule} from "../shared/shared.module";
 import {ContactRoutingModule} from "./contact-routing.module";
-import { ContactTextComponent } from './components/contact-text/contact-text.component';
+import {ContactTextComponent} from './components/contact-text/contact-text.component';
+import {ContactAddressComponent} from './components/contact-address/contact-address.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,9 @@ import { ContactTextComponent } from './components/contact-text/contact-text.com
   ],
   declarations: [
     ContactComponent,
-    ContactTextComponent
+    ContactTextComponent,
+    ContactAddressComponent
   ]
 })
-export class ContactModule { }
+export class ContactModule {
+}

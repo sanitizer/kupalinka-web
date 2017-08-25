@@ -3,10 +3,13 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: forestgreen;
   position: fixed;
-  bottom: 0;
+  display: block;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 50px;
 }
 
 li {
@@ -17,17 +20,17 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 16px 5px;
   text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: forestgreen;
 }
 
 .active {
   background-color: forestgreen;
-  border-top: 1px solid white;
+  border-bottom: 2px solid white;
 }
 
 .right {

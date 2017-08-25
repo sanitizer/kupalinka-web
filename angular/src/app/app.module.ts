@@ -9,7 +9,7 @@ import {LoginGuard} from "./login.guard";
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
-  MdButtonModule, MdCardModule, MdIconModule, MdMenuModule, MdTabsModule,
+  MdButtonModule, MdCardModule, MdHeaderCell, MdIconModule, MdMenuModule, MdTabsModule,
   MdToolbarModule
 } from "@angular/material";
 import {ROUTES_MODULE} from "./components/tabs/model/routes";

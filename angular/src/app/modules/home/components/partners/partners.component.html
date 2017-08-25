@@ -1,0 +1,11 @@
+<div class="links">
+  <div class="ui large header">
+    <app-header [text]="hText"></app-header>
+  </div>
+
+  <div class="round-button" *ngFor="let p of partners">
+    <a href="{{p.refs}}" target="_blank">
+      <img src="{{p.pic.path}}"/>
+    </a>
+  </div>
+</div>

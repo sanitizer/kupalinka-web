@@ -3,6 +3,7 @@ import {HomeComponent} from './components/home.component';
 import {SharedModule} from "../shared/shared.module";
 import {HomeRoutingModule} from "./home-routing.module";
 import {HomeTextComponent} from './components/home-text/home-text.component';
+import { PartnersComponent } from './components/partners/partners.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import {HomeTextComponent} from './components/home-text/home-text.component';
   ],
   declarations: [
     HomeComponent,
-    HomeTextComponent
+    HomeTextComponent,
+    PartnersComponent
   ]
 })
 export class HomeModule { }

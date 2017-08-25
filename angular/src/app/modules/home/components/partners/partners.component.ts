@@ -16,7 +16,7 @@ export class PartnersComponent implements OnInit {
 
   ngOnInit() {
     this.hText = "Our Partners";
-    this.partners = [new Partner("http://www.ave-tours.com", new Picture("/images/misc/ave-tours-ico.ico"))];
+    this.partners = [new Partner("http://www.ave-tours.com", new Picture("../../images/misc/ave-tours-ico.ico"))];
   }
 
 }

@@ -1,7 +1,11 @@
-<ul>
-  <li *ngFor="let r of routes">
-    <a routerLink="{{r.path}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      {{r.display}}
-    </a>
-  </li>
-</ul>
+<div class="menu">
+  <div class="left">
+    <app-company></app-company>
+  </div>
+  <div class="left">
+    <app-routes></app-routes>
+  </div>
+  <div class="right">
+    <app-select-language></app-select-language>
+  </div>
+</div>

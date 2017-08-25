@@ -1,0 +1,8 @@
+<label for="langSelect">
+  {{dropDownLabel}}
+</label>
+<select id="langSelect">
+  <option value="{{l}}" *ngFor="let l of languages">
+    {{l.displayName}}
+  </option>
+</select>

@@ -6,7 +6,7 @@ import {Directive, ElementRef} from "@angular/core"
 export class UnderTabsDirective {
 
   constructor(element: ElementRef) {
-    element.nativeElement.style.marginTop = "70px";
+    element.nativeElement.style.marginTop = "80px";
   }
 
 }

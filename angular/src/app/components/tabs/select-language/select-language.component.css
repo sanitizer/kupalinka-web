@@ -1,0 +1,16 @@
+select {
+  background-color: forestgreen;
+  border: none;
+  text-align: center;
+  font-family: sans-serif;
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
+
+label {
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-decoration: none;
+}

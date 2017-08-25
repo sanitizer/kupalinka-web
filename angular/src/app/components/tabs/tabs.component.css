@@ -13,12 +13,9 @@ div.menu {
 div.left {
   float: left;
   padding-left: 10px;
-
-  border: 2px solid red;
 }
 
 div.right {
   float: right;
   padding-right: 10px;
-  border: 2px solid red;
 }

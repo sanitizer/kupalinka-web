@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Language} from "../model/language";
+import {LanguageService} from "../../../services/language.service";
 
 @Component({
   selector: 'app-select-language',
@@ -9,15 +10,17 @@ import {Language} from "../model/language";
 export class SelectLanguageComponent implements OnInit {
 
   dropDownLabel: string;
-  languages: Array<Language>;
   selectedLang: Language;
 
-  constructor() { }
+  constructor(public langService: LanguageService) { }
 
   ngOnInit() {
     this.dropDownLabel = "Language";
-    this.languages = [new Language("en", "English"),
-                      new Language("ru", "Russian")];
+    this.selectedLang = this.langService.getSelectedLanguage();
+  }
+
+  langChange(): void {
+    this.langService.setSelectedLanguage(this.selectedLang);
   }
 
 }

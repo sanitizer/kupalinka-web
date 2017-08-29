@@ -1,8 +1,8 @@
 <label for="langSelect">
   {{dropDownLabel}}
 </label>
-<select id="langSelect">
-  <option value="{{l}}" *ngFor="let l of languages">
+<select id="langSelect" [(ngModel)]="selectedLang" (change)="langChange()">
+  <option [ngValue]="l" *ngFor="let l of langService.languages">
     {{l.displayName}}
   </option>
 </select>

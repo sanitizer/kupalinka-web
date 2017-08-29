@@ -3,13 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {UserService} from "./user.service";
 import { TabsComponent } from './components/tabs/tabs.component';
 import {LoginGuard} from "./login.guard";
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
-  MdButtonModule, MdCardModule, MdHeaderCell, MdIconModule, MdMenuModule, MdTabsModule,
+  MdButtonModule, MdCardModule, MdIconModule, MdMenuModule, MdTabsModule,
   MdToolbarModule
 } from "@angular/material";
 import {ROUTES_MODULE} from "./components/tabs/model/routes";
@@ -22,6 +21,7 @@ import {SharedModule} from "./modules/shared/shared.module";
 import { SelectLanguageComponent } from './components/tabs/select-language/select-language.component';
 import { CompanyComponent } from './components/tabs/company/company.component';
 import {RoutesComponent} from "./components/tabs/routes/routes.component";
+import {LanguageService} from "./services/language.service";
 
 
 @NgModule({
@@ -52,8 +52,8 @@ import {RoutesComponent} from "./components/tabs/routes/routes.component";
     SharedModule
   ],
   providers: [
-    UserService,
-    LoginGuard
+    LoginGuard,
+    LanguageService
   ],
   bootstrap: [
     AppComponent

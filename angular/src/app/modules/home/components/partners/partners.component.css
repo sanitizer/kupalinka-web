@@ -1,0 +1,70 @@
+div.links {
+  position: fixed;
+  top: 35%;
+  left: 2%;
+  max-width: 15%;
+}
+
+div.links div {
+  align-items: center;
+}
+
+p {
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+div.round-button:hover{
+  opacity: .8;
+  width: 75px;
+  height: 75px;
+  box-shadow: 0 0 35px forestgreen;
+  animation: none;
+}
+
+div.round-button:active{
+  opacity: .8;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 0 20px forestgreen;
+  animation: none;
+  transition: .2s;
+}
+
+div.round-button {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 40px forestgreen;
+  margin: 40px auto;
+  /*transition setup*/
+  -webkit-transition: all .4s;
+  -moz-transition:    all .4s;
+  -ms-transition:     all .4s;
+  -o-transition:      all .4s;
+  transition:         all .4s;
+  /*animation setup*/
+  animation:          blinking 2s alternate 0s infinite;
+  -webkit-animation:  blinking 2s alternate 0s infinite;
+  -moz-animation:     blinking 2s alternate 0s infinite;
+  -o-animation:       blinking 2s alternate 0s infinite;
+  -ms-transition:     blinking 2s alternate 0s infinite;
+}
+
+@keyframes blinking {
+  from {
+    box-shadow: 0 0 40px forestgreen;
+  }
+  to {
+    box-shadow: 0 0 40px red;
+  }
+}
+
+div.round-button img {
+  display: block;
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid white;
+}

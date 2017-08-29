@@ -19,13 +19,19 @@ import {HomeModule} from "./modules/home/home.module";
 import {StaffModule} from "./modules/staff/staff.module";
 import {ServicesModule} from "./modules/services/services.module";
 import {SharedModule} from "./modules/shared/shared.module";
+import { SelectLanguageComponent } from './components/tabs/select-language/select-language.component';
+import { CompanyComponent } from './components/tabs/company/company.component';
+import {RoutesComponent} from "./components/tabs/routes/routes.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    TabsComponent
+    TabsComponent,
+    SelectLanguageComponent,
+    CompanyComponent,
+    RoutesComponent
   ],
   imports: [
     BrowserModule,

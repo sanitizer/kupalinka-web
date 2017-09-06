@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../../user.service";
+import {LanguageService} from "../../../services/language.service";
 
 @Component({
   selector: 'app-gallery',
@@ -10,7 +10,7 @@ export class GalleryComponent implements OnInit {
 
   text: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private langService: LanguageService) { }
 
   ngOnInit() {
     this.text = "This is gallery";

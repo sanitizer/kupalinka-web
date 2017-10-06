@@ -1,0 +1,31 @@
+<template>
+    <div class="pad20">
+        <h1 class="ui large header">
+            <span class="common-font">
+                ${mainHeader}
+            </span>
+            <div class="sub large header margin10">
+                <p class="common-font justify-right20">
+                    ${text}
+                </p>
+            </div>
+        </h1>
+
+        <div class="pad20">
+            <div class="ui list">
+                <div class="item common-font" repeat.for="event of events">
+                    <p class="justify-right20">
+                        <i>${event.text}</i></br>
+                        <h3>${splitter}</h3>
+                        <ul>
+                            <li repeat.for="time of event.times">
+                                ${time}
+                            </li>
+                        </ul>
+                    </p>
+                    <div class="ui divider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

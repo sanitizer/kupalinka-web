@@ -46,6 +46,7 @@ export class App {
       routes.push(new RouteModel(["staff"], "staff", "staff/staff", this.i18n.tr(this.getKeyByHref("#/staff"))));
       routes.push(new RouteModel(["gallery"], "gallery", "gallery/gallery", this.i18n.tr(this.getKeyByHref("#/gallery"))));
       routes.push(new RouteModel(["contact"], "contact", "contact/contact", this.i18n.tr(this.getKeyByHref("#/contact"))));
+      routes.push(new RouteModel(["events"], "events", "events/events", this.i18n.tr(this.getKeyByHref("#/events"))));
       return routes;
   }
 
@@ -84,6 +85,10 @@ export class App {
       return "nav:contact";
   }
 
+  getEventsKey(): string {
+      return "nav:events";
+  }
+
   getKeyByHref(href: string) {
       switch(href) {
           case "#/services":
@@ -94,6 +99,8 @@ export class App {
               return this.getGalleryTitleKey();
           case "#/contact":
               return this.getContactTitleKey();
+          case "#/events":
+              return this.getEventsKey();
           default:
               return this.getHomeTitleKey();
       }

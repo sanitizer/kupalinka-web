@@ -5,7 +5,7 @@ div {
   height: 100%;
 }
 
-div::after {
+body::after {
   content: "";
   height: auto;
   width: auto;
@@ -16,5 +16,5 @@ div::after {
   position: fixed;
   z-index: -999;
   opacity: 0.1;
-  background: url("../assets/images/misc/fern.jpg") no-repeat center;
+  background: url("/assets/images/misc/fern.jpg") no-repeat center;
 }

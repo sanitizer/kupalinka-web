@@ -1,9 +1,9 @@
-<div class="links">
-  <div>
-    <h3 central-text><b>{{hText}}</b></h3>
-  </div>
+<div class="links-header">
+  <h3 central-text><b>{{hText}}</b></h3>
+</div>
 
-  <div class="round-button" *ngFor="let p of partners">
+<div class="links">
+  <div class="round-button" *ngFor="let p of partners" style="display: block; float: left">
     <a href="{{p.refs}}" target="_blank">
       <img src="{{p.pic.path}}">
     </a>

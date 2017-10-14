@@ -38,7 +38,7 @@ div.round-button {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 40px forestgreen;
-  margin: 40px auto;
+  margin: 0 auto;
   /*transition setup*/
   -webkit-transition: all .4s;
   -moz-transition:    all .4s;
@@ -66,5 +66,4 @@ div.round-button img {
   display: block;
   width: 100%;
   border-radius: 50%;
-  border: 5px solid white;
 }

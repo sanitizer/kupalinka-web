@@ -14,3 +14,9 @@ label {
   font-family: sans-serif;
   text-decoration: none;
 }
+
+div {
+  float: right;
+  margin-top: 17px;
+  margin-right: 7px;
+}

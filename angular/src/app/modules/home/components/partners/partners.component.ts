@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Partner} from "../../model/partner";
 import {Picture} from "../../../../components/common/model/picture";
-import {BASE_ASSETS_PATH} from "../../../../consts";
+import {BASE_IMAGES_PATH} from "../../../../consts";
 
 @Component({
   selector: 'app-partners',
@@ -17,7 +17,7 @@ export class PartnersComponent implements OnInit {
 
   ngOnInit() {
     this.hText = "Our Partners";
-    this.partners = [new Partner("http://www.ave-tours.com", new Picture(BASE_ASSETS_PATH + "images/misc/ave-tours-ico.ico"))];
+    this.partners = [new Partner("http://www.ave-tours.com", new Picture(BASE_IMAGES_PATH + "misc/ave-tours-ico.ico"))];
   }
 
 }

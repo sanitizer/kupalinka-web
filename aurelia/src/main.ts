@@ -24,7 +24,7 @@ export function configure(aurelia) {
               lng : 'en',
               fallbackLng : 'ru',
               debug : false,
-              ns: ["home", "nav", "pics", "emps", "services", "cont"],
+              ns: ["home", "nav", "pics", "emps", "services", "cont", "events"],
               defaultNS: "services"
           });
       });

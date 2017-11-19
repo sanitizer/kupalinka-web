@@ -10,7 +10,7 @@ export class ServicesComponent implements OnInit {
 
   text: string;
 
-  constructor(private langService: LanguageService) { }
+  constructor(private langSerice: LanguageService) { }
 
   ngOnInit() {
     this.text = "This is services";

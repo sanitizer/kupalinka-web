@@ -14,7 +14,8 @@ export class Events implements Localized {
 
     @bindable mainHeader: string;
     @bindable text: string;
-    @bindable splitter: string;
+    @bindable scheduleHeader: string;
+    @bindable admissionHeader: string;
     @bindable events: Array<Event> = [];
     i18n: I18N;
     ea: EventAggregator;
@@ -35,16 +36,22 @@ export class Events implements Localized {
         return "events:text";
     }
 
-    private getSplitterKey(): string {
-        return "events:splitter";
+    private getScheduleHeaderKey(): string {
+        return "events:scheduleHeader";
+    }
+
+    private getAdmissionHeaderKey(): string {
+        return "events:admissionHeader";
     }
 
     setLocalizedStrings() {
         this.mainHeader = this.i18n.tr(this.getHeaderKey());
-        this.splitter = this.i18n.tr(this.getSplitterKey());
+        this.scheduleHeader = this.i18n.tr(this.getScheduleHeaderKey());
+        this.admissionHeader = this.i18n.tr(this.getAdmissionHeaderKey());
         if (this.events.length == 0) {
             this.text = this.i18n.tr(this.getTextKey());
-            this.splitter = "";
+            this.scheduleHeader = "";
+            this.admissionHeader = "";
         }
     }
 

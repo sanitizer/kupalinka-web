@@ -1,29 +1,20 @@
 <template>
-    <div class="pad20">
-        <h1 class="ui large header">
-            <span class="common-font">
-                ${mainHeader}
-            </span>
-            <div class="sub large header margin10">
-                <p class="common-font justify-right20">
-                    ${text}
-                </p>
-            </div>
-        </h1>
-
-        <div class="pad20">
-            <div class="ui list">
-                <div class="item common-font" repeat.for="event of events">
-                    <p class="justify-right20">
-                        <i>${event.text}</i></br>
-                        <h3>${splitter}</h3>
-                        <ul>
-                            <li repeat.for="time of event.times">
-                                ${time}
-                            </li>
-                        </ul>
-                    </p>
-                    <div class="ui divider"></div>
+    <div class="container">
+        <div class="jumbotron common-font">
+            <h1>${mainHeader}</h1>
+            <p>${text}</p>
+            <div class="common-font event-box" repeat.for="event of events" style="background-color: white;">
+                <p class="justify-right20" repeat.for="txt of event.text">${txt}</p>
+                <h3>${scheduleHeader}</h3>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-heading" repeat.for="time of event.times">
+                        ${time}
+                    </li>
+                </ul>
+                <div style="text-align: right;">
+                    <h4>${admissionHeader}
+                        <small style="color: orangered;">${event.admission}</small>
+                    </h4>
                 </div>
             </div>
         </div>

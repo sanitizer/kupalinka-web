@@ -1,7 +1,9 @@
 {
-  "mainHeader": "Our Events",
+  "mainHeader": "Events",
   "text": "No current events at this time.",
-  "splitter": "Days and times of the event:",
-  "exhibition/text": "Adult Day Care Center 'Kupalinka' invites creative people to take an active part in the exhibition-sale of hand made products (products of embroidery, knitting, sewing, costume jewelery, objects burning out on a tree, etc.)",
-  "exhibition/times": "October 5th (Thursday): 12.00 pm - 6 pm,October 6th (Friday): 12.00 pm - 6 pm,October 7th (Saturday): 12.00 pm - 4 pm"
+  "scheduleHeader": "Schedule:",
+  "admissionHeader": "Admission:",
+  "exhibition/admission": "Free",
+  "exhibition/text": "Center \"Kupalinka\" invites creative people to take an active part in the \"Christmas-New Year Exhibition-Fair\" of hand made souveniers.\nThe application form for participation must be submitted in advance by phone: 303-386-4508, 720-412-4116.\n\"Christmas-New Year Exhibition-Fair\" is open to all comers to buy and to look at interesting souveniers.",
+  "exhibition/times": "December 16th (Saturday): 12.00 pm - 6 pm,December 17th (Sunday): 12.00 pm - 6 pm"
 }

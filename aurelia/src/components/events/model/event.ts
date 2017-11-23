@@ -9,8 +9,9 @@ import {LANG_CHANGED} from "../../lang/model/constants";
 @inject(I18N, EventAggregator)
 export class Event {
 
-    @bindable text: string;
+    @bindable text: string[];
     @bindable times: string[];
+    @bindable admission: string;
     nameKeyPart: string;
     i18n: I18N;
     ea: EventAggregator;
@@ -25,7 +26,8 @@ export class Event {
     }
 
     setLocalizedStrings() {
-        this.text = this.i18n.tr(this.getTextKey());
+        this.text = this.i18n.tr(this.getTextKey()).split("\n");
+        this.admission = this.i18n.tr(this.getAdmissionKey());
         this.times = this.i18n.tr(this.getTimesKey()).split(",");
     }
 
@@ -35,6 +37,10 @@ export class Event {
 
     getTimesKey(): string {
         return "events:" + this.nameKeyPart + "/times";
+    }
+
+    getAdmissionKey(): string {
+        return "events:" + this.nameKeyPart + "/admission";
     }
 
     attached() {

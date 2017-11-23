@@ -13,7 +13,7 @@
 }
 
 .ud50 {
-  margin: 50px 0;
+    margin: 50px 0;
 }
 
 .margin10 {
@@ -66,7 +66,7 @@ div.links div {
     created round buttons for
     link buttons
 */
-div.round-button:hover{
+div.round-button:hover {
     opacity: .8;
     width: 75px;
     height: 75px;
@@ -74,7 +74,7 @@ div.round-button:hover{
     animation: none;
 }
 
-div.round-button:active{
+div.round-button:active {
     opacity: .8;
     width: 70px;
     height: 70px;
@@ -93,24 +93,71 @@ div.round-button {
     margin: 40px auto;
     /*transition setup*/
     -webkit-transition: all .4s;
-    -moz-transition:    all .4s;
-    -ms-transition:     all .4s;
-    -o-transition:      all .4s;
-    transition:         all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
     /*animation setup*/
-    animation:          blinking 2s alternate 0s infinite;
-    -webkit-animation:  blinking 2s alternate 0s infinite;
-    -moz-animation:     blinking 2s alternate 0s infinite;
-    -o-animation:       blinking 2s alternate 0s infinite;
-    -ms-transition:     blinking 2s alternate 0s infinite;
+    animation: blinking 2s alternate 0s infinite;
+    -webkit-animation: blinking 2s alternate 0s infinite;
+    -moz-animation: blinking 2s alternate 0s infinite;
+    -o-animation: blinking 2s alternate 0s infinite;
+    -ms-transition: blinking 2s alternate 0s infinite;
 }
 
+/*blinking partners icon shadow*/
 @keyframes blinking {
     from {
         box-shadow: 0 0 40px forestgreen;
     }
     to {
         box-shadow: 0 0 40px red;
+    }
+}
+
+@-webkit-keyframes blinking {
+    from {
+        box-shadow: 0 0 40px forestgreen;
+    }
+    to {
+        box-shadow: 0 0 40px red;
+    }
+}
+
+@-moz-keyframes blinking {
+    from {
+        box-shadow: 0 0 40px forestgreen;
+    }
+    to {
+        box-shadow: 0 0 40px red;
+    }
+}
+
+/*blinking event box shadow*/
+@keyframes eventBlink {
+    from {
+        box-shadow: .2em .2em .2em .2em lightgreen;
+    }
+    to {
+        box-shadow: none;
+    }
+}
+
+@-webkit-keyframes eventBlink {
+    from {
+        box-shadow: .2em .2em .2em .2em lightgreen;
+    }
+    to {
+        box-shadow: none;
+    }
+}
+
+@-moz-keyframes eventBlink {
+    from {
+        box-shadow: .2em .2em .2em .2em lightgreen;
+    }
+    to {
+        box-shadow: none;
     }
 }
 
@@ -135,14 +182,14 @@ div.centered-div {
     color: white;
     font-family: Georgia, sans-serif;
 
-    background: rgba(193,158,103,1);
-    background: -moz-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193,158,103,1)), color-stop(1%, rgba(110,72,14,1)), color-stop(7%, rgba(110,72,14,1)), color-stop(15%, rgba(110,72,14,1)), color-stop(26%, rgba(110,72,14,1)), color-stop(35%, rgba(110,72,14,1)), color-stop(48%, rgba(125,75,0,1)), color-stop(68%, rgba(150,104,36,1)), color-stop(100%, rgba(233,212,179,1)));
-    background: -webkit-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
-    background: -o-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
-    background: -ms-linear-gradient(-45deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
-    background: linear-gradient(135deg, rgba(193,158,103,1) 0%, rgba(110,72,14,1) 1%, rgba(110,72,14,1) 7%, rgba(110,72,14,1) 15%, rgba(110,72,14,1) 26%, rgba(110,72,14,1) 35%, rgba(125,75,0,1) 48%, rgba(150,104,36,1) 68%, rgba(233,212,179,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1 );
+    background: rgba(193, 158, 103, 1);
+    background: -moz-linear-gradient(-45deg, rgba(193, 158, 103, 1) 0%, rgba(110, 72, 14, 1) 1%, rgba(110, 72, 14, 1) 7%, rgba(110, 72, 14, 1) 15%, rgba(110, 72, 14, 1) 26%, rgba(110, 72, 14, 1) 35%, rgba(125, 75, 0, 1) 48%, rgba(150, 104, 36, 1) 68%, rgba(233, 212, 179, 1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(193, 158, 103, 1)), color-stop(1%, rgba(110, 72, 14, 1)), color-stop(7%, rgba(110, 72, 14, 1)), color-stop(15%, rgba(110, 72, 14, 1)), color-stop(26%, rgba(110, 72, 14, 1)), color-stop(35%, rgba(110, 72, 14, 1)), color-stop(48%, rgba(125, 75, 0, 1)), color-stop(68%, rgba(150, 104, 36, 1)), color-stop(100%, rgba(233, 212, 179, 1)));
+    background: -webkit-linear-gradient(-45deg, rgba(193, 158, 103, 1) 0%, rgba(110, 72, 14, 1) 1%, rgba(110, 72, 14, 1) 7%, rgba(110, 72, 14, 1) 15%, rgba(110, 72, 14, 1) 26%, rgba(110, 72, 14, 1) 35%, rgba(125, 75, 0, 1) 48%, rgba(150, 104, 36, 1) 68%, rgba(233, 212, 179, 1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(193, 158, 103, 1) 0%, rgba(110, 72, 14, 1) 1%, rgba(110, 72, 14, 1) 7%, rgba(110, 72, 14, 1) 15%, rgba(110, 72, 14, 1) 26%, rgba(110, 72, 14, 1) 35%, rgba(125, 75, 0, 1) 48%, rgba(150, 104, 36, 1) 68%, rgba(233, 212, 179, 1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(193, 158, 103, 1) 0%, rgba(110, 72, 14, 1) 1%, rgba(110, 72, 14, 1) 7%, rgba(110, 72, 14, 1) 15%, rgba(110, 72, 14, 1) 26%, rgba(110, 72, 14, 1) 35%, rgba(125, 75, 0, 1) 48%, rgba(150, 104, 36, 1) 68%, rgba(233, 212, 179, 1) 100%);
+    background: linear-gradient(135deg, rgba(193, 158, 103, 1) 0%, rgba(110, 72, 14, 1) 1%, rgba(110, 72, 14, 1) 7%, rgba(110, 72, 14, 1) 15%, rgba(110, 72, 14, 1) 26%, rgba(110, 72, 14, 1) 35%, rgba(125, 75, 0, 1) 48%, rgba(150, 104, 36, 1) 68%, rgba(233, 212, 179, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c19e67', endColorstr='#e9d4b3', GradientType=1);
 
     border-radius: 3px;
     border: 10px outset #996515;
@@ -213,3 +260,15 @@ p.justify-right20 {
     background-color: forestgreen;
     border: none;
 }
+
+.event-box {
+    padding: 1em;
+    box-shadow: .2em .2em .2em .2em lightgreen;
+    margin: 1.5em .5em 0 .5em;
+    border-radius: .2em;
+
+    -webkit-animation: eventBlink 3s alternate infinite;
+    -moz-animation:    eventBlink 3s alternate infinite;
+    animation:         eventBlink 3s alternate infinite;
+}
+

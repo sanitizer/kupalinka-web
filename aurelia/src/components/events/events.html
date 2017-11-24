@@ -4,7 +4,7 @@
             <h1>${mainHeader}</h1>
             <p>${text}</p>
             <div class="common-font event-box" repeat.for="event of events" style="background-color: white;">
-                <p class="justify-right20" repeat.for="txt of event.text">${txt}</p>
+                <p class="justify-right20" repeat.for="txt of event.text" style="font-weight: 600;">${txt}</p>
                 <h3>${scheduleHeader}</h3>
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-heading" repeat.for="time of event.times">

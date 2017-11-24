@@ -136,7 +136,7 @@ div.round-button {
 /*blinking event box shadow*/
 @keyframes eventBlink {
     from {
-        box-shadow: .2em .2em .2em .2em lightgreen;
+        box-shadow: .2em .2em .2em .2em forestgreen;
     }
     to {
         box-shadow: none;
@@ -145,7 +145,7 @@ div.round-button {
 
 @-webkit-keyframes eventBlink {
     from {
-        box-shadow: .2em .2em .2em .2em lightgreen;
+        box-shadow: .2em .2em .2em .2em forestgreen;
     }
     to {
         box-shadow: none;
@@ -154,7 +154,7 @@ div.round-button {
 
 @-moz-keyframes eventBlink {
     from {
-        box-shadow: .2em .2em .2em .2em lightgreen;
+        box-shadow: .2em .2em .2em .2em forestgreen;
     }
     to {
         box-shadow: none;
@@ -263,7 +263,7 @@ p.justify-right20 {
 
 .event-box {
     padding: 1em;
-    box-shadow: .2em .2em .2em .2em lightgreen;
+    box-shadow: .2em .2em .2em .2em forestgreen;
     margin: 1.5em .5em 0 .5em;
     border-radius: .2em;
 

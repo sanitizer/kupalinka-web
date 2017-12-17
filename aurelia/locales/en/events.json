@@ -3,9 +3,28 @@
   "text": "No current events at this time.",
   "scheduleHeader": "Schedule:",
   "admissionHeader": "Admission:",
+
   "exhibition/admission": "Free",
   "exhibition/dates": "December 16, 2017;December 17, 2017",
-  "exhibition/expirationDate": "December 17, 2017",
+  "exhibition/eventExpirationDate": "December 17, 2017",
   "exhibition/text": "Center \"Kupalinka\" invites creative people to take an active part in the \"Christmas-New Year Exhibition-Fair\" of hand made souveniers.\nThe application form for participation must be submitted in advance by phone: 303-386-4508, 720-412-4116.\n\"Christmas-New Year Exhibition-Fair\" is open to all comers to buy and to look at interesting souveniers.",
-  "exhibition/times": "December 16th (Saturday): 12.00 pm - 6 pm,December 17th (Sunday): 12.00 pm - 6 pm"
+  "exhibition/times": "December 16th (Saturday): 12:00 pm - 6:00 pm,December 17th (Sunday): 12:00 pm - 6:00 pm",
+
+  "tour/admission": "$25",
+  "tour/dates": "December 23, 2017",
+  "tour/eventExpirationDate": "December 23, 2017",
+  "tour/text": "We organize an excursion \"Christmas lights of the city\".\nYou can call and order the tickets in advance by phone: 720-412-4116, 303-386-4508",
+  "tour/times": "December 23rd (Saturday): 5:00 pm",
+
+  "russianChristmas/admission": "$20",
+  "russianChristmas/dates": "January 12, 2018",
+  "russianChristmas/eventExpirationDate": "January 12, 2018",
+  "russianChristmas/text": "We are celebrating The Old New Year.\nAn amusing, musical and entertaining program awaits: karaoke, New Year sketches, attractive and fabulous New Year's hall.\nCocktail Reception included.\nOrder the tickets by phone: 720-412-4116, 303-386-4508.",
+  "russianChristmas/times": "January 12th (Friday): 5:00 pm",
+
+  "placeholder/admission": "",
+  "placeholder/dates": "January 12, 2018",
+  "placeholder/eventExpirationDate": "December 23, 2017",
+  "placeholder/text": "",
+  "placeholder/times": "January 12th (Saturday): 5:00 pm"
 }

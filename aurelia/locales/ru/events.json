@@ -3,9 +3,28 @@
   "text": "В настоящее время нет текущих мероприятий.",
   "scheduleHeader": "Pасписание:",
   "admissionHeader": "Вход:",
+
   "exhibition/admission": "Бесплатно",
   "exhibition/dates": "December 16, 2017;December 17, 2017",
-  "exhibition/expirationDate": "December 17, 2017",
+  "exhibition/eventExpirationDate": "December 17, 2017",
   "exhibition/text": "Центр \"Kupalinka\" приглашает творческих людей принять активное участие в \"Рождественско-новогодней выставке-ярмарке\" изделий, созданных своими руками.\nЗаявку на участие необходимо подать заранее по тел.: 303-386-4508, 720-412-4116.\n\"Рождественско-новогодняя выставка-ярмарка\" открыта для всех желающих посмотреть и приобрести интересные изделия.",
-  "exhibition/times": "16 декабря (суббота): 12.00 час. - 18.00 час.,17 декабря (воскресенье): 12.00 час. - 18.00 час."
+  "exhibition/times": "16 Декабря (Суббота): 12:00 час. - 18:00 час.,17 Декабря (Воскресенье): 12:00 час. - 18:00 час.",
+
+  "tour/admission": "$25",
+  "tour/dates": "December 23, 2017",
+  "tour/eventExpirationDate": "December 23, 2017",
+  "tour/text": "Организуем экскурсию \"Рождественские огни города\".\nЗаранее позвонить и заказать билет можно по телефонам: 720-412-4116, 303-386-4508",
+  "tour/times": "23 Декабря (Суббота): 17:00 час",
+
+  "russianChristmas/admission": "$20",
+  "russianChristmas/dates": "January 12, 2018",
+  "russianChristmas/eventExpirationDate": "January 12, 2018",
+  "russianChristmas/text": "Празднуем Старый Новый год.\nЗабавная, музыкально-развлекательная программа ждет Вас: караоке, новогодние сценки, привлекательность и сказочность новогоднего зала.\nФуршет включен.\nЗаказ пригласительных билетов по телефонам: 720-412-4116, 303-386-4508.",
+  "russianChristmas/times": "12 Января (Пятница): 17:00 час",
+
+  "placeholder/admission": "",
+  "placeholder/dates": "January 12, 2018",
+  "placeholder/eventExpirationDate": "January 12, 2018",
+  "placeholder/text": "",
+  "placeholder/times": "January 12th (Saturday): 5:00 pm"
 }

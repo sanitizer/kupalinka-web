@@ -2,14 +2,18 @@
     <div class="container">
         <div class="jumbotron common-font">
             <h1>${mainHeader}</h1>
-            <div repeat.for="event of events" class="${event.expired ? 'forText' : eventBoxStyle}" style="background-color: white;">
-                <p if.bind="event.expired">${text}</p>
+            <p >${text}</p>
+            <div repeat.for="event of events" class="${event.expired ? '' : 'common-font event-box'}" style="background-color: white;">
                 <div if.bind="!event.expired">
                     <p class="justify-right20" repeat.for="txt of event.text" style="font-weight: 600;">${txt}</p>
                     <h3>${scheduleHeader}</h3>
                     <ul class="list-group">
-                        <li class="list-group-item list-group-item-heading" repeat.for="time of event.times">
-                            ${time}
+                        <li class="${time.isToday ?
+                                        'list-group-item list-group-item-success' :
+                                        time.isFuture ?
+                                            'list-group-item list-group-item-info' :
+                                            'list-group-item list-group-item-danger'}" repeat.for="time of event.times">
+                            ${time.display}
                         </li>
                     </ul>
                     <div style="text-align: right;">

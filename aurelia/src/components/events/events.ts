@@ -50,7 +50,6 @@ export class Events implements Localized {
         this.mainHeader = this.i18n.tr(this.getHeaderKey());
         this.scheduleHeader = this.i18n.tr(this.getScheduleHeaderKey());
         this.admissionHeader = this.i18n.tr(this.getAdmissionHeaderKey());
-        this.text = this.i18n.tr(this.getTextKey());
         if (this.events.length === 0 || this.allEventsAreExpired()) {
             this.text = this.i18n.tr(this.getTextKey());
         }

@@ -12,6 +12,9 @@ export class Event {
     @bindable text: string[];
     @bindable times: string[];
     @bindable admission: string;
+    @bindable eventIsToday: boolean;
+    @bindable expired: boolean;
+    dates: Date[] = [];
     nameKeyPart: string;
     i18n: I18N;
     ea: EventAggregator;
@@ -21,9 +24,26 @@ export class Event {
         this.ea = ea;
         this.i18n = i18n;
         this.nameKeyPart = eventName;
+        this.setDates();
         this.setLocalizedStrings();
         this.subscribe();
     }
+
+    setDates() {
+        let today = new Date();
+        let dates = this.i18n.tr(this.getDatesKey()).split(";");
+        let expirationDate = new Date(this.i18n.tr(this.getExpirationDateKey()));
+        this.expired = expirationDate.getFullYear() < today.getFullYear() || expirationDate.getMonth() < today.getMonth() || expirationDate.getDate() < today.getDate();
+
+        dates.forEach(date => {
+            let theDate = new Date(date);
+            this.eventIsToday = theDate.getFullYear() === today.getFullYear() &&
+                                theDate.getMonth() === today.getMonth() &&
+                                theDate.getDate() === today.getDate();
+        });
+    }
+
+
 
     setLocalizedStrings() {
         this.text = this.i18n.tr(this.getTextKey()).split("\n");
@@ -33,6 +53,14 @@ export class Event {
 
     getTextKey(): string {
         return "events:" + this.nameKeyPart + "/text";
+    }
+
+    getDatesKey(): string {
+        return "events:" + this.nameKeyPart + "/dates";
+    }
+
+    getExpirationDateKey(): string {
+        return "events:" + this.nameKeyPart + "/expirationDate";
     }
 
     getTimesKey(): string {

@@ -16,6 +16,7 @@ export class Events implements Localized {
     @bindable text: string;
     @bindable scheduleHeader: string;
     @bindable admissionHeader: string;
+    @bindable eventBoxStyle: string = 'common-font event-box';
     @bindable events: Array<Event> = [];
     i18n: I18N;
     ea: EventAggregator;
@@ -48,11 +49,7 @@ export class Events implements Localized {
         this.mainHeader = this.i18n.tr(this.getHeaderKey());
         this.scheduleHeader = this.i18n.tr(this.getScheduleHeaderKey());
         this.admissionHeader = this.i18n.tr(this.getAdmissionHeaderKey());
-        if (this.events.length == 0) {
-            this.text = this.i18n.tr(this.getTextKey());
-            this.scheduleHeader = "";
-            this.admissionHeader = "";
-        }
+        this.text = this.i18n.tr(this.getTextKey());
     }
 
     attached() {

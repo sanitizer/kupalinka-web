@@ -136,7 +136,10 @@ div.round-button {
 /*blinking event box shadow*/
 @keyframes eventBlink {
     from {
-        box-shadow: .2em .2em .2em .2em forestgreen;
+        -webkit-box-shadow: -1px 1px 3px 5px var(--box-shadow-color);
+        -moz-box-shadow:    -1px 1px 3px 5px var(--box-shadow-color);
+        box-shadow:         -1px 1px 3px 5px var(--box-shadow-color);
+        /*box-shadow: .2em .2em .2em .2em var(--box-shadow-color);*/
     }
     to {
         box-shadow: none;
@@ -145,7 +148,10 @@ div.round-button {
 
 @-webkit-keyframes eventBlink {
     from {
-        box-shadow: .2em .2em .2em .2em forestgreen;
+        -webkit-box-shadow: -1px 1px 3px 5px var(--box-shadow-color);
+        -moz-box-shadow:    -1px 1px 3px 5px var(--box-shadow-color);
+        box-shadow:         -1px 1px 3px 5px var(--box-shadow-color);
+        /*box-shadow: .2em .2em .2em .2em var(--box-shadow-color);*/
     }
     to {
         box-shadow: none;
@@ -154,7 +160,10 @@ div.round-button {
 
 @-moz-keyframes eventBlink {
     from {
-        box-shadow: .2em .2em .2em .2em forestgreen;
+        -webkit-box-shadow: -1px 1px 3px 5px var(--box-shadow-color);
+        -moz-box-shadow:    -1px 1px 3px 5px var(--box-shadow-color);
+        box-shadow:         -1px 1px 3px 5px var(--box-shadow-color);
+        /*box-shadow: .2em .2em .2em .2em var(--box-shadow-color);*/
     }
     to {
         box-shadow: none;
@@ -263,12 +272,20 @@ p.justify-right20 {
 
 .event-box {
     padding: 1em;
-    box-shadow: .2em .2em .2em .2em forestgreen;
     margin: 1.5em .5em 0 .5em;
     border-radius: .2em;
+    --box-shadow-color: forestgreen;
 
-    -webkit-animation: eventBlink 3s alternate infinite;
-    -moz-animation:    eventBlink 3s alternate infinite;
-    animation:         eventBlink 3s alternate infinite;
+    -webkit-animation: eventBlink 2s alternate infinite;
+    -moz-animation:    eventBlink 2s alternate infinite;
+    animation:         eventBlink 2s alternate infinite;
 }
 
+.event-box-future {
+    --box-shadow-color: dodgerblue;
+}
+
+.forText {
+    text-align: center;
+    padding: 1em;
+}

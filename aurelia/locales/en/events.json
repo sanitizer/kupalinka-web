@@ -1,7 +1,7 @@
 {
   "mainHeader": "Events",
   "text": "No current events at this time.",
-  "scheduleHeader": "Schedule:",
+  "scheduleHeader": "Days of Event:",
   "admissionHeader": "Admission:",
 
   "exhibition/admission": "Free",
@@ -21,6 +21,12 @@
   "russianChristmas/eventExpirationDate": "January 12, 2018",
   "russianChristmas/text": "We are celebrating The Old New Year.\nAn amusing, musical and entertaining program awaits: karaoke, New Year sketches, attractive and fabulous New Year's hall.\nCocktail Reception included.\nOrder the tickets by phone: 720-412-4116, 303-386-4508.",
   "russianChristmas/times": "January 12th (Friday): 5:00 pm",
+
+  "womenDay/admission": "$10",
+  "womenDay/dates": "March 9, 2018",
+  "womenDay/eventExpirationDate": "March 9, 2018",
+  "womenDay/text": "Center Kupalinka invites dear ladies and friends to the festive program \"Oh what a woman\".\nYou can call and order the tickets in advance by phone: 720-412-4116, 303-386-4508",
+  "womenDay/times": "March 9th (Friday): 5:00 pm",
 
   "placeholder/admission": "",
   "placeholder/dates": "January 12, 2018",

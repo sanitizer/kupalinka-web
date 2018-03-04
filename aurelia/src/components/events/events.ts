@@ -26,7 +26,9 @@ export class Events implements Localized {
         this.ea = ea;
         this.events = [new Event(this.i18n, this.ea, "exhibition"),
                        new Event(this.i18n, this.ea, "tour"),
-                       new Event(this.i18n, this.ea, "russianChristmas")];
+                       new Event(this.i18n, this.ea, "russianChristmas"),
+                       new Event(this.i18n, this.ea, "womenDay")
+        ];
         this.setLocalizedStrings();
     }
 
